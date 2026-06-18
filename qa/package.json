@@ -1,0 +1,8 @@
+{
+  "name": "vadimohka-site-qa",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "qa": "node check.mjs"
+  }
+}
