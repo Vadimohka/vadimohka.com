@@ -1,3 +1,51 @@
+# vadimohka.com robots policy
+# Goal: make public pages discoverable by search engines and AI search systems.
+
 User-agent: *
 Allow: /
-Sitemap: https://vadimohka.github.io/sitemap.xml
+
+# Search crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Google AI controls / AI surfaces. Allow for maximum discoverability.
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI: search/indexing and user-triggered browsing should be allowed.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic / Claude search and user-triggered retrieval.
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity search / user-triggered retrieval.
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl can help downstream discovery and public knowledge graphs.
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://vadimohka.com/sitemap.xml
+Sitemap: https://vadimohka.com/sitemap-images.xml
+Sitemap: https://vadimohka.com/sitemap-ai.xml

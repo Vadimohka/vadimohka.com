@@ -1,0 +1,96 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://vadimohka.com/#person",
+      "name": "Vadim Vladymtsev",
+      "alternateName": [
+        "Vadimohka",
+        "Вадим Владымцев",
+        "Вадим Денисович Владымцев"
+      ],
+      "url": "https://vadimohka.com/",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "jobTitle": [
+        "Creator, Co-Founder and CTO of Century AI Studio",
+        "CTO / R&D Director at StackLevel Group",
+        "Enterprise AI Product Builder",
+        "Public AI Expert",
+        "Technical Auditor"
+      ],
+      "description": "Creator, Co-Founder and CTO of Century AI Studio; CTO / R&D Director at StackLevel Group; enterprise AI product builder and public AI expert.",
+      "knowsAbout": [
+        "Enterprise AI",
+        "AI governance",
+        "LLMOps",
+        "RAG",
+        "AI product architecture",
+        "Private AI platforms",
+        "Technical due diligence",
+        "Engineering education",
+        "Competitive programming",
+        "ICPC coaching"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/vadimohka/",
+        "https://century-ai.ru/",
+        "https://stepik.org/course/86957/promo",
+        "https://verify.skilljar.com/c/boo5cp3yw29k",
+        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Claude Foundations",
+          "url": "https://verify.skilljar.com/c/boo5cp3yw29k"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "MIPT"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "BSUIR"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://vadimohka.com/#stacklevel"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://vadimohka.com/#stacklevel",
+      "name": "StackLevel Group",
+      "url": "https://www.linkedin.com/in/vadimohka/",
+      "employee": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://vadimohka.com/#century",
+      "name": "Century AI Studio",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://century-ai.ru/",
+      "creator": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "description": "Enterprise AI Studio and operating layer for assistants, workflows, documents, data access, auditability, metrics and deployment control.",
+      "keywords": "enterprise AI, AI Studio, RAG, workflows, AI governance, LLMOps, private AI platform"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vadimohka.com/#website",
+      "url": "https://vadimohka.com/",
+      "name": "Vadim Vladymtsev",
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}

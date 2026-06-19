@@ -2,3 +2,6 @@ node_modules/
 qa/node_modules/
 qa/screenshots/
 .DS_Store
+.remember/
+.playwright-mcp/
+_site/

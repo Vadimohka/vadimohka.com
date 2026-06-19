@@ -45,5 +45,5 @@ checks sitemap + robots consistency.
 ## Notes
 
 No build step. No dependencies. Works on GitHub Pages. Canonical / Open Graph /
-sitemap URLs use the `vadimohka.github.io` domain — update them if you deploy to a
+sitemap URLs use the `vadimohka.com` domain — update them if you deploy to a
 custom domain.

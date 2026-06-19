@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const PAGES = ['index.html','enterprise.html','founders.html','investors.html','origin.html',
-  'century.html','proof.html','writing.html','contact.html','sources.html','404.html'];
+  'century.html','proof.html','expert.html','writing.html','contact.html','sources.html','404.html'];
 
 let fails = 0;
 const fail = (p, msg) => { console.error(`  ✗ ${p}: ${msg}`); fails++; };
@@ -36,6 +36,7 @@ for (const page of PAGES) {
   if (!/property="og:image"/.test(html)) fail(page, 'missing og:image');
   if (!/name="twitter:card"/.test(html)) fail(page, 'missing twitter:card');
   if (page !== '404.html' && !/rel="canonical"/.test(html)) fail(page, 'missing canonical');
+  if (/vadimohka\.github\.io/.test(html)) fail(page, 'stale github.io domain (use vadimohka.com)');
 
   // images: alt + intrinsic dimensions + resolvable src
   for (const m of matches(/<img\b[^>]*>/g, html)) {
@@ -72,11 +73,17 @@ for (const page of PAGES) {
   if (opens !== closes) fail(page, `<div> imbalance: ${opens} open vs ${closes} close`);
 }
 
-// sitemap + robots
+// sitemap + robots — public pages only (bare-domain home, no sources/404)
 const sm = existsSync(resolve(ROOT, 'sitemap.xml')) ? read('sitemap.xml') : '';
+const SITEMAP = ['century.html','proof.html','expert.html','enterprise.html','investors.html',
+  'founders.html','contact.html','origin.html','writing.html'];
 if (!sm) fail('sitemap.xml', 'missing');
-else for (const p of PAGES.filter(p => p !== '404.html'))
-  if (!sm.includes(p)) fail('sitemap.xml', `does not list ${p}`);
+else {
+  if (!/<loc>https:\/\/vadimohka\.com\/?<\/loc>/.test(sm)) fail('sitemap.xml', 'missing home (bare-domain) loc');
+  for (const p of SITEMAP) if (!sm.includes('/' + p)) fail('sitemap.xml', `does not list ${p}`);
+  for (const p of ['sources.html', '404.html']) if (sm.includes('/' + p)) fail('sitemap.xml', `should not list ${p}`);
+  if (/vadimohka\.github\.io/.test(sm)) fail('sitemap.xml', 'stale github.io domain');
+}
 const robots = existsSync(resolve(ROOT, 'robots.txt')) ? read('robots.txt') : '';
 if (!robots) fail('robots.txt', 'missing');
 else if (!/Sitemap:/i.test(robots)) fail('robots.txt', 'missing Sitemap: reference');

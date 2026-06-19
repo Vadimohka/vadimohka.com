@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://vadimohka.com</loc>
+    <image:image>
+      <image:loc>https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg</image:loc>
+      <image:title>Vadim Vladymtsev — CTO, Co-Founder and Enterprise AI leader</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/century.html</loc>
+    <image:image>
+      <image:loc>https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg</image:loc>
+      <image:title>Century AI Studio by Vadim Vladymtsev</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/expert.html</loc>
+    <image:image>
+      <image:loc>https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg</image:loc>
+      <image:title>Vadim Vladymtsev expert and speaker</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/proof.html</loc>
+    <image:image>
+      <image:loc>https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg</image:loc>
+      <image:title>Selected proof of Vadim Vladymtsev</image:title>
+    </image:image>
+  </url>
+</urlset>

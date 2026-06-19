@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://vadimohka.github.io/index.html</loc></url>
-<url><loc>https://vadimohka.github.io/enterprise.html</loc></url>
-<url><loc>https://vadimohka.github.io/founders.html</loc></url>
-<url><loc>https://vadimohka.github.io/investors.html</loc></url>
-<url><loc>https://vadimohka.github.io/origin.html</loc></url>
-<url><loc>https://vadimohka.github.io/century.html</loc></url>
-<url><loc>https://vadimohka.github.io/proof.html</loc></url>
-<url><loc>https://vadimohka.github.io/writing.html</loc></url>
-<url><loc>https://vadimohka.github.io/contact.html</loc></url>
-<url><loc>https://vadimohka.github.io/sources.html</loc></url>
+  <url>
+    <loc>https://vadimohka.com</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/century.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/proof.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/expert.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/enterprise.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/investors.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/founders.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/contact.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/origin.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://vadimohka.com/writing.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
 </urlset>

@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least-privilege token scopes required by the Pages deploy action.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; let an in-progress production deploy finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fail the deploy if the static checks don't pass (no broken site ships).
+      - name: QA gate
+        run: node qa/check.mjs
+
+      # Publish only the public site — exclude repo/dev/internal files.
+      - name: Assemble _site
+        run: |
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.remember' \
+            --exclude='.playwright-mcp' \
+            --exclude='qa' \
+            --exclude='_site' \
+            --exclude='.gitignore' \
+            --exclude='.DS_Store' \
+            ./ _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

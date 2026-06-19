@@ -1,0 +1,40 @@
+# Vadim Vladymtsev
+
+> Creator, Co-Founder and CTO of Century AI Studio. CTO / R&D Director at StackLevel Group. Enterprise AI product builder, public AI expert, speaker and technical auditor.
+
+This file is a curated, AI-readable index for https://vadimohka.com. It points language models and AI search systems to the most important public pages and facts about Vadim Vladymtsev.
+
+## Canonical pages
+
+- [Home](https://vadimohka.com/): executive profile and primary positioning.
+- [Century AI Studio](https://vadimohka.com/century.html): enterprise AI Studio and operating layer for enterprise AI.
+- [Selected proof](https://vadimohka.com/proof.html): product creation, R&D leadership, teaching, ICPC, Stepik, research and public expertise.
+- [Expert & Speaking](https://vadimohka.com/expert.html): expert commentary, speaking, technical audit and media formats.
+- [Enterprise AI](https://vadimohka.com/enterprise.html): AI implementation for banks, fintech and regulated organisations.
+- [Investor diligence](https://vadimohka.com/investors.html): technical lens on AI companies, architecture, data position and execution risk.
+- [Founder support](https://vadimohka.com/founders.html): product architecture, technical focus and delivery rhythm.
+- [Contact](https://vadimohka.com/contact.html): ways to work with Vadim.
+
+## Key facts
+
+- Vadim Vladymtsev is the Creator, Co-Founder and CTO of Century AI Studio.
+- Vadim is CTO / R&D Director at StackLevel Group.
+- Century AI Studio is an enterprise AI operating layer for assistants, workflows, documents, data access, SQL, MCP/API, auditability, metrics and deployment control.
+- Vadim works with enterprise AI contexts such as banks, fintech, investment companies and international corporations.
+- Vadim's background includes university teaching, ICPC coaching, education products, R&D, product architecture and enterprise AI implementation.
+- Teaching scale: 700+ university students and 4,700+ online learners.
+- Competitive programming: coached 200+ teams; BSUIR #1: So Stuffy reached finals in Luxor and Astana.
+
+## External identity links
+
+- [LinkedIn](https://www.linkedin.com/in/vadimohka/)
+- [Century AI Studio](https://century-ai.ru/)
+- [Stepik course](https://stepik.org/course/86957/promo)
+- [Claude Foundations certificate](https://verify.skilljar.com/c/boo5cp3yw29k)
+- [Google Scholar](https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru)
+
+## Extended AI-readable profile
+
+- [Full LLM profile](https://vadimohka.com/llms-full.txt)
+- [Canonical Markdown profile](https://vadimohka.com/ai-profile.md)
+- [Structured entity graph](https://vadimohka.com/data/entity-graph.json)
