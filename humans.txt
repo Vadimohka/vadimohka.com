@@ -1,6 +1,6 @@
 /* TEAM */
 Person: Vadim Vladymtsev
-Role: Creator, Co-Founder and CTO of Century AI Studio; CTO / R&D Director at StackLevel Group
+Role: Enterprise AI CTO and product operator; CTO at StackLevel Group
 Site: https://vadimohka.com/
 LinkedIn: https://www.linkedin.com/in/vadimohka/
 

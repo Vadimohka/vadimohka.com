@@ -1,0 +1,112 @@
+# Copy to owner-input.local.yaml and keep private.
+# Do not commit confidential client names, personal email, or non-public metrics.
+
+identity:
+  preferred_public_name: "Vadim Vladymtsev"
+  alternate_names:
+    - "Vadim Vladymtsev"
+  primary_title: "Enterprise AI CTO and product operator"
+  stacklevel:
+    exact_title: "CTO"
+    start_date: null
+    current: true
+  century:
+    exact_title: null            # e.g. Co-Founder and CTO
+    start_date: null
+    legal_or_product_relationship: null
+    permission_to_publish: false
+  other_current_roles: []
+
+contact:
+  professional_email: null
+  permission_to_publish_email: false
+  form_endpoint: null
+  calendar_url: null
+  preferred_response_time_text: null
+  privacy_contact_entity: null
+
+education:
+  bsuir:
+    exact_roles: []
+    date_ranges: []
+  mipt:
+    exact_programme_or_credential: null
+    date_range: null
+    verification_url: null
+    permission_to_publish: false
+
+operating_scope:
+  largest_team_range: null
+  budget_or_pnl_scope: null
+  number_of_production_deployments: null
+  number_of_active_enterprise_users: null
+  number_of_workflows: null
+  geography: []
+  date_basis: null
+  publication_permission: false
+
+sector_experience:
+  banks:
+    personally_confirmed: false
+    permitted_case_ids: []
+  fintech:
+    personally_confirmed: false
+    permitted_case_ids: []
+  investment_companies:
+    personally_confirmed: false
+    permitted_case_ids: []
+  international_corporations:
+    personally_confirmed: false
+    permitted_case_ids: []
+
+diligence:
+  completed_engagement_count: null
+  permitted_anonymised_examples: []
+  sample_deliverable_available: false
+  testimonial_available: false
+  conflicts_or_disclosures: null
+
+education_metrics:
+  students_taught:
+    value: null
+    definition: null
+    period: null
+    source: null
+  stepik_learners:
+    value: null
+    checked_date: null
+    source: null
+  teams_coached:
+    value: null
+    definition: null
+    period: null
+    source: null
+
+cases:
+  - id: null
+    organisation_display: null
+    permission_level: null       # named | anonymised | private
+    sector: null
+    date_range: null
+    personal_mandate: null
+    team_scope: null
+    technical_scope: null
+    constraints: []
+    actions: []
+    measurable_outcomes: []
+    source_urls: []
+    approved_quote: null
+
+testimonials:
+  - person_name: null
+    title: null
+    organisation: null
+    quote: null
+    permission_confirmed: false
+    verification_contact_or_url: null
+
+external_profiles:
+  legacy_ru_strategy: null       # redirect | rebuild | deprecate
+  linkedin_headline_approved: null
+  github_bio_approved: null
+  setka_action: null             # update | remove | keep

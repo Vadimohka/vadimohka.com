@@ -1,7 +1,17 @@
 node_modules/
 qa/node_modules/
+qa/browser/node_modules/
 qa/screenshots/
+qa/performance/*.json
 .DS_Store
 .remember/
 .playwright-mcp/
 _site/
+
+# Local owner input and private evidence must never enter version control.
+**/owner-input.local.yaml
+**/owner-input.local.yml
+**/private-evidence/
+**/evidence/private/
+**/screenshots/private/
+**/screenshots-private/

@@ -13,13 +13,10 @@
       "url": "https://vadimohka.com/",
       "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
       "jobTitle": [
-        "Creator, Co-Founder and CTO of Century AI Studio",
-        "CTO / R&D Director at StackLevel Group",
-        "Enterprise AI Product Builder",
-        "Public AI Expert",
-        "Technical Auditor"
+        "Enterprise AI CTO and product operator",
+        "CTO at StackLevel Group"
       ],
-      "description": "Creator, Co-Founder and CTO of Century AI Studio; CTO / R&D Director at StackLevel Group; enterprise AI product builder and public AI expert.",
+      "description": "Enterprise AI CTO and product operator focused on governed private AI for regulated organisations; CTO at StackLevel Group.",
       "knowsAbout": [
         "Enterprise AI",
         "AI governance",
@@ -34,26 +31,46 @@
       ],
       "sameAs": [
         "https://www.linkedin.com/in/vadimohka/",
-        "https://century-ai.ru/",
-        "https://stepik.org/course/86957/promo",
-        "https://verify.skilljar.com/c/boo5cp3yw29k",
+        "https://codeforces.com/profile/Vadimohka",
         "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
+      ],
+      "subjectOf": [
+        {
+          "@type": "NewsArticle",
+          "name": "New roles in work: a market for hybrid professions is forming in Russia",
+          "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
+          "datePublished": "2026-01-11",
+          "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
+        },
+        {
+          "@type": "Article",
+          "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
+          "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
+          "datePublished": "2026-03-02",
+          "author": {
+            "@id": "https://vadimohka.com/#person"
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "M.AI.N AI Community",
+          "url": "https://www.instagram.com/p/DW7GULsDNwq/",
+          "startDate": "2026-04-30",
+          "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
+        },
+        {
+          "@type": "Event",
+          "name": "IT-Security programme discussion on AI",
+          "url": "https://its.it-event.by/2-uncategorised/61-programma",
+          "startDate": "2026-03-18",
+          "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
+        }
       ],
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",
           "name": "Claude Foundations",
           "url": "https://verify.skilljar.com/c/boo5cp3yw29k"
-        }
-      ],
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "MIPT"
-        },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "BSUIR"
         }
       ],
       "worksFor": {
@@ -64,7 +81,7 @@
       "@type": "Organization",
       "@id": "https://vadimohka.com/#stacklevel",
       "name": "StackLevel Group",
-      "url": "https://www.linkedin.com/in/vadimohka/",
+      "url": "https://stacklevel.group/en/company",
       "employee": {
         "@id": "https://vadimohka.com/#person"
       }
@@ -76,11 +93,8 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "url": "https://century-ai.ru/",
-      "creator": {
-        "@id": "https://vadimohka.com/#person"
-      },
-      "description": "Enterprise AI Studio and operating layer for assistants, workflows, documents, data access, auditability, metrics and deployment control.",
-      "keywords": "enterprise AI, AI Studio, RAG, workflows, AI governance, LLMOps, private AI platform"
+      "description": "Corporate AI platform for chat, assistants, workflow modes, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.",
+      "keywords": "enterprise AI, corporate AI platform, AI Studio, workflows, text-to-SQL, private deployment, audit, access policies"
     },
     {
       "@type": "WebSite",
