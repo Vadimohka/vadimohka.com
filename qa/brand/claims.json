@@ -1,0 +1,729 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-22",
+  "policy_reference": "site-improvement-pack/evidence/claim-policy.md",
+  "claims": [
+    {
+      "id": "C001",
+      "claim": "Vadim Vladymtsev is CTO at StackLevel Group.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "current_role",
+      "status": "verified",
+      "scope": "personal current role",
+      "sources": [
+        "S001"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "origin.html",
+        "proof.html",
+        "expert.html",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json"
+      ],
+      "surfaces": [
+        "index.html",
+        "origin.html",
+        "proof.html",
+        "expert.html",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json"
+      ],
+      "text_variants": [
+        "CTO at StackLevel Group"
+      ],
+      "notes": "CTO at StackLevel Group"
+    },
+    {
+      "id": "C002",
+      "claim": "Century received third place in the AI Product Leader category at IT-Akademgrad 2025.",
+      "subject": "Century",
+      "claim_type": "product_recognition",
+      "status": "verified",
+      "scope": "product recognition",
+      "sources": [
+        "S002"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "proof.html",
+        "century.html",
+        "sources.html"
+      ],
+      "surfaces": [
+        "index.html",
+        "proof.html",
+        "century.html",
+        "sources.html"
+      ],
+      "text_variants": [
+        "Recognised at IT-Akademgrad in the AI Product Leader category."
+      ],
+      "notes": "Century — 3rd place, AI Product Leader, IT-Akademgrad 2025 Owner action: Do not convert to a personal award."
+    },
+    {
+      "id": "C003",
+      "claim": "Vadim is Co-Founder and/or CTO of Century.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "current_product_role",
+      "status": "owner_confirmed",
+      "scope": "personal role",
+      "sources": [
+        "S021",
+        "S027"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "Creator · Co-Founder · CTO",
+        "Creator, Co-Founder and CTO of Century AI Studio"
+      ],
+      "notes": "Use only after exact title, legal/product relationship and dates are confirmed. Owner action: Confirm exact title, start date and public wording."
+    },
+    {
+      "id": "C004",
+      "claim": "Vadim builds enterprise AI products for banks, fintech and investment companies.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "sector_experience",
+      "status": "partially_verified",
+      "scope": "personal client-sector experience",
+      "sources": [
+        "S001",
+        "S021",
+        "S027"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "Banks · fintech · investment companies",
+        "banks, fintech, investment companies and international corporations"
+      ],
+      "notes": "Focus: governed private AI for regulated organisations. Name sectors only with a personal case or owner-approved anonymised evidence. Owner action: Provide approved cases and personal mandate."
+    },
+    {
+      "id": "C005",
+      "claim": "Vadim has taught 700+ students.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "teaching_reach",
+      "status": "owner_confirmed",
+      "scope": "aggregate education metric",
+      "sources": [
+        "S015",
+        "S016",
+        "S017",
+        "S018",
+        "S019",
+        "S020"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "700+ university students",
+        "700+ students"
+      ],
+      "notes": "Teaching and coaching at BSUIR; use 700+ only with a reproducible count/source. Owner action: Provide calculation, date and source."
+    },
+    {
+      "id": "C006",
+      "claim": "Vadim's Stepik course has 4,700+ learners.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "course_reach",
+      "status": "partially_verified",
+      "scope": "course reach metric",
+      "sources": [
+        "S012"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "4,700+ online learners",
+        "4,700+ learners"
+      ],
+      "notes": "Creator of a public C++ algorithms course on Stepik. Add learner count only after current platform verification. Owner action: Provide dated screenshot/export or allow current platform check."
+    },
+    {
+      "id": "C007",
+      "claim": "Vadim coached 200+ programming teams.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "coaching_reach",
+      "status": "owner_confirmed",
+      "scope": "aggregate coaching metric",
+      "sources": [
+        "S016",
+        "S017",
+        "S018",
+        "S019",
+        "S020"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "200+ teams coached",
+        "200+ competitive programming teams"
+      ],
+      "notes": "Coach and organiser of competitive-programming teams/events at BSUIR. Use 200+ only with method and source. Owner action: Provide seasons, event/team count and evidence."
+    },
+    {
+      "id": "C008",
+      "claim": "Vadim taught and coached at BSUIR.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "teaching_history",
+      "status": "verified",
+      "scope": "personal background",
+      "sources": [
+        "S015",
+        "S016",
+        "S017",
+        "S018",
+        "S019",
+        "S020"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "founders.html",
+        "origin.html",
+        "proof.html",
+        "expert.html",
+        "ai-profile.md",
+        "llms-full.txt"
+      ],
+      "surfaces": [
+        "founders.html",
+        "origin.html",
+        "proof.html",
+        "expert.html",
+        "ai-profile.md",
+        "llms-full.txt"
+      ],
+      "text_variants": [
+        "teaching, mentoring, software leadership and research",
+        "university teaching"
+      ],
+      "notes": "Former BSUIR lecturer and competitive-programming coach, with dates where possible. Owner action: Confirm exact employment dates."
+    },
+    {
+      "id": "C009",
+      "claim": "Vadim has a Codeforces Expert maximum rating of 1663.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "technical_history",
+      "status": "verified",
+      "scope": "technical background",
+      "sources": [
+        "S013"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "Codeforces"
+      ],
+      "notes": "Codeforces maximum rating: Expert, 1663."
+    },
+    {
+      "id": "C010",
+      "claim": "Vadim has a Google Scholar profile and academic/publication record.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "academic_profile",
+      "status": "partially_verified",
+      "scope": "academic profile",
+      "sources": [
+        "S014"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "proof.html",
+        "sources.html",
+        "ai-profile.md",
+        "data/entity-graph.json"
+      ],
+      "surfaces": [
+        "proof.html",
+        "sources.html",
+        "ai-profile.md",
+        "data/entity-graph.json"
+      ],
+      "text_variants": [
+        "Google Scholar"
+      ],
+      "notes": "Link the profile and separately verify each publication used. Owner action: Confirm preferred public profile and relevant works."
+    },
+    {
+      "id": "C011",
+      "claim": "Vadim was quoted in media on emerging AI roles.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "media_quote",
+      "status": "verified",
+      "scope": "public expertise",
+      "sources": [
+        "S003",
+        "S004"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "text_variants": [
+        "Cited as CTO of STACKLEVEL GROUP on emerging AI roles",
+        "Quoted as CTO at StackLevel Group on emerging AI roles · Finance Mail.ru · 11 January 2026"
+      ],
+      "notes": "Quoted by Finance Mail.ru on emerging AI roles, 11 Jan 2026."
+    },
+    {
+      "id": "C012",
+      "claim": "Vadim authored an article on escaping enterprise AI pilot hell.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "authored_article",
+      "status": "verified",
+      "scope": "authored article",
+      "sources": [
+        "S005",
+        "S006"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "enterprise.html",
+        "proof.html",
+        "expert.html",
+        "writing.html"
+      ],
+      "surfaces": [
+        "index.html",
+        "enterprise.html",
+        "proof.html",
+        "expert.html",
+        "writing.html"
+      ],
+      "text_variants": [
+        "Author of a public article on enterprise AI adoption",
+        "Authored Vaiti article on enterprise AI “pilot hell” · 2 March 2026"
+      ],
+      "notes": "Author of the 2 Mar 2026 Vaiti article on enterprise AI 'pilot hell'."
+    },
+    {
+      "id": "C013",
+      "claim": "Vadim spoke at M.AI.N AI Community.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "public_appearance",
+      "status": "verified",
+      "scope": "public appearance",
+      "sources": [
+        "S007",
+        "S008",
+        "S009"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "text_variants": [
+        "Spoke as CTO of StackLevel Group on practical AI tools for business",
+        "M.AI.N AI Community organiser record · 30 April 2026"
+      ],
+      "notes": "Speaker at M.AI.N AI Community, 30 Apr 2026, with exact topic from organiser source. Owner action: Choose preferred source/recording link."
+    },
+    {
+      "id": "C014",
+      "claim": "Vadim spoke or participated at IT-Security 2026.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "public_appearance",
+      "status": "verified",
+      "scope": "public appearance",
+      "sources": [
+        "S010",
+        "S011"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "surfaces": [
+        "index.html",
+        "proof.html",
+        "expert.html"
+      ],
+      "text_variants": [
+        "Took part as a StackLevel Group representative",
+        "IT-Security programme · StackLevel Group representative · 18 March 2026"
+      ],
+      "notes": "Participant in the IT-Security 2026 discussion on AI in Belarus and neighbouring countries; use exact programme role."
+    },
+    {
+      "id": "C015",
+      "claim": "Vadim has completed AI technical diligence mandates for investors.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "commercial_track_record",
+      "status": "unverified",
+      "scope": "commercial track record",
+      "sources": [],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "technical diligence"
+      ],
+      "notes": "Describe a diligence framework or available service, not completed mandates. Owner action: Provide count, permitted descriptions, deliverables and references if true."
+    },
+    {
+      "id": "C016",
+      "claim": "Vadim has direct experience with international corporations.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "sector_experience",
+      "status": "unverified",
+      "scope": "personal client experience",
+      "sources": [
+        "S027"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [
+        "expert.html",
+        "proof.html",
+        "ai-profile.md",
+        "llms-full.txt"
+      ],
+      "text_variants": [
+        "international corporations"
+      ],
+      "notes": "Omit or replace with a verified case. Owner action: Provide approved attribution or anonymised evidence."
+    },
+    {
+      "id": "C017",
+      "claim": "Vadim has an MIPT credential or affiliation.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "education",
+      "status": "remove_or_clarify",
+      "scope": "education",
+      "sources": [
+        "S027"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "MIPT"
+      ],
+      "notes": "Omit until programme, credential, institution unit and dates are exact. Owner action: Provide exact credential and verification URL."
+    },
+    {
+      "id": "C018",
+      "claim": "Vadim holds a Claude Foundations certificate.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "credential",
+      "status": "low_authority",
+      "scope": "secondary credential",
+      "sources": [
+        "S025"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "proof.html",
+        "sources.html",
+        "ai-profile.md",
+        "data/entity-graph.json"
+      ],
+      "surfaces": [
+        "proof.html",
+        "sources.html",
+        "ai-profile.md",
+        "data/entity-graph.json"
+      ],
+      "text_variants": [
+        "Claude Foundations certification",
+        "Certified AI practice"
+      ],
+      "notes": "May appear in a secondary credential list, not in hero or top proof."
+    },
+    {
+      "id": "C019",
+      "claim": "StackLevel's company clients or metrics prove Vadim's personal work.",
+      "subject": "Site/editorial policy",
+      "claim_type": "attribution_rule",
+      "status": "remove_or_clarify",
+      "scope": "attribution rule",
+      "sources": [
+        "S001"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "Company clients or metrics"
+      ],
+      "notes": "Never attribute a client, outcome or metric to Vadim without personal-role evidence. Owner action: Provide personal mandate for any permitted company case."
+    },
+    {
+      "id": "C020",
+      "claim": "Century supports private/on-prem/VPC deployment, local processing, audit/logging and integrations.",
+      "subject": "Century",
+      "claim_type": "product_capability",
+      "status": "company_level_only",
+      "scope": "product capability",
+      "sources": [
+        "S021"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [
+        "index.html",
+        "enterprise.html",
+        "founders.html",
+        "century.html",
+        "proof.html",
+        "expert.html",
+        "sources.html",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json"
+      ],
+      "surfaces": [
+        "index.html",
+        "enterprise.html",
+        "founders.html",
+        "century.html",
+        "proof.html",
+        "expert.html",
+        "sources.html",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json"
+      ],
+      "text_variants": [
+        "private compute",
+        "auditability",
+        "deployment control",
+        "private/on-prem/VPC deployment"
+      ],
+      "notes": "Use current product-site wording and re-check before publishing. Owner action: Confirm product naming and any capability restrictions."
+    },
+    {
+      "id": "C021",
+      "claim": "Vadim is an investor, capital allocator or established board-level figure.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "professional_identity",
+      "status": "remove_or_clarify",
+      "scope": "professional identity",
+      "sources": [],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "Investor",
+        "capital allocator",
+        "board-level"
+      ],
+      "notes": "Do not use. Owner action: Only revisit with direct, verifiable roles."
+    },
+    {
+      "id": "C022",
+      "claim": "Vadim is a global industry leader or established thought leader.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "professional_identity",
+      "status": "remove_or_clarify",
+      "scope": "reputation",
+      "sources": [
+        "S003",
+        "S005",
+        "S007",
+        "S010"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [
+        "expert.html"
+      ],
+      "text_variants": [
+        "Public expert",
+        "speaker",
+        "thought leader"
+      ],
+      "notes": "Use 'speaker', 'author', or 'technical expert' tied to verified records. Owner action: Build an independent publication and speaking corpus first."
+    },
+    {
+      "id": "C023",
+      "claim": "The Setka profile's current job-search status is aligned with the executive brand.",
+      "subject": "Vadim Vladymtsev",
+      "claim_type": "external_profile_consistency",
+      "status": "remove_or_clarify",
+      "scope": "external profile consistency",
+      "sources": [
+        "S024"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "job-search status"
+      ],
+      "notes": "No site copy; update or remove the external status if no longer accurate. Owner action: Review Setka profile."
+    },
+    {
+      "id": "C024",
+      "claim": "The old .ru site communicates the same primary identity as the .com site.",
+      "subject": "Site/editorial policy",
+      "claim_type": "entity_consistency",
+      "status": "remove_or_clarify",
+      "scope": "entity consistency",
+      "sources": [
+        "S023",
+        "S027"
+      ],
+      "valid_from": null,
+      "valid_to": null,
+      "last_checked": "2026-08-22",
+      "allowed_surfaces": [],
+      "surfaces": [],
+      "text_variants": [
+        "old .ru site"
+      ],
+      "notes": "No public claim; consolidate or clearly separate language/legacy strategy. Owner action: Choose redirect, rebuild, or deprecation plan."
+    }
+  ],
+  "coverage": {
+    "production_files": [
+      "index.html",
+      "enterprise.html",
+      "founders.html",
+      "investors.html",
+      "origin.html",
+      "century.html",
+      "proof.html",
+      "expert.html",
+      "writing.html",
+      "contact.html",
+      "sources.html",
+      "404.html",
+      "ai-profile.md",
+      "llms.txt",
+      "llms-full.txt",
+      "data/entity-graph.json"
+    ],
+    "classification_rule": "Substantive person, role, product, outcome, recognition, credential, reach, sector or source statements map to a claim ID. Method, opinion, navigation, CTA, page-intent and product-description copy without a personal outcome are explicitly non-claim copy until evidence makes them a claim.",
+    "non_claim_copy": [
+      {
+        "surfaces": [
+          "enterprise.html",
+          "founders.html",
+          "investors.html",
+          "contact.html",
+          "expert.html"
+        ],
+        "classification": "method_or_service_description",
+        "note": "Frameworks, audience routes and current-focus language; not proof of completed mandates or outcomes."
+      },
+      {
+        "surfaces": [
+          "index.html",
+          "century.html",
+          "proof.html",
+          "expert.html"
+        ],
+        "classification": "product_description",
+        "note": "Century capability and deployment language is product-level and must remain attributed to Century."
+      },
+      {
+        "surfaces": [
+          "404.html",
+          "all HTML footers"
+        ],
+        "classification": "navigation_or_template_copy",
+        "note": "Site chrome and route labels are not evidence claims."
+      },
+      {
+        "surfaces": [
+          "sources.html"
+        ],
+        "classification": "source_index_copy",
+        "note": "Descriptions identify what a link is intended to support; the linked source remains authoritative."
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "hero-proof-eligibility",
+      "description": "Claims with status unverified, remove_or_clarify, or company_level_only cannot be used as personal hero proof."
+    },
+    {
+      "id": "scope-attribution",
+      "description": "Company-level and product-level evidence cannot be presented as Vadim Vladymtsev personal outcomes without a personal mandate source."
+    },
+    {
+      "id": "mirror-synchronisation",
+      "description": "When a claim changes, update visible HTML, metadata, JSON-LD, ai-profile.md, llms.txt, llms-full.txt, data/entity-graph.json and sources.html together."
+    }
+  ]
+}

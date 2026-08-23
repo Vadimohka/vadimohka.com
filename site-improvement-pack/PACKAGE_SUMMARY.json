@@ -1,0 +1,28 @@
+{
+  "name": "vadimohka.com Codex brand-first improvement pack",
+  "snapshot_date": "2026-08-22",
+  "archive_install_root": "repository root",
+  "archive_top_level": [
+    "qa/site-improvement-pack"
+  ],
+  "task_counts": {
+    "brand": 12,
+    "technical": 10,
+    "total": 22
+  },
+  "acceptance_criteria": 125,
+  "evidence": {
+    "claims": 24,
+    "sources": 27
+  },
+  "architecture_constraints": [
+    "static site",
+    "no framework migration",
+    "no production dependencies"
+  ],
+  "entry_points": [
+    "qa/site-improvement-pack/START_HERE_RU.md",
+    "qa/site-improvement-pack/MASTER_PROMPT.md"
+  ],
+  "validation_command": "python3 qa/site-improvement-pack/scripts/validate_pack.py"
+}

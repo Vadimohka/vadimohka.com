@@ -35,6 +35,10 @@ jobs:
             --exclude='.remember' \
             --exclude='.playwright-mcp' \
             --exclude='qa' \
+            --exclude='site-improvement-pack' \
+            --exclude='reports' \
+            --exclude='AGENTS.md' \
+            --exclude='.agents' \
             --exclude='_site' \
             --exclude='.gitignore' \
             --exclude='.DS_Store' \

@@ -1,0 +1,557 @@
+{
+  "programme": "vadimohka.com brand-first improvement",
+  "snapshot_date": "2026-08-22",
+  "execution_policy": {
+    "brand_before_technical": true,
+    "one_task_at_a_time_default": true,
+    "separately_committable": true,
+    "no_production_dependencies": true,
+    "framework_migration_forbidden": true,
+    "unsupported_claims_forbidden": true
+  },
+  "tasks": [
+    {
+      "id": "B00",
+      "phase": "Brand",
+      "order": 0,
+      "title": "Establish the claim and source control layer",
+      "priority": "P0",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [],
+      "owner_gate": "No; use conservative statuses when owner input is absent.",
+      "file": "tasks/brand/B00.md",
+      "primary_files": [
+        "qa/brand/claims.json",
+        "qa/brand/sources.json",
+        "qa/brand/README.md",
+        ".gitignore"
+      ],
+      "summary": "Create a maintainable source of truth for claims before rewriting public copy.",
+      "status": "complete"
+    },
+    {
+      "id": "B01",
+      "phase": "Brand",
+      "order": 1,
+      "title": "Repair all public expertise signals with primary links",
+      "priority": "P0",
+      "impact": "High",
+      "effort": "Low",
+      "dependencies": [
+        "B00"
+      ],
+      "owner_gate": "No; verified public sources are supplied.",
+      "file": "tasks/brand/B01.md",
+      "primary_files": [
+        "expert.html",
+        "proof.html",
+        "sources.html",
+        "writing.html",
+        "llms.txt",
+        "llms-full.txt",
+        "ai-profile.md",
+        "data/entity-graph.json"
+      ],
+      "summary": "Replace source TODOs and unsupported signal cards with exact, dated, linked records.",
+      "status": "complete"
+    },
+    {
+      "id": "B02",
+      "phase": "Brand",
+      "order": 2,
+      "title": "Consolidate master positioning, roles and claim language",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B00",
+        "B01"
+      ],
+      "owner_gate": "Century title and any non-StackLevel current role require owner confirmation; use the safe default otherwise.",
+      "file": "tasks/brand/B02.md",
+      "primary_files": [
+        "*.html",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json",
+        "sources.html"
+      ],
+      "summary": "Make every site surface communicate one defensible primary identity and remove overclaiming.",
+      "status": "complete"
+    },
+    {
+      "id": "B03",
+      "phase": "Brand",
+      "order": 3,
+      "title": "Rebuild the homepage narrative around authority and proof",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B02"
+      ],
+      "owner_gate": "A third hero metric/outcome requires verified owner input; omit it rather than fill the slot.",
+      "file": "tasks/brand/B03.md",
+      "primary_files": [
+        "index.html",
+        "assets/site.css",
+        "assets/site.js",
+        "sources.html"
+      ],
+      "summary": "Make the first 60 seconds answer who, why it matters, proof, relevance and next action.",
+      "status": "complete"
+    },
+    {
+      "id": "B04",
+      "phase": "Brand",
+      "order": 4,
+      "title": "Transform Proof into a verified Track Record",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B00",
+        "B02"
+      ],
+      "owner_gate": "Commercial outcomes and confidential cases require owner input; publish fewer records if needed.",
+      "file": "tasks/brand/B04.md",
+      "primary_files": [
+        "proof.html",
+        "sources.html",
+        "assets/site.css",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt"
+      ],
+      "summary": "Replace a mixed evidence ledger with a page that distinguishes roles, outcomes, recognition and background.",
+      "status": "complete"
+    },
+    {
+      "id": "B05",
+      "phase": "Brand",
+      "order": 5,
+      "title": "Reframe the Enterprise page for regulated organisations",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B02"
+      ],
+      "owner_gate": "Named sectors/cases and security certifications require owner evidence.",
+      "file": "tasks/brand/B05.md",
+      "primary_files": [
+        "enterprise.html",
+        "assets/site.css",
+        "sources.html"
+      ],
+      "summary": "Turn the page from broad AI implementation language into a credible governed-deployment offer.",
+      "status": "complete"
+    },
+    {
+      "id": "B06",
+      "phase": "Brand",
+      "order": 6,
+      "title": "Reframe Investors as AI technical diligence",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B02"
+      ],
+      "owner_gate": "Completed mandates, deal counts, testimonials and sample reports require owner evidence.",
+      "file": "tasks/brand/B06.md",
+      "primary_files": [
+        "investors.html",
+        "assets/site.css",
+        "sources.html"
+      ],
+      "summary": "Present a rigorous assessment method without pretending to be an investor or established transaction adviser.",
+      "status": "complete"
+    },
+    {
+      "id": "B07",
+      "phase": "Brand",
+      "order": 7,
+      "title": "Reframe Founders as a CTO-level diagnostic",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B02"
+      ],
+      "owner_gate": "Testimonials and commercial outcomes require owner evidence.",
+      "file": "tasks/brand/B07.md",
+      "primary_files": [
+        "founders.html",
+        "assets/site.css",
+        "sources.html"
+      ],
+      "summary": "Replace generic product-velocity language with clear trigger conditions, deliverables and boundaries.",
+      "status": "complete"
+    },
+    {
+      "id": "B08",
+      "phase": "Brand",
+      "order": 8,
+      "title": "Turn Century into the primary product proof",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B00",
+        "B02"
+      ],
+      "owner_gate": "Vadim's exact role, live deployment/adoption metrics and client cases require owner confirmation.",
+      "file": "tasks/brand/B08.md",
+      "primary_files": [
+        "century.html",
+        "index.html",
+        "proof.html",
+        "sources.html",
+        "data/entity-graph.json",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt"
+      ],
+      "summary": "Explain what Century is, what is live, what Vadim owns and what can be independently verified.",
+      "status": "complete"
+    },
+    {
+      "id": "B09",
+      "phase": "Brand",
+      "order": 9,
+      "title": "Build a verified media, speaking and insights system",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B01",
+        "B02"
+      ],
+      "owner_gate": "Approved portraits, direct media contact and new article publication require owner input.",
+      "file": "tasks/brand/B09.md",
+      "primary_files": [
+        "expert.html",
+        "writing.html",
+        "origin.html",
+        "sources.html",
+        "assets/site.css"
+      ],
+      "summary": "Convert thin public-authority pages into a verifiable archive and an honest topical-authority foundation.",
+      "status": "complete"
+    },
+    {
+      "id": "B10",
+      "phase": "Brand",
+      "order": 10,
+      "title": "Implement intent-specific conversion architecture",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B03",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "owner_gate": "Direct email, form endpoint, response-time promise and privacy entity require owner input.",
+      "file": "tasks/brand/B10.md",
+      "primary_files": [
+        "contact.html",
+        "index.html",
+        "enterprise.html",
+        "founders.html",
+        "investors.html",
+        "expert.html",
+        "assets/site.css",
+        "assets/site.js"
+      ],
+      "summary": "Give every audience a clear, functional next action without rendering a fake form.",
+      "status": "complete"
+    },
+    {
+      "id": "B11",
+      "phase": "Brand",
+      "order": 11,
+      "title": "Produce and execute the external identity consistency plan",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B02",
+        "B09"
+      ],
+      "owner_gate": "External profile changes require owner access and approval.",
+      "file": "tasks/brand/B11.md",
+      "primary_files": [
+        "reports/external-profile-actions.md",
+        "sources.html",
+        "data/entity-graph.json"
+      ],
+      "summary": "Align the website's entity with LinkedIn, GitHub, legacy .ru, Setka, Scholar, Codeforces and Stepik.",
+      "status": "complete"
+    },
+    {
+      "id": "T01",
+      "phase": "Technical",
+      "order": 12,
+      "title": "Implement the staged information architecture and navigation labels",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B09",
+        "B10"
+      ],
+      "owner_gate": "No, unless a URL migration beyond stage one is proposed.",
+      "file": "tasks/technical/T01.md",
+      "primary_files": [
+        "*.html",
+        "sitemap.xml",
+        "robots.txt",
+        "qa/check.mjs"
+      ],
+      "summary": "Make page labels and navigation reflect the new brand while preserving working static URLs.",
+      "status": "complete"
+    },
+    {
+      "id": "T02",
+      "phase": "Technical",
+      "order": 13,
+      "title": "Replace horizontal mobile navigation with an accessible disclosure menu",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "T01"
+      ],
+      "owner_gate": "No.",
+      "file": "tasks/technical/T02.md",
+      "primary_files": [
+        "*.html",
+        "assets/site.css",
+        "assets/site.js",
+        "qa/check.mjs"
+      ],
+      "summary": "Make all primary destinations discoverable and operable on mobile and keyboard.",
+      "status": "complete"
+    },
+    {
+      "id": "T03",
+      "phase": "Technical",
+      "order": 14,
+      "title": "Fix contrast, typography, focus and motion accessibility",
+      "priority": "P1",
+      "impact": "Medium",
+      "effort": "Medium",
+      "dependencies": [
+        "T02"
+      ],
+      "owner_gate": "No.",
+      "file": "tasks/technical/T03.md",
+      "primary_files": [
+        "assets/site.css",
+        "*.html",
+        "assets/site.js"
+      ],
+      "summary": "Bring the visual system closer to WCAG AA without losing the executive visual identity.",
+      "status": "complete"
+    },
+    {
+      "id": "T04",
+      "phase": "Technical",
+      "order": 15,
+      "title": "Unify metadata and the structured entity graph",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "owner_gate": "Century role and exact education relations require owner confirmation.",
+      "file": "tasks/technical/T04.md",
+      "primary_files": [
+        "*.html",
+        "data/entity-graph.json",
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "qa/check.mjs"
+      ],
+      "summary": "Make search engines and AI systems receive the same conservative identity as human readers.",
+      "status": "complete"
+    },
+    {
+      "id": "T05",
+      "phase": "Technical",
+      "order": 16,
+      "title": "Harden canonical, sitemap, robots and URL consistency",
+      "priority": "P1",
+      "impact": "Medium",
+      "effort": "Medium",
+      "dependencies": [
+        "T01",
+        "T04"
+      ],
+      "owner_gate": "A true `/index.html` 301 requires a hosting/CDN decision.",
+      "file": "tasks/technical/T05.md",
+      "primary_files": [
+        "*.html",
+        "sitemap.xml",
+        "sitemap-images.xml",
+        "sitemap-ai.xml",
+        "robots.txt",
+        ".github/workflows/*",
+        "README.md",
+        "qa/check.mjs"
+      ],
+      "summary": "Remove canonical inconsistencies and document hosting limitations without pretending GitHub Pages supports arbitrary redirects.",
+      "status": "complete"
+    },
+    {
+      "id": "T06",
+      "phase": "Technical",
+      "order": 17,
+      "title": "Implement the contact route safely on a static site",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "Medium",
+      "dependencies": [
+        "B10",
+        "T02",
+        "T03"
+      ],
+      "owner_gate": "A form requires endpoint, privacy entity and owner approval. Email requires publication permission.",
+      "file": "tasks/technical/T06.md",
+      "primary_files": [
+        "contact.html",
+        "assets/site.css",
+        "assets/site.js",
+        "README.md",
+        "qa/check.mjs"
+      ],
+      "summary": "Make the conversion UI functional and privacy-aware without adding a dead form.",
+      "status": "complete"
+    },
+    {
+      "id": "T07",
+      "phase": "Technical",
+      "order": 18,
+      "title": "Extend dependency-free static QA for brand and SEO consistency",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "B00",
+        "T01",
+        "T04",
+        "T05"
+      ],
+      "owner_gate": "No.",
+      "file": "tasks/technical/T07.md",
+      "primary_files": [
+        "qa/check.mjs",
+        "qa/brand/claims.json",
+        "qa/brand/sources.json",
+        "README.md",
+        ".github/workflows/*"
+      ],
+      "summary": "Turn recurring audit risks into automated failures without bloating the production site.",
+      "status": "complete"
+    },
+    {
+      "id": "T08",
+      "phase": "Technical",
+      "order": 19,
+      "title": "Add browser, responsive and accessibility regression tests",
+      "priority": "P2",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "T02",
+        "T03",
+        "T06",
+        "T07"
+      ],
+      "owner_gate": "No.",
+      "file": "tasks/technical/T08.md",
+      "primary_files": [
+        "package.json",
+        "package-lock.json",
+        "qa/browser/*",
+        ".github/workflows/*",
+        "README.md"
+      ],
+      "summary": "Add development-only browser coverage for layout, menu, keyboard behavior and serious accessibility issues.",
+      "status": "complete"
+    },
+    {
+      "id": "T09",
+      "phase": "Technical",
+      "order": 20,
+      "title": "Measure and optimise performance and sharing assets",
+      "priority": "P2",
+      "impact": "Medium",
+      "effort": "Medium",
+      "dependencies": [
+        "B03",
+        "T03",
+        "T08"
+      ],
+      "owner_gate": "Approved visual assets may require owner selection.",
+      "file": "tasks/technical/T09.md",
+      "primary_files": [
+        "assets/*",
+        "*.html",
+        "sitemap-images.xml",
+        "README.md",
+        "qa/performance/*"
+      ],
+      "summary": "Optimise only after measuring a current baseline; create page-specific social assets without adding runtime weight.",
+      "status": "complete"
+    },
+    {
+      "id": "T10",
+      "phase": "Technical",
+      "order": 21,
+      "title": "Synchronise machine-readable profiles and complete release regression",
+      "priority": "P1",
+      "impact": "High",
+      "effort": "High",
+      "dependencies": [
+        "T04",
+        "T05",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "owner_gate": "Any unresolved current role or private metric remains omitted.",
+      "file": "tasks/technical/T10.md",
+      "primary_files": [
+        "ai-profile.md",
+        "llms.txt",
+        "llms-full.txt",
+        "data/entity-graph.json",
+        "sitemap-ai.xml",
+        "qa/*",
+        "reports/release-report.md"
+      ],
+      "summary": "Ensure AI/search representations are conservative, current and fully aligned before release.",
+      "status": "complete"
+    }
+  ]
+}

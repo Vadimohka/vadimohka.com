@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vadimohka.com/internal/schemas/claim.schema.json",
+  "title": "Brand claim",
+  "type": "object",
+  "required": [
+    "id",
+    "claim",
+    "claim_type",
+    "status",
+    "scope",
+    "sources",
+    "last_checked",
+    "allowed_surfaces"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^C[0-9]{3,}$"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "partially_verified",
+        "owner_confirmed",
+        "company_level_only",
+        "product_level_only",
+        "unverified",
+        "remove_or_clarify",
+        "low_authority"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "personal",
+        "company",
+        "product",
+        "background",
+        "reputation_rule"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^S[0-9]{3,}$"
+      },
+      "uniqueItems": true
+    },
+    "valid_from": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "last_checked": {
+      "type": "string",
+      "format": "date"
+    },
+    "allowed_surfaces": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "html",
+          "metadata",
+          "jsonld",
+          "ai_profile",
+          "llms",
+          "sources",
+          "hero",
+          "track_record"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "safe_wording": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

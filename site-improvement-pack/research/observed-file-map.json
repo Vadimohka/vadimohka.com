@@ -1,0 +1,88 @@
+{
+  "snapshot_date": "2026-08-22",
+  "repo": "https://github.com/Vadimohka/vadimohka.com",
+  "pages": [
+    {
+      "file": "index.html",
+      "current_purpose": "main positioning",
+      "target_purpose": "identity, authority, proof, relevance, action",
+      "primary_risk": "hero claims stronger than outcome evidence"
+    },
+    {
+      "file": "enterprise.html",
+      "current_purpose": "enterprise/boardroom",
+      "target_purpose": "governed private AI for regulated organisations",
+      "primary_risk": "broad institutional language without cases"
+    },
+    {
+      "file": "founders.html",
+      "current_purpose": "founder/product velocity",
+      "target_purpose": "CTO-level diagnostic",
+      "primary_risk": "generic growth/velocity framing"
+    },
+    {
+      "file": "investors.html",
+      "current_purpose": "investor technical judgement",
+      "target_purpose": "AI technical diligence method",
+      "primary_risk": "service appears ahead of verified mandate track record"
+    },
+    {
+      "file": "origin.html",
+      "current_purpose": "personal origin story",
+      "target_purpose": "exact biography and career",
+      "primary_risk": "story precedes current operating authority"
+    },
+    {
+      "file": "century.html",
+      "current_purpose": "product proof",
+      "target_purpose": "primary product-building proof",
+      "primary_risk": "role/adoption attribution"
+    },
+    {
+      "file": "proof.html",
+      "current_purpose": "evidence ledger",
+      "target_purpose": "verified Track Record",
+      "primary_risk": "claims, duties and proof are mixed"
+    },
+    {
+      "file": "expert.html",
+      "current_purpose": "public expertise",
+      "target_purpose": "verified Media & Speaking archive",
+      "primary_risk": "previously unlinked signals"
+    },
+    {
+      "file": "writing.html",
+      "current_purpose": "articles",
+      "target_purpose": "Enterprise AI Insights",
+      "primary_risk": "thin corpus"
+    },
+    {
+      "file": "contact.html",
+      "current_purpose": "conversion",
+      "target_purpose": "intent-specific functional routes",
+      "primary_risk": "no direct/qualified path"
+    },
+    {
+      "file": "sources.html",
+      "current_purpose": "public source map",
+      "target_purpose": "evidence utility or polished source page",
+      "primary_risk": "first-party page cannot independently verify itself"
+    }
+  ],
+  "shared": {
+    "css": "assets/site.css",
+    "js": "assets/site.js",
+    "qa": "qa/check.mjs",
+    "entity": "data/entity-graph.json",
+    "ai_files": [
+      "ai-profile.md",
+      "llms.txt",
+      "llms-full.txt"
+    ],
+    "sitemaps": [
+      "sitemap.xml",
+      "sitemap-images.xml",
+      "sitemap-ai.xml"
+    ]
+  }
+}

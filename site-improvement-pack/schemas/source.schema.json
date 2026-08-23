@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vadimohka.com/internal/schemas/source.schema.json",
+  "title": "Evidence source",
+  "type": "object",
+  "required": [
+    "id",
+    "subject",
+    "url",
+    "source_type",
+    "supports",
+    "status",
+    "last_checked",
+    "caveat"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^S[0-9]{3,}$"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "source_type": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "supports": {
+      "type": "string",
+      "minLength": 1
+    },
+    "does_not_support": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string"
+    },
+    "authority": {
+      "enum": [
+        "high",
+        "medium-high",
+        "medium",
+        "low-medium",
+        "low"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "personal",
+        "company",
+        "product",
+        "background",
+        "mixed"
+      ]
+    },
+    "last_checked": {
+      "type": "string",
+      "format": "date"
+    },
+    "caveat": {
+      "type": "string"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

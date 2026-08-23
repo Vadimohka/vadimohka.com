@@ -1,25 +1,30 @@
 # Vadim Vladymtsev
 
-Creator, Co-Founder and CTO of Century AI Studio. CTO / R&D Director at StackLevel Group.
+Enterprise AI CTO and product operator. CTO at StackLevel Group.
 
 ## Positioning
 
-Vadim builds AI products and engineering teams for serious environments — where trust, execution and product judgment matter as much as the model.
+Vadim works across product, architecture, security, adoption and controlled production for governed private AI systems serving regulated organisations.
 
 ## Core proof
 
-- Creator, Co-Founder and CTO of Century AI Studio.
-- CTO / R&D Director at StackLevel Group.
-- Enterprise AI work for banks, fintech, investment companies and international corporations.
-- 700+ university students taught.
-- 4,700+ online learners through Stepik.
-- 200+ competitive programming teams coached.
-- BSUIR #1: So Stuffy reached finals in Luxor and Astana.
-- Public expert, speaker and technical auditor on enterprise AI, AI governance, LLMOps and product architecture.
+- CTO at StackLevel Group.
+- Focus: governed private AI for regulated organisations.
+- Background: university teaching, programming education and competitive-programming coaching at BSUIR.
+- Century AI Studio is the product anchor for chat, assistants, workflows, protected data access, integrations, private deployment, logs and operational controls.
+- BSUIR coaching and event records are supporting background evidence; they are not enterprise outcome claims.
+- Public work records on enterprise AI adoption and technical product work; education records are listed separately.
+
+## Verified public work
+
+- Finance Mail.ru quotation on emerging AI roles, with Vadim identified as CTO at StackLevel Group (11 January 2026): https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/
+- Authored Vaiti article on enterprise AI “pilot hell” and moving from pilots to production (2 March 2026): https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/
+- M.AI.N AI Community organiser record listing Vadim as CTO of StackLevel Group for practical AI technologies for business (30 April 2026): https://www.instagram.com/p/DW7GULsDNwq/
+- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://its.it-event.by/2-uncategorised/61-programma
 
 ## Century AI Studio
 
-Century is an enterprise AI Studio and operating layer for organisations that need assistants, workflows, documents, data access, auditability, metrics and deployment control.
+Century is a corporate AI platform for chat, assistants, workflows, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.
 
 ## Main topics
 
@@ -40,4 +45,5 @@ Century is an enterprise AI Studio and operating layer for organisations that ne
 - Century: https://century-ai.ru/
 - Stepik: https://stepik.org/course/86957/promo
 - Claude Foundations: https://verify.skilljar.com/c/boo5cp3yw29k
+- Codeforces: https://codeforces.com/profile/Vadimohka
 - Google Scholar: https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru
