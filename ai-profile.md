@@ -6,6 +6,10 @@ Enterprise AI CTO and product operator. CTO at StackLevel Group.
 
 Vadim works across product, architecture, security, adoption and controlled production for governed private AI systems serving regulated organisations.
 
+## Geographic focus
+
+Vadim frequently works from the United States and the United Arab Emirates, with availability across both regions.
+
 ## Core proof
 
 - CTO at StackLevel Group.

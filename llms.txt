@@ -4,6 +4,10 @@
 
 This file is a curated, AI-readable index for https://vadimohka.com. It points language models and AI search systems to the most important public pages and facts about Vadim Vladymtsev.
 
+## Geographic focus
+
+Vadim works frequently from the United States and the United Arab Emirates. These are the primary geographic regions for availability and enterprise AI conversations.
+
 ## Canonical pages
 
 - [Home](https://vadimohka.com/): executive profile and primary positioning.

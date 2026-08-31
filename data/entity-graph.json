@@ -29,6 +29,16 @@
         "Competitive programming",
         "ICPC coaching"
       ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        }
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/vadimohka/",
         "https://codeforces.com/profile/Vadimohka",
