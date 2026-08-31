@@ -17,6 +17,7 @@ Vadim Vladymtsev works across enterprise AI product architecture, security, adop
 - Name: Vadim Vladymtsev
 - Also known as: Vadimohka; Вадим Владымцев; Вадим Денисович Владымцев
 - Current role: CTO at StackLevel Group
+- Geographic focus: frequently works from the United States and the United Arab Emirates; available for enterprise AI conversations in both regions
 - Focus areas: enterprise AI, private AI platforms, AI governance, LLM/RAG systems, workflow automation, product architecture, technical due diligence, engineering education, ICPC coaching
 - Audience: regulated organisations, founders seeking CTO-level product judgement, technical diligence readers, media and conference organisers
 

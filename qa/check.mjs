@@ -45,7 +45,11 @@ for (const page of PAGES) {
       const node = JSON.parse(block[1]);
       if (node['@type'] === 'Person') {
         if (node['@id'] !== 'https://vadimohka.com/#person') fail(page, 'Person JSON-LD has unstable @id');
-        personCores.push(JSON.stringify({name:node.name,jobTitle:node.jobTitle,sameAs:node.sameAs,worksFor:node.worksFor}));
+        const servedMarkets = (node.areaServed || []).map(area => area.name).sort();
+        if (JSON.stringify(servedMarkets) !== JSON.stringify(['United Arab Emirates', 'United States'])) {
+          fail(page, 'Person JSON-LD must identify United States and United Arab Emirates as areas served');
+        }
+        personCores.push(JSON.stringify({name:node.name,jobTitle:node.jobTitle,sameAs:node.sameAs,worksFor:node.worksFor,areaServed:servedMarkets}));
       }
       if (node['@type'] === 'WebPage' && node.inLanguage !== 'en') fail(page, 'WebPage JSON-LD missing inLanguage=en');
       if (page === 'century.html' && node['@type'] === 'SoftwareApplication' && node['@id'] !== 'https://vadimohka.com/#century') fail(page, 'Century schema has unstable @id');
@@ -92,6 +96,10 @@ for (const page of PAGES) {
   if (!/name="twitter:card"/.test(html)) fail(page, 'missing twitter:card');
   if (page !== '404.html' && !/rel="canonical"/.test(html)) fail(page, 'missing canonical');
   if (/vadimohka\.github\.io/.test(html)) fail(page, 'stale github.io domain (use vadimohka.com)');
+  if (page !== '404.html' && !/<meta name="yandex-verification" content="c3fd18a00a5bf714"\s*\/>/.test(html)) {
+    fail(page, 'missing Yandex site-verification meta tag');
+  }
+  if (!/<script\s+src="assets\/site\.js\?v=[^"]+"\s+defer><\/script>/.test(html)) fail(page, 'site script must load with defer');
 
   // images: alt + intrinsic dimensions + resolvable src
   for (const m of matches(/<img\b[^>]*>/g, html)) {
@@ -196,12 +204,16 @@ for (const page of PAGES) {
 // sitemap + robots — public pages only (bare-domain home, no sources/404)
 const sm = existsSync(resolve(ROOT, 'sitemap.xml')) ? read('sitemap.xml') : '';
 const SITEMAP = ['work.html','about.html','century.html','expert.html','enterprise.html','investors.html','founders.html'];
+const CURRENT_LASTMOD = '2026-08-31';
 if (!sm) fail('sitemap.xml', 'missing');
 else {
   if (!/<loc>https:\/\/vadimohka\.com\/?<\/loc>/.test(sm)) fail('sitemap.xml', 'missing home (bare-domain) loc');
   for (const p of SITEMAP) if (!sm.includes('/' + p)) fail('sitemap.xml', `does not list ${p}`);
   for (const p of ['sources.html', '404.html']) if (sm.includes('/' + p)) fail('sitemap.xml', `should not list ${p}`);
   if (/vadimohka\.github\.io/.test(sm)) fail('sitemap.xml', 'stale github.io domain');
+  for (const entry of matches(/<url>([\s\S]*?)<\/url>/g, sm)) {
+    if (!new RegExp(`<lastmod>${CURRENT_LASTMOD}<\\/lastmod>`).test(entry[1])) fail('sitemap.xml', 'lastmod must match the current publication date');
+  }
 }
 const robots = existsSync(resolve(ROOT, 'robots.txt')) ? read('robots.txt') : '';
 if (!robots) fail('robots.txt', 'missing');
@@ -226,6 +238,9 @@ for (const sitemap of ['sitemap-images.xml','sitemap-ai.xml']) {
   else {
     const body = read(sitemap);
     if (!/<urlset\b/.test(body)) fail(sitemap, 'invalid sitemap root');
+    for (const entry of matches(/<url>([\s\S]*?)<\/url>/g, body)) {
+      if (!new RegExp(`<lastmod>${CURRENT_LASTMOD}<\\/lastmod>`).test(entry[1])) fail(sitemap, 'lastmod must match the current publication date');
+    }
     if (sitemap === 'sitemap-images.xml') {
       for (const match of matches(/<image:loc>([^<]+)<\/image:loc>/g, body)) {
         try {
@@ -235,6 +250,25 @@ for (const sitemap of ['sitemap-images.xml','sitemap-ai.xml']) {
         } catch { fail(sitemap, `invalid image URL: ${match[1]}`); }
       }
     }
+  }
+}
+
+for (const profile of ['llms.txt', 'llms-full.txt', 'ai-profile.md']) {
+  const body = read(profile);
+  if (!/United States/.test(body) || !/United Arab Emirates/.test(body)) {
+    fail(profile, 'must identify United States and United Arab Emirates as geographic focus');
+  }
+}
+
+const home = read('index.html');
+if (!/<link rel="preload"[^>]+fetchpriority="high"[^>]*>/.test(home)) fail('index.html', 'hero image preload must have fetchpriority=high');
+for (const portrait of ['assets/portraits/vadim-boardroom-640.webp', 'assets/portraits/vadim-warm-640.webp']) {
+  if (!existsSync(resolve(ROOT, portrait))) fail(portrait, 'missing 640px responsive portrait');
+}
+for (const page of PAGES) {
+  const html = read(page);
+  if (/portraits\/vadim-(?:boardroom|warm)-1536\.webp/.test(html) && !/portraits\/vadim-(?:boardroom|warm)-640\.webp 640w/.test(html)) {
+    fail(page, 'portrait srcset is missing a 640w responsive candidate');
   }
 }
 if (robots) {
