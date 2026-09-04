@@ -209,7 +209,7 @@ if (!sm) fail('sitemap.xml', 'missing');
 else {
   if (!/<loc>https:\/\/vadimohka\.com\/?<\/loc>/.test(sm)) fail('sitemap.xml', 'missing home (bare-domain) loc');
   for (const p of SITEMAP) if (!sm.includes('/' + p)) fail('sitemap.xml', `does not list ${p}`);
-  for (const p of ['sources.html', '404.html']) if (sm.includes('/' + p)) fail('sitemap.xml', `should not list ${p}`);
+  if (sm.includes('/404.html')) fail('sitemap.xml', 'should not list 404.html');
   if (/vadimohka\.github\.io/.test(sm)) fail('sitemap.xml', 'stale github.io domain');
   for (const entry of matches(/<url>([\s\S]*?)<\/url>/g, sm)) {
     if (!new RegExp(`<lastmod>${CURRENT_LASTMOD}<\\/lastmod>`).test(entry[1])) fail('sitemap.xml', 'lastmod must match the current publication date');
@@ -224,7 +224,7 @@ else if (!/Sitemap:/i.test(robots)) fail('robots.txt', 'missing Sitemap: referen
 // indexable HTML URLs.
 if (sm) {
   const sitemapLocs = matches(/<loc>([^<]+)<\/loc>/g, sm).map(m => m[1]);
-  const canonicalPages = PAGES.filter(page => page !== '404.html' && page !== 'sources.html')
+  const canonicalPages = PAGES.filter(page => page !== '404.html')
     .map(page => {
       const canonical = read(page).match(/<link rel="canonical" href="([^"]+)"/);
       return canonical ? canonical[1] : null;

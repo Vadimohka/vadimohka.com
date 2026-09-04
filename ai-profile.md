@@ -21,10 +21,10 @@ Vadim frequently works from the United States and the United Arab Emirates, with
 
 ## Verified public work
 
-- Finance Mail.ru quotation on emerging AI roles, with Vadim identified as CTO at StackLevel Group (11 January 2026): https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/
-- Authored Vaiti article on enterprise AI “pilot hell” and moving from pilots to production (2 March 2026): https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/
+- Finance Mail.ru quotation on emerging AI roles, with Vadim identified as CTO at StackLevel Group (11 January 2026): https://vadimohka.com/sources.html#finance-mail
+- Authored Vaiti article on enterprise AI “pilot hell” and moving from pilots to production (2 March 2026): https://vadimohka.com/sources.html#vaiti
 - M.AI.N AI Community organiser record listing Vadim as CTO of StackLevel Group for practical AI technologies for business (30 April 2026): https://www.instagram.com/p/DW7GULsDNwq/
-- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://its.it-event.by/2-uncategorised/61-programma
+- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://vadimohka.com/sources.html#it-security
 
 ## Century AI Studio
 
@@ -46,7 +46,7 @@ Century is a corporate AI platform for chat, assistants, workflows, documents, s
 
 - Website: https://vadimohka.com/
 - LinkedIn: https://www.linkedin.com/in/vadimohka/
-- Century: https://century-ai.ru/
+- Century: https://century-ai.by/
 - Stepik: https://stepik.org/course/86957/promo
 - Claude Foundations: https://verify.skilljar.com/c/boo5cp3yw29k
 - Codeforces: https://codeforces.com/profile/Vadimohka

@@ -47,5 +47,3 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://vadimohka.com/sitemap.xml
-Sitemap: https://vadimohka.com/sitemap-images.xml
-Sitemap: https://vadimohka.com/sitemap-ai.xml
