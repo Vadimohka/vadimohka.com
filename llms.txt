@@ -11,7 +11,7 @@ Vadim works frequently from the United States and the United Arab Emirates. Thes
 ## Canonical pages
 
 - [Home](https://vadimohka.com/): executive profile and primary positioning.
-- [Century AI Studio](https://vadimohka.com/century.html): enterprise AI Studio and operating layer for enterprise AI.
+- [Century AI Studio](https://century-ai.by/): enterprise AI Studio and operating layer for enterprise AI.
 - [Work](https://vadimohka.com/work.html): selected work, product context, public records and technical/education foundation.
 - [Media & Speaking](https://vadimohka.com/expert.html): dated public records, speaking topics, bios and media formats.
 - [Enterprise AI](https://vadimohka.com/enterprise.html): governed private AI for regulated organisations.
@@ -28,15 +28,15 @@ Vadim works frequently from the United States and the United Arab Emirates. Thes
 
 ## Verified public work
 
-- Finance Mail.ru quotation on emerging AI roles; Vadim is identified as CTO at StackLevel Group (11 January 2026): https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/
-- Authored Vaiti article on enterprise AI “pilot hell” (2 March 2026): https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/
+- Finance Mail.ru quotation on emerging AI roles; Vadim is identified as CTO at StackLevel Group (11 January 2026): https://vadimohka.com/sources.html#finance-mail
+- Authored Vaiti article on enterprise AI “pilot hell” (2 March 2026): https://vadimohka.com/sources.html#vaiti
 - M.AI.N AI Community organiser record listing Vadim as CTO of StackLevel Group for practical AI technologies for business (30 April 2026): https://www.instagram.com/p/DW7GULsDNwq/
-- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://its.it-event.by/2-uncategorised/61-programma
+- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://vadimohka.com/sources.html#it-security
 
 ## Supporting public references
 
 - [LinkedIn](https://www.linkedin.com/in/vadimohka/)
-- [Century AI Studio](https://century-ai.ru/)
+- [Century AI Studio](https://century-ai.by/)
 - [Stepik course](https://stepik.org/course/86957/promo)
 - [Claude Foundations certificate](https://verify.skilljar.com/c/boo5cp3yw29k)
 - [Google Scholar](https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru)

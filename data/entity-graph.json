@@ -48,14 +48,14 @@
         {
           "@type": "NewsArticle",
           "name": "New roles in work: a market for hybrid professions is forming in Russia",
-          "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
+          "url": "https://vadimohka.com/sources.html#finance-mail",
           "datePublished": "2026-01-11",
           "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
         },
         {
           "@type": "Article",
           "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
-          "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
+          "url": "https://vadimohka.com/sources.html#vaiti",
           "datePublished": "2026-03-02",
           "author": {
             "@id": "https://vadimohka.com/#person"
@@ -71,7 +71,7 @@
         {
           "@type": "Event",
           "name": "IT-Security programme discussion on AI",
-          "url": "https://its.it-event.by/2-uncategorised/61-programma",
+          "url": "https://vadimohka.com/sources.html#it-security",
           "startDate": "2026-03-18",
           "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
         }
@@ -102,7 +102,7 @@
       "name": "Century AI Studio",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "url": "https://century-ai.ru/",
+      "url": "https://century-ai.by/",
       "description": "Corporate AI platform for chat, assistants, workflow modes, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.",
       "keywords": "enterprise AI, corporate AI platform, AI Studio, workflows, text-to-SQL, private deployment, audit, access policies"
     },
