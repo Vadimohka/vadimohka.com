@@ -45,7 +45,7 @@ Optional browser QA uses development-only Playwright and axe-core tooling:
 
     cd qa/browser && npm ci && npx playwright install chromium && npm test
 
-It checks all 10 public pages at 16 viewport sizes, from 320 to 1920px,
+It checks all 10 public pages at 19 viewport sizes, from 320 to 1920px,
 including both sides of the navigation/hero breakpoints and short landscape
 screens. Checks cover element-level clipping, aligned containers, portrait
 framing, touch targets, keyboard focus during menu/viewport changes, contact
@@ -60,8 +60,19 @@ screenshots for each engine. Locally, select another installed engine with:
 
 The homepage uses `assets/portraits/vadim-home-720.webp`, optimized from the
 provided 720 x 900 portrait without cropping or upscaling. Its eager image and
-preload reference the same file. Portrait frames retain a 4:5 ratio at every
-breakpoint; supporting photographs retain their natural image proportions.
+preload reference the same file. The homepage uses an SVG silhouette mask and an intentional responsive chest-up
+crop to match the approved composition; the source image is unchanged. Internal
+portrait frames retain 4:5 framing. Supporting photographs retain their natural
+image proportions. The homepage architecture scene is explicitly illustrative,
+not a live product screenshot. Decorative photographs do not imply clients,
+offices or endorsements. Image sources and font licenses are recorded in
+`assets/executive/credits.json` and adjacent OFL license files.
+
+    node qa/executive-content.mjs
+
+This additional check protects 21 original files, all factual homepage paragraphs,
+links, anchors and the original metadata. Editorial heading/label changes are
+listed explicitly rather than weakening or regenerating the baseline.
 
 When network access is available, re-check the key public proof links with:
 

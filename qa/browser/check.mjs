@@ -3,6 +3,7 @@ import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { chromium, firefox, webkit } from 'playwright';
 import { auditLayout, checkResponsive } from './responsive.mjs';
+import '../executive-content.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const ROOT = resolve(new URL('../..', import.meta.url).pathname);
@@ -17,8 +18,11 @@ const viewports = [
   {width:901,height:768,name:'901'},
   {width:900,height:768,name:'900'},
   {width:768,height:1024,name:'768'},
+  {width:701,height:900,name:'701'},
+  {width:700,height:900,name:'700'},
   {width:640,height:960,name:'640'},
   {width:480,height:800,name:'480'},
+  {width:430,height:932,name:'430'},
   {width:390,height:844,name:'390'},
   {width:360,height:780,name:'360'},
   {width:320,height:568,name:'320'},
@@ -56,6 +60,10 @@ try {
     } else if (await page.getByRole('button', {name:'Menu'}).isVisible()) {
       throw new Error(`${viewport.name}: mobile menu button visible on desktop`);
     }
+    await page.evaluate(() => document.fonts.ready);
+    const loadedFonts = await page.evaluate(() => [...document.fonts].filter(font => font.status === 'loaded').map(font => font.family.replace(/["']/g,'')));
+    if (!['Playfair Display','DM Sans'].every(font => loadedFonts.includes(font))) throw new Error(`${viewport.name}: the specified web typography did not load`);
+    await page.locator('main img').evaluateAll(images => Promise.all(images.filter(image => image.loading !== 'lazy').map(image => image.decode())));
     await page.screenshot({path:resolve(ROOT, `qa/screenshots/T08-home-${viewport.name}.png`), fullPage:false});
   }
 
@@ -66,6 +74,14 @@ try {
     for (const route of allPages) {
       await page.goto(`${BASE}/${route}?browserqa=alignment`, {waitUntil:'networkidle'});
       await auditLayout(page, `${route} ${viewport.name}`);
+      if (route === 'index.html') {
+        const caption = await page.locator('.product-stage figcaption').boundingBox();
+        const front = await page.locator('.screen-front').boundingBox();
+        if (front.y + front.height > caption.y - 4) throw new Error(`${viewport.name}: product illustration overlaps its disclosure`);
+        await page.locator('.mandate-details').evaluate(node => { node.open = true; });
+        await auditLayout(page, `${route} ${viewport.name} expanded mandate`);
+        await page.locator('.mandate-details').evaluate(node => { node.open = false; });
+      }
       const alignment = await page.evaluate(() => {
         const boxes = [...document.querySelectorAll('main > section > .container')].map(node => {
           const rect = node.getBoundingClientRect();
@@ -87,7 +103,12 @@ try {
         const sectionCount = await page.locator('main > section').count();
         const heroWidth = await page.locator('main > section.hero .hero-photo').evaluate(el => Math.round(el.getBoundingClientRect().width));
         if (sectionCount > 7) throw new Error(`index.html ${viewport.name}: homepage is too long (${sectionCount} sections)`);
-        if (heroWidth < 470) throw new Error(`index.html ${viewport.name}: hero portrait is too narrow (${heroWidth}px)`);
+        // The reference uses a larger, intentionally art-directed portrait; the original image file is retained.
+        if (heroWidth < 500 || heroWidth > 560) throw new Error(`index.html ${viewport.name}: portrait scale is outside the executive layout (${heroWidth}px)`);
+        if (await page.locator('main img[src*="vadim-home-"]').count() !== 1) throw new Error('index.html: duplicate portrait reintroduced');
+        if (await page.locator('.insight img').count() !== 3) throw new Error('index.html: editorial image triptych is missing');
+        const order = await page.locator('main > section').evaluateAll(nodes => nodes.map(n => n.getAttribute('aria-labelledby')));
+        if (JSON.stringify(order) !== JSON.stringify([null, 'century-title', 'relevance-title', 'mandate-title', 'public-work-title', 'action-title'])) throw new Error('index.html: product-first section order changed');
         const recognitionCount = await page.getByText(/3rd place, AI Product Leader/i).count();
         if (recognitionCount > 1) throw new Error(`index.html ${viewport.name}: recognition is repeated ${recognitionCount} times`);
       }
@@ -111,9 +132,11 @@ try {
           if (articleStyle.gap < 16) throw new Error(`${route} ${viewport.name}: article card gap is too tight (${articleStyle.gap}px)`);
         }
         const tightGroups = await page.locator('.cards, .article-list').evaluateAll(elements => elements
-          .filter(el => !el.closest('.split'))
+          .filter(el => !el.closest('.split') && !el.matches('.advisory-grid'))
           .map(el => ({className: el.className, marginTop: parseFloat(getComputedStyle(el).marginTop)}))
           .filter(item => item.marginTop < 20));
+        const advisoryGap = await page.locator('.advisory-grid').evaluateAll(groups => groups.map(group => group.getBoundingClientRect().top - group.previousElementSibling.getBoundingClientRect().bottom));
+        if (advisoryGap.some(gap => gap < 20)) throw new Error(`${route}: advisory heading gap is too tight`);
         if (tightGroups.length) throw new Error(`${route} ${viewport.name}: heading-to-card/list spacing is too tight (${tightGroups.map(item => `${item.className}:${item.marginTop}px`).join(', ')})`);
       }
     }
@@ -152,13 +175,13 @@ try {
   const reduced = await browser.newContext({reducedMotion:'reduce', viewport:{width:390,height:844}});
   const reducedPage = await reduced.newPage();
   await reducedPage.goto(`${BASE}/index.html?browserqa=reduced`, {waitUntil:'networkidle'});
-  const motion = await reducedPage.evaluate(() => getComputedStyle(document.querySelector('.reveal')).transitionDuration);
-  if (motion !== '0s') throw new Error(`reduced-motion reveal transition is ${motion}`);
+  const motion = await reducedPage.evaluate(() => getComputedStyle(document.querySelector('.btn')).transitionDuration);
+  if (motion !== '0s') throw new Error(`reduced-motion button transition is ${motion}`);
   await reduced.close();
 
   const axeContext = await browser.newContext({viewport:{width:1440,height:1000}});
   const axePage = await axeContext.newPage();
-  for (const route of ['index.html','about.html','work.html']) {
+  for (const route of allPages) {
     await axePage.goto(`${BASE}/${route}?browserqa=axe`, {waitUntil:'networkidle'});
     // Audit the final rendered content, not a transient opacity during a reveal.
     await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});
