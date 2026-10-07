@@ -127,9 +127,16 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
         await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
         await page.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
       }
+      // Lazy images need a real viewport intersection before decode() in Firefox.
+      // Trigger each request by scrolling, then verify loading and decoding; do not
+      // swallow failures or replace the production lazy-loading behavior for screenshots.
+      for (const image of await page.locator('main img').all()) {
+        await image.scrollIntoViewIfNeeded();
+        await page.waitForFunction(node => node.complete && node.naturalWidth > 0, await image.elementHandle(), {timeout:10000});
+        await image.evaluate(node => node.decode());
+      }
+      await page.evaluate(() => document.fonts.ready);
       await page.evaluate(() => window.scrollTo({top:0,behavior:'instant'}));
-      // networkidle does not guarantee that asynchronous image decoding/painting has finished.
-      await page.locator('main img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
       await page.evaluate(() => new Promise(resolvePaint => requestAnimationFrame(() => requestAnimationFrame(resolvePaint))));
       await page.waitForTimeout(700);
       const invisible = await page.locator('main .reveal').evaluateAll(nodes => nodes.some(node => getComputedStyle(node).opacity !== '1'));
