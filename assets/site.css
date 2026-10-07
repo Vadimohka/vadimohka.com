@@ -75,7 +75,7 @@ main>section+section{border-top:1px solid var(--line)}
 .hero-photo.hero-photo--portrait{aspect-ratio:4/5}
 .hero-photo--portrait img{object-fit:contain;object-position:center}
 .hero-executive{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 84% 32%,#32302a42,transparent 48%),linear-gradient(145deg,#101215,#0c0f12)}
-.hero-executive::before{content:"";position:absolute;z-index:-1;pointer-events:none;width:105%;height:65%;left:28%;top:32%;border-radius:50%;border-top:1px solid #c7ad7b77;box-shadow:0 -7px 26px -19px #e9d1a3;transform:rotate(-16deg);background:linear-gradient(180deg,#c7ad7b08,transparent 24%)}
+.hero-executive::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 115% 120% at 115% 135%,transparent 73%,#c7ad7b0a 73.1%,#c7ad7b77 73.25%,transparent 73.45%)}
 .hero-executive .hero-photo{justify-self:end;width:min(100%,432px);border:0;border-radius:0;background:transparent;box-shadow:none;mask-image:linear-gradient(to bottom,transparent,#000 6%,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 6%,#000 80%,transparent 100%)}
 .hero-executive .hero-photo img{mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)}
 .hero-executive .hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#10121566,transparent 20%,transparent 70%,#10121555)}
@@ -225,7 +225,7 @@ main>section+section{border-top:1px solid var(--line)}
   .hero-name{font-size:16px;margin-bottom:10px}
   .hero-eyebrow{font-size:9px;margin-bottom:10px;max-width:440px}
   .hero-executive .hero-photo{justify-self:center;width:min(76%,320px)}
-  .hero-executive::before{top:50%;height:35%;left:8%;width:140%}
+  .hero-executive::before{background:radial-gradient(ellipse 180% 65% at 150% 90%,transparent 73%,#c7ad7b66 73.25%,transparent 73.6%)}
   .credential-strip .signal{padding-block:14px}
   .signal strong{font-size:15px}
   .signal+.signal{padding-left:18px}
