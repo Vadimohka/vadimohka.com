@@ -14,10 +14,14 @@ const viewports = [
   {width:1280,height:800,name:'1280'},
   {width:1151,height:900,name:'1151'},
   {width:1150,height:900,name:'1150'},
+  {width:1101,height:900,name:'1101'},
+  {width:1100,height:900,name:'1100'},
   {width:1024,height:768,name:'1024'},
   {width:901,height:768,name:'901'},
   {width:900,height:768,name:'900'},
   {width:768,height:1024,name:'768'},
+  {width:761,height:1024,name:'761'},
+  {width:760,height:1024,name:'760'},
   {width:701,height:900,name:'701'},
   {width:700,height:900,name:'700'},
   {width:640,height:960,name:'640'},
@@ -95,10 +99,28 @@ try {
       });
       if (alignment.overflow) throw new Error(`${route} ${viewport.name}: horizontal overflow`);
       if (alignment.edges.length > 1) throw new Error(`${route} ${viewport.name}: section containers are misaligned (${alignment.edges.join(', ')})`);
-      const expectedHero = route === 'founders.html'
-        ? 'vadim-educator-1122.webp'
-        : (route === 'index.html' ? 'vadim-home-720.webp' : (route === 'enterprise.html' ? 'vadim-boardroom-1536.webp' : 'vadim-warm-1536.webp'));
-      if (!alignment.heroImage.includes(expectedHero)) throw new Error(`${route} ${viewport.name}: expected hero portrait is missing`);
+      if (route === 'index.html') {
+        if (!alignment.heroImage.includes('vadim-home-720.webp')) throw new Error('Homepage portrait changed');
+        if (await page.locator('link[href="assets/internal.css"]').count()) throw new Error('Internal CSS leaked onto the homepage');
+      } else {
+        if (await page.locator('.inner-hero').count() !== 1) throw new Error(`${route}: missing internal-page composition`);
+        if (await page.locator('.hero-photo').count()) throw new Error(`${route}: old repeated portrait layout returned`);
+        if (route === 'about.html' && await page.locator('.profile-portrait img[src="assets/portraits/vadim-home-720.webp"]').count() !== 1) throw new Error('About portrait missing');
+        const type = await page.locator('h1').evaluate(el => ({size:parseFloat(getComputedStyle(el).fontSize), family:getComputedStyle(el).fontFamily}));
+        if (!type.family.includes('Playfair Display') || type.size < 37) throw new Error(`${route}: editorial headline hierarchy regressed`);
+        const brokenNumbers = await page.locator('.page-index a span:first-child').evaluateAll(ns => ns.filter(n => n.offsetHeight > parseFloat(getComputedStyle(n).lineHeight) + 1).length);
+        if (brokenNumbers) throw new Error(`${route} ${viewport.name}: chapter numbers wrap`);
+        if (route === 'investors.html') {
+          const inset = await page.locator('.review-page--front').evaluate(el => { const f=el.querySelector('.report-foot'); return el.clientHeight - f.offsetTop - f.offsetHeight; });
+          if (inset < 8) throw new Error(`${route} ${viewport.name}: illustrated document content clips (${inset}px inset)`);
+        }
+
+        if (route === 'century.html' || route === 'work.html') {
+          if (await page.locator('.studio-visual .studio-window').count() !== 2) throw new Error(`${route}: missing layered architectural illustration`);
+          if (!(await page.locator('.studio-visual figcaption').innerText()).includes('not a product screenshot')) throw new Error('Illustration boundary missing');
+        }
+
+      }
       if (route === 'index.html' && viewport.name === '1440') {
         const sectionCount = await page.locator('main > section').count();
         const heroWidth = await page.locator('main > section.hero .hero-photo').evaluate(el => Math.round(el.getBoundingClientRect().width));
@@ -164,6 +186,22 @@ try {
     if (await contact.locator('form').count()) throw new Error('contact page unexpectedly contains a form');
   }
   await contactContext.close();
+
+  for (const width of [320, 768, 1440]) {
+    await page.setViewportSize({width,height:900});
+    await page.goto(`${BASE}/expert.html?browserqa=bios`, {waitUntil:'networkidle'});
+    for (const disclosure of await page.locator('.bio-variant').all()) {
+      await disclosure.locator('summary').focus();
+      if (await disclosure.getAttribute('open') === null) await page.keyboard.press('Enter');
+      if (!(await disclosure.locator('.bio-copy').isVisible())) throw new Error('Bio disclosure inaccessible');
+      await auditLayout(page, `expert expanded biography ${width}`);
+    }
+    await page.goto(`${BASE}/century.html?browserqa=chapter-navigation`, {waitUntil:'networkidle'});
+    const chapter = page.locator('.page-index a[href="#deployment-title"]');
+    await chapter.click();
+    await page.waitForFunction(() => Math.abs(document.querySelector('#deployment-title').getBoundingClientRect().top - document.querySelector('.site-header').getBoundingClientRect().height) < 100);
+    await auditLayout(page, `century chapter navigation ${width}`);
+  }
 
   const noJs = await browser.newContext({javaScriptEnabled:false, viewport:{width:320,height:568}});
   const noJsPage = await noJs.newPage();

@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
+import { internalPages } from './internal-content.mjs';
 const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const read = name => readFileSync(resolve(ROOT, name), 'utf8');
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -15,7 +16,8 @@ export const normalize = html => html.replace(/<[^>]*>/g, ' ')
   }).replace(/\s+/g, ' ').trim();
 const baseline = JSON.parse(read('qa/executive-content-baseline.json'));
 for (const [file, expected] of Object.entries(baseline.unchanged)) {
-  assert.equal(hash(readFileSync(resolve(ROOT, file))), expected, `${file}: protected content changed`);
+  // Internal HTML now has a semantic + metadata guard anchored to this original hash.
+  if (!internalPages.has(file)) assert.equal(hash(readFileSync(resolve(ROOT, file))), expected, `${file}: protected content changed`);
 }
 const home = read('index.html');
 assert.equal(hash(home.match(/<head>[\s\S]*?<\/head>/)[0]), baseline.home.head, 'Homepage metadata/preload changed');
