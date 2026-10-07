@@ -3,6 +3,7 @@ import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { chromium, firefox, webkit } from 'playwright';
 import { auditLayout, checkResponsive } from './responsive.mjs';
+import '../executive-content.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const ROOT = resolve(new URL('../..', import.meta.url).pathname);
@@ -87,7 +88,11 @@ try {
         const sectionCount = await page.locator('main > section').count();
         const heroWidth = await page.locator('main > section.hero .hero-photo').evaluate(el => Math.round(el.getBoundingClientRect().width));
         if (sectionCount > 7) throw new Error(`index.html ${viewport.name}: homepage is too long (${sectionCount} sections)`);
-        if (heroWidth < 470) throw new Error(`index.html ${viewport.name}: hero portrait is too narrow (${heroWidth}px)`);
+        // The approved executive composition is compact; the full 4:5 portrait is retained.
+        if (heroWidth < 400 || heroWidth > 480) throw new Error(`index.html ${viewport.name}: portrait scale is outside the executive layout (${heroWidth}px)`);
+        if (await page.locator('main img').count() !== 1) throw new Error('index.html: duplicate portrait reintroduced');
+        const order = await page.locator('main > section').evaluateAll(nodes => nodes.map(n => n.getAttribute('aria-labelledby')));
+        if (JSON.stringify(order) !== JSON.stringify([null, 'century-title', 'relevance-title', 'mandate-title', 'public-work-title', 'action-title'])) throw new Error('index.html: product-first section order changed');
         const recognitionCount = await page.getByText(/3rd place, AI Product Leader/i).count();
         if (recognitionCount > 1) throw new Error(`index.html ${viewport.name}: recognition is repeated ${recognitionCount} times`);
       }
@@ -158,7 +163,7 @@ try {
 
   const axeContext = await browser.newContext({viewport:{width:1440,height:1000}});
   const axePage = await axeContext.newPage();
-  for (const route of ['index.html','about.html','work.html']) {
+  for (const route of allPages) {
     await axePage.goto(`${BASE}/${route}?browserqa=axe`, {waitUntil:'networkidle'});
     // Audit the final rendered content, not a transient opacity during a reveal.
     await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});

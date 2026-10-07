@@ -117,15 +117,6 @@ if(!('IntersectionObserver' in window)){
   },{threshold:0});
   reveals.forEach(el=>io.observe(el));
 }
-const light = document.querySelector('.cursor-light');
-if(light){
-  const pointerEffects = window.matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
-  window.addEventListener('pointermove', e => {
-    if(!pointerEffects.matches) return;
-    light.style.setProperty('--pointer-x', e.clientX + 'px');
-    light.style.setProperty('--pointer-y', e.clientY + 'px');
-  }, {passive:true});
-}
 const intentCards = document.querySelectorAll('.intent-card[data-intent]');
 const routeResponse = document.querySelector('[data-route-response]');
 const routeTitle = routeResponse?.querySelector('[data-route-title]');
