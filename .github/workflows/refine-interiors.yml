@@ -1,0 +1,32 @@
+name: Prepare reviewed editorial interiors
+on:
+  push:
+    branches: [design/internal-editorial-refinement]
+    paths: [qa/refine-interiors.py, qa/editorial-css.b64, .github/workflows/refine-interiors.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: design/internal-editorial-refinement
+      - name: Apply reviewed presentation
+        run: |
+          test "$GITHUB_REF" = refs/heads/design/internal-editorial-refinement
+          python -m pip install 'beautifulsoup4==4.14.3'
+          python qa/refine-interiors.py
+          node qa/check.mjs
+          node qa/test-regressions.mjs
+          node qa/executive-content.mjs
+      - name: Commit reviewed output and remove preparation helpers
+        run: |
+          git rm qa/refine-interiors.py qa/editorial-css.b64 .github/workflows/refine-interiors.yml
+          git add 404.html about.html century.html enterprise.html expert.html founders.html investors.html sources.html work.html assets/internal.css qa/editorial-titles.json qa/internal-content.mjs qa/browser/check.mjs
+          git diff --exit-code HEAD -- index.html assets/site.css assets/site.js
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'design: rebuild internal pages with editorial hierarchy, layered product scenes and preserved source content'
+          git push origin HEAD:design/internal-editorial-refinement
