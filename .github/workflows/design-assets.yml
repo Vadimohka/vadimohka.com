@@ -14,58 +14,51 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: design/executive-focus
-      - run: python -m pip install Pillow numpy
-      - name: Download and optimize editorial assets
+      - run: python -m pip install Pillow numpy fonttools brotli
+      - name: Refine the photographic horizon and web typography
         shell: python
         run: |
-          import urllib.request, pathlib, re, io, json, hashlib
+          import urllib.request, pathlib, io
           import numpy as np
-          from PIL import Image, ImageOps
-          root=pathlib.Path('assets/executive'); root.mkdir(parents=True,exist_ok=True)
+          from PIL import Image
+          from fontTools.ttLib import TTFont
+          from fontTools import subset
+          root=pathlib.Path('assets/executive')
           def fetch(url):
-            req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
-            with urllib.request.urlopen(req,timeout=60) as r: return r.read()
-          urls={
-            'dubai':'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=85&fit=crop',
-            'workspace':'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1000&q=85&fit=crop',
-            'architecture':'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=85&fit=crop'
-          }
-          for name,url in urls.items():
-            im=Image.open(io.BytesIO(fetch(url))).convert('RGB')
-            im.thumbnail((1600,1000)); im.save(root/(name+'.webp'),quality=84,method=6)
-          earth_url='https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/144000/144898/BlackMarble_2016_01deg.jpg'
-          texture=np.array(Image.open(io.BytesIO(fetch(earth_url))).convert('RGB'))/255
+            with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'}),timeout=60) as r: return r.read()
+          font=TTFont(io.BytesIO(fetch('https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf')))
+          def webfont(font,name):
+            options=subset.Options(); options.flavor='woff2'
+            sub=subset.Subsetter(options=options); sub.populate(unicodes=list(range(32,256))+list(range(1024,1280))+list(range(8192,8304))+list(range(8592,8704))+list(range(9632,9728)))
+            sub.subset(font); font.flavor='woff2'; font.save(root/name)
+          webfont(font,'PlayfairDisplay.woff2')
+          webfont(TTFont(root/'DMSans.ttf'),'DMSans.woff2')
+          (root/'playfairdisplay-OFL.txt').write_bytes(fetch('https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/OFL.txt'))
+          for name in ['InstrumentSerif-Regular.ttf','InstrumentSerif-Italic.ttf','instrumentserif-OFL.txt','DMSans.ttf']:
+            (root/name).unlink(missing_ok=True)
+          texture=np.array(Image.open(io.BytesIO(fetch('https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/144000/144898/BlackMarble_2016_01deg.jpg'))).convert('RGB'))/255
           h,w=800,1600; yy,xx=np.mgrid[:h,:w]; r=1500.; dx=(xx-1460)/r; dy=(yy-1640)/r
           d=dx*dx+dy*dy; inside=d<=1; z=np.sqrt(np.maximum(0,1-d))
-          lat0=np.deg2rad(25); lon0=np.deg2rad(40)
+          lat0=np.deg2rad(-25); lon0=np.deg2rad(25)
           lat=np.arcsin(np.clip(-dy*np.cos(lat0)+z*np.sin(lat0),-1,1))
           lon=lon0+np.arctan2(dx,z*np.cos(lat0)+dy*np.sin(lat0))
           u=((lon/(2*np.pi)+.5)%1)*(texture.shape[1]-1); v=(.5-lat/np.pi)*(texture.shape[0]-1)
           tex=texture[v.astype(int),u.astype(int)]
-          lum=tex.max(axis=2); lights=np.maximum(0,lum-.12)**.85
+          lum=tex@np.array([.2126,.7152,.0722]); lights=np.maximum(0,lum-.14)**.85
           base=np.zeros((h,w,3))+np.array([8,12,14])/255
-          surface=base+tex*.15+lights[:,:,None]*np.array([.72,.54,.30])
+          surface=base+tex*.12+lights[:,:,None]*np.array([.85,.62,.32])
           dist=(np.sqrt(d)-1)*r
-          glow=np.exp(-(dist/13)**2)*.11+np.exp(-(dist/2.2)**2)*.48
-          glow*=np.clip((xx-400)/900,0,1)
+          glow=(np.exp(-(dist/15)**2)*.10+np.exp(-(dist/2.2)**2)*.42)*np.clip((xx-400)/900,0,1)
           out=np.where(inside[:,:,None],surface,base)+glow[:,:,None]*np.array([1.,.77,.42])
           fade=np.clip((xx-300)/450,0,1)*np.clip((h-yy)/160,0,1)
           out=base*(1-fade[:,:,None])+out*fade[:,:,None]
           Image.fromarray(np.uint8(np.clip(out,0,1)*255)).save(root/'horizon.webp',quality=87,method=6)
-          # Use openly licensed web fonts downloaded from Google, never system fonts.
-          fontbase='https://raw.githubusercontent.com/google/fonts/main/ofl/'
-          fontfiles={'instrumentserif/InstrumentSerif-Regular.ttf':'InstrumentSerif-Regular.ttf','instrumentserif/InstrumentSerif-Italic.ttf':'InstrumentSerif-Italic.ttf','dmsans/DMSans%5Bopsz,wght%5D.ttf':'DMSans.ttf'}
-          for source,name in fontfiles.items(): (root/name).write_bytes(fetch(fontbase+source))
-          for family in ['instrumentserif','dmsans']: (root/(family+'-OFL.txt')).write_bytes(fetch(fontbase+family+'/OFL.txt'))
-          credits={'editorial_photography':urls,'photography_license':'https://unsplash.com/license','earth_texture':earth_url,'earth_credit':'NASA Earth Observatory / Joshua Stevens, Suomi NPP VIIRS data. 2016 composite. Decorative interpretation, not a current map.','fonts':'Google Fonts: Instrument Serif, DM Sans. SIL Open Font License; license files included.','usage':'Editorial atmosphere only. No client, office-location, product-interface or endorsement claims.'}
-          (root/'credits.json').write_text(json.dumps(credits,indent=2)+'\n')
-          for file in root.iterdir(): print(file.name,file.stat().st_size)
       - name: Commit only prepared design assets to the working branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add assets/executive
-          git diff --cached --quiet || git commit -m 'assets: add licensed editorial imagery and typography for concept 03'
+          git diff --cached --quiet || git commit -m 'assets: refine photographic horizon and optimize web fonts'
           git push origin HEAD:design/executive-focus
       - uses: actions/upload-artifact@v4
         with:
