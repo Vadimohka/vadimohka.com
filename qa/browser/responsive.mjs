@@ -55,13 +55,26 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
     await page.keyboard.press('Enter');
     await page.waitForFunction(() => document.activeElement === document.querySelector('.nav-links a'));
     for (let i = 1; i < 7; i++) await page.keyboard.press('Tab');
-    const lastVisible = await page.locator('.nav-links a').last().evaluate(node => {
-      const link = node.getBoundingClientRect();
-      const menu = node.parentElement.getBoundingClientRect();
-      return document.activeElement === node && link.top >= menu.top && link.bottom <= menu.bottom + 1 && menu.bottom <= innerHeight;
-    });
-    if (!lastVisible) throw new Error(`${viewport.width}x${viewport.height}: last menu link is not keyboard-reachable within the viewport`);
-    await page.screenshot({path:resolve(ROOT, `qa/screenshots/T08-menu-${viewport.width}x${viewport.height}.png`)});
+    try {
+      // Native focus scrolling can finish on a later frame, particularly in Firefox.
+      await page.waitForFunction(() => {
+        const node = document.querySelector('.nav-links a:last-child');
+        const link = node.getBoundingClientRect();
+        const menu = node.parentElement.getBoundingClientRect();
+        return document.activeElement === node && link.top >= menu.top - 1 && link.bottom <= menu.bottom + 1 && menu.bottom <= innerHeight + 1;
+      }, null, {timeout:3000});
+    } catch (error) {
+      const state = await page.locator('.nav-links a').last().evaluate(node => ({
+        active:document.activeElement?.outerHTML,
+        link:node.getBoundingClientRect().toJSON(),
+        menu:node.parentElement.getBoundingClientRect().toJSON(),
+        viewport:innerHeight,
+        scrollTop:node.parentElement.scrollTop
+      }));
+      throw new Error(`${viewport.width}x${viewport.height}: last menu link is not keyboard-reachable: ${JSON.stringify(state)}`, {cause:error});
+    } finally {
+      await page.screenshot({path:resolve(ROOT, `qa/screenshots/T08-menu-${viewport.width}x${viewport.height}.png`)});
+    }
     await page.keyboard.press('Escape');
     await page.waitForFunction(() => document.activeElement === document.querySelector('.menu-toggle') && document.querySelector('.nav-links').hidden);
     await page.keyboard.press('Space');
