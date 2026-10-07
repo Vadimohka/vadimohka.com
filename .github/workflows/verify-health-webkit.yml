@@ -1,0 +1,36 @@
+name: Verify final health source in WebKit
+on:
+  push:
+    branches: [qa/site-health-webkit]
+    paths: ['.github/workflows/verify-health-webkit.yml']
+permissions:
+  contents: read
+jobs:
+  webkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    container:
+      image: mcr.microsoft.com/playwright:v1.62.1-noble
+    env:
+      BROWSER: webkit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 5e08e2e313fea69fb36934c0cf64b779bdd18d59
+      - name: Verify the exact final source and its guards
+        run: |
+          test "$(git rev-parse HEAD)" = '5e08e2e313fea69fb36934c0cf64b779bdd18d59'
+          node qa/check.mjs
+          node qa/test-regressions.mjs
+          node qa/executive-content.mjs
+          python3 qa/health/check.py
+      - name: Run the complete unchanged browser suite with installed WebKit dependencies
+        working-directory: qa/browser
+        run: npm ci && npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-health-webkit-verified
+          path: qa/screenshots/T08-*.png
+          retention-days: 7
+          if-no-files-found: ignore
