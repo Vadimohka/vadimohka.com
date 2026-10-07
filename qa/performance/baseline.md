@@ -1,3 +1,5 @@
+> Historical pre-redesign measurement. Superseded for the current site by the Site health workflow and its raw Lighthouse artifacts; do not use these scores as current results.
+
 # Performance baseline — 2026-08-22
 
 Measured locally against `http://127.0.0.1:4173/index.html` with Lighthouse

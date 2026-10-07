@@ -1,0 +1,367 @@
+{
+  "baseURL": "https://vadimohka.com/",
+  "modified": "2026-10-07",
+  "person": {
+    "@type": "Person",
+    "@id": "https://vadimohka.com/#person",
+    "name": "Vadim Vladymtsev",
+    "alternateName": [
+      "Vadimohka",
+      "Вадим Владымцев",
+      "Вадим Денисович Владымцев"
+    ],
+    "url": "https://vadimohka.com/",
+    "image": "https://vadimohka.com/assets/portraits/vadim-home-720.webp",
+    "jobTitle": [
+      "Enterprise AI CTO and product operator",
+      "CTO at StackLevel Group"
+    ],
+    "description": "Enterprise AI CTO and product operator focused on governed private AI for regulated organisations; CTO at StackLevel Group.",
+    "knowsAbout": [
+      "Enterprise AI",
+      "AI governance",
+      "LLMOps",
+      "RAG",
+      "AI product architecture",
+      "Private AI platforms",
+      "Technical due diligence",
+      "Engineering education",
+      "Competitive programming",
+      "ICPC coaching"
+    ],
+    "sameAs": [
+      "https://vadimohka.ru/",
+      "https://www.linkedin.com/in/vadimohka/",
+      "https://github.com/Vadimohka",
+      "https://codeforces.com/profile/Vadimohka",
+      "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
+    ],
+    "subjectOf": [
+      {
+        "@type": "NewsArticle",
+        "name": "New roles in work: a market for hybrid professions is forming in Russia",
+        "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
+        "datePublished": "2026-01-11",
+        "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
+      },
+      {
+        "@type": "Article",
+        "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
+        "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
+        "datePublished": "2026-03-02",
+        "author": {
+          "@id": "https://vadimohka.com/#person"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "M.AI.N AI Community",
+        "url": "https://www.instagram.com/p/DW7GULsDNwq/",
+        "startDate": "2026-04-30",
+        "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
+      },
+      {
+        "@type": "Event",
+        "name": "IT-Security programme discussion on AI",
+        "url": "https://its.it-event.by/2-uncategorised/61-programma",
+        "startDate": "2026-03-18",
+        "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Claude Foundations",
+        "url": "https://verify.skilljar.com/c/boo5cp3yw29k"
+      }
+    ],
+    "worksFor": {
+      "@id": "https://vadimohka.com/#stacklevel"
+    },
+    "mainEntityOfPage": {
+      "@id": "https://vadimohka.com/about.html#webpage"
+    },
+    "knowsLanguage": [
+      "en",
+      "ru"
+    ]
+  },
+  "core": [
+    {
+      "@type": "Person",
+      "@id": "https://vadimohka.com/#person",
+      "name": "Vadim Vladymtsev",
+      "alternateName": [
+        "Vadimohka",
+        "Вадим Владымцев",
+        "Вадим Денисович Владымцев"
+      ],
+      "url": "https://vadimohka.com/",
+      "image": "https://vadimohka.com/assets/portraits/vadim-home-720.webp",
+      "jobTitle": [
+        "Enterprise AI CTO and product operator",
+        "CTO at StackLevel Group"
+      ],
+      "description": "Enterprise AI CTO and product operator focused on governed private AI for regulated organisations; CTO at StackLevel Group.",
+      "knowsAbout": [
+        "Enterprise AI",
+        "AI governance",
+        "LLMOps",
+        "RAG",
+        "AI product architecture",
+        "Private AI platforms",
+        "Technical due diligence",
+        "Engineering education",
+        "Competitive programming",
+        "ICPC coaching"
+      ],
+      "sameAs": [
+        "https://vadimohka.ru/",
+        "https://www.linkedin.com/in/vadimohka/",
+        "https://github.com/Vadimohka",
+        "https://codeforces.com/profile/Vadimohka",
+        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
+      ],
+      "subjectOf": [
+        {
+          "@type": "NewsArticle",
+          "name": "New roles in work: a market for hybrid professions is forming in Russia",
+          "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
+          "datePublished": "2026-01-11",
+          "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
+        },
+        {
+          "@type": "Article",
+          "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
+          "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
+          "datePublished": "2026-03-02",
+          "author": {
+            "@id": "https://vadimohka.com/#person"
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "M.AI.N AI Community",
+          "url": "https://www.instagram.com/p/DW7GULsDNwq/",
+          "startDate": "2026-04-30",
+          "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
+        },
+        {
+          "@type": "Event",
+          "name": "IT-Security programme discussion on AI",
+          "url": "https://its.it-event.by/2-uncategorised/61-programma",
+          "startDate": "2026-03-18",
+          "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Claude Foundations",
+          "url": "https://verify.skilljar.com/c/boo5cp3yw29k"
+        }
+      ],
+      "worksFor": {
+        "@id": "https://vadimohka.com/#stacklevel"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/about.html#webpage"
+      },
+      "knowsLanguage": [
+        "en",
+        "ru"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://vadimohka.com/#stacklevel",
+      "name": "StackLevel Group",
+      "url": "https://stacklevel.group/en/company",
+      "employee": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vadimohka.com/#website",
+      "url": "https://vadimohka.com/",
+      "name": "Vadim Vladymtsev",
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "inLanguage": "en"
+    }
+  ],
+  "century": {
+    "@type": "SoftwareApplication",
+    "@id": "https://vadimohka.com/#century",
+    "name": "Century AI Studio",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://century-ai.by/",
+    "description": "Corporate AI platform for chat, assistants, workflow modes, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.",
+    "keywords": "enterprise AI, corporate AI platform, AI Studio, workflows, text-to-SQL, private deployment, audit, access policies"
+  },
+  "pages": {
+    "index.html": {
+      "title": "Vadim Vladymtsev | Enterprise AI CTO & Advisory",
+      "description": "Vadim Vladymtsev, CTO at StackLevel Group. Enterprise AI strategy, product architecture, technical due diligence and CTO advisory for USA and UAE audiences.",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "label": "Home"
+    },
+    "about.html": {
+      "title": "Vadim Vladymtsev | About & Contact — USA & UAE",
+      "description": "Meet Vadim Vladymtsev, CTO at StackLevel Group. Product architecture, enterprise AI and technical judgment. Contact routes for USA and UAE business inquiries.",
+      "socialImage": "https://vadimohka.com/assets/social/og-home.png",
+      "schemaType": "ProfilePage",
+      "label": "About & Contact"
+    },
+    "century.html": {
+      "title": "Century AI Studio | Governed Enterprise AI Platform",
+      "description": "Explore Century AI Studio: assistants, workflows, protected data access, private deployment and operational controls for enterprise AI. Product context and sources.",
+      "socialImage": "https://vadimohka.com/assets/social/og-century.png",
+      "schemaType": "WebPage",
+      "label": "Century AI Studio"
+    },
+    "enterprise.html": {
+      "title": "Enterprise AI Strategy & Architecture | USA & UAE",
+      "description": "Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.",
+      "socialImage": "https://vadimohka.com/assets/social/og-enterprise.png",
+      "schemaType": "WebPage",
+      "label": "Enterprise AI",
+      "service": {
+        "@type": "Service",
+        "@id": "https://vadimohka.com/enterprise.html#service",
+        "name": "Enterprise AI strategy and architecture",
+        "serviceType": "Enterprise AI strategy, product architecture, deployment planning and governance",
+        "url": "https://vadimohka.com/enterprise.html",
+        "provider": {
+          "@id": "https://vadimohka.com/#person"
+        },
+        "description": "Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          }
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Organizations and executive teams"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://vadimohka.com/about.html#contact",
+          "availableLanguage": "en"
+        }
+      }
+    },
+    "investors.html": {
+      "title": "AI Technical Due Diligence | USA & UAE | Vadim Vladymtsev",
+      "description": "AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.",
+      "socialImage": "https://vadimohka.com/assets/social/og-diligence.png",
+      "schemaType": "WebPage",
+      "label": "AI Technical Due Diligence",
+      "service": {
+        "@type": "Service",
+        "@id": "https://vadimohka.com/investors.html#service",
+        "name": "AI technical due diligence",
+        "serviceType": "Technical assessment of AI product, data, architecture, deployment and team claims; not investment, legal or financial advice",
+        "url": "https://vadimohka.com/investors.html",
+        "provider": {
+          "@id": "https://vadimohka.com/#person"
+        },
+        "description": "AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          }
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Investors and investment teams"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://vadimohka.com/about.html#contact",
+          "availableLanguage": "en"
+        }
+      }
+    },
+    "founders.html": {
+      "title": "CTO Advisory for Founders | USA & UAE | Vadim Vladymtsev",
+      "description": "CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.",
+      "socialImage": "https://vadimohka.com/assets/social/og-founder.png",
+      "schemaType": "WebPage",
+      "label": "CTO Advisory",
+      "service": {
+        "@type": "Service",
+        "@id": "https://vadimohka.com/founders.html#service",
+        "name": "CTO advisory for founders",
+        "serviceType": "CTO-level diagnosis of product, architecture, engineering ownership and delivery decisions",
+        "url": "https://vadimohka.com/founders.html",
+        "provider": {
+          "@id": "https://vadimohka.com/#person"
+        },
+        "description": "CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          }
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Founders and executive teams"
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://vadimohka.com/about.html#contact",
+          "availableLanguage": "en"
+        }
+      }
+    },
+    "expert.html": {
+      "title": "Enterprise AI Speaker & Expert | Vadim Vladymtsev",
+      "description": "Enterprise AI speaker and technical expert Vadim Vladymtsev. Topics, published articles, public appearances and contact routes for media and conference organizers.",
+      "socialImage": "https://vadimohka.com/assets/social/og-expert.png",
+      "schemaType": "CollectionPage",
+      "label": "Media & Speaking"
+    },
+    "work.html": {
+      "title": "Enterprise AI Work & Public Record | Vadim Vladymtsev",
+      "description": "Explore Vadim Vladymtsev’s enterprise AI work: Century product context, published expertise, engineering experience and source-linked public records.",
+      "socialImage": "https://vadimohka.com/assets/social/og-home.png",
+      "schemaType": "CollectionPage",
+      "label": "Selected Work"
+    },
+    "sources.html": {
+      "title": "Sources & Public References | Vadim Vladymtsev",
+      "description": "Original publications, product references, conference records and professional profiles supporting Vadim Vladymtsev’s enterprise AI work and background.",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "CollectionPage",
+      "label": "Sources"
+    },
+    "404.html": {
+      "title": "Page Not Found | Vadim Vladymtsev",
+      "description": "This page could not be found. Return to Vadim Vladymtsev’s enterprise AI work, advisory services or contact page.",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "label": "Not Found"
+    }
+  }
+}

@@ -42,17 +42,16 @@ for (const page of PAGES) {
   if (!jsonld.length) fail(page, 'missing JSON-LD');
   for (const block of jsonld) {
     try {
-      const node = JSON.parse(block[1]);
+      const parsed = JSON.parse(block[1]);
+      for (const node of parsed["@graph"] || [parsed]) {
       if (node['@type'] === 'Person') {
         if (node['@id'] !== 'https://vadimohka.com/#person') fail(page, 'Person JSON-LD has unstable @id');
-        const servedMarkets = (node.areaServed || []).map(area => area.name).sort();
-        if (JSON.stringify(servedMarkets) !== JSON.stringify(['United Arab Emirates', 'United States'])) {
-          fail(page, 'Person JSON-LD must identify United States and United Arab Emirates as areas served');
-        }
-        personCores.push(JSON.stringify({name:node.name,jobTitle:node.jobTitle,sameAs:node.sameAs,worksFor:node.worksFor,areaServed:servedMarkets}));
+        if ('areaServed' in node) fail(page, 'areaServed belongs on Service, not Person');
+        personCores.push(JSON.stringify({name:node.name,jobTitle:node.jobTitle,sameAs:node.sameAs,worksFor:node.worksFor,image:node.image}));
       }
-      if (node['@type'] === 'WebPage' && node.inLanguage !== 'en') fail(page, 'WebPage JSON-LD missing inLanguage=en');
+      if (['WebPage','ProfilePage','CollectionPage'].includes(node['@type']) && node.inLanguage !== 'en') fail(page, 'WebPage JSON-LD missing inLanguage=en');
       if (page === 'century.html' && node['@type'] === 'SoftwareApplication' && node['@id'] !== 'https://vadimohka.com/#century') fail(page, 'Century schema has unstable @id');
+      }
     } catch (error) {
       fail(page, `invalid JSON-LD: ${error.message}`);
     }
@@ -116,6 +115,7 @@ for (const page of PAGES) {
     if (href.trim() === '') { fail(page, 'empty href'); continue; }
     if (/^(https?:|mailto:|tel:|#|data:)/.test(href)) continue;
     if (href.startsWith('//')) continue;
+    if (page === '404.html' && href === '/') continue;
     if (href.startsWith('/')) { fail(page, `absolute local path (breaks project pages): ${href}`); continue; }
     const path = href.split(/[?#]/)[0];
     if (path && !existsSync(resolve(ROOT, path))) fail(page, `internal link not found: ${href}`);
@@ -204,7 +204,7 @@ for (const page of PAGES) {
 // sitemap + robots — public pages only (bare-domain home, no sources/404)
 const sm = existsSync(resolve(ROOT, 'sitemap.xml')) ? read('sitemap.xml') : '';
 const SITEMAP = ['work.html','about.html','century.html','expert.html','enterprise.html','investors.html','founders.html'];
-const CURRENT_LASTMOD = '2026-08-31';
+const CURRENT_LASTMOD = JSON.parse(read('qa/health/search-config.json')).modified;
 if (!sm) fail('sitemap.xml', 'missing');
 else {
   if (!/<loc>https:\/\/vadimohka\.com\/?<\/loc>/.test(sm)) fail('sitemap.xml', 'missing home (bare-domain) loc');
@@ -262,9 +262,6 @@ for (const profile of ['llms.txt', 'llms-full.txt', 'ai-profile.md']) {
 
 const home = read('index.html');
 if (!/<link rel="preload"[^>]+fetchpriority="high"[^>]*>/.test(home)) fail('index.html', 'hero image preload must have fetchpriority=high');
-for (const portrait of ['assets/portraits/vadim-boardroom-640.webp', 'assets/portraits/vadim-warm-640.webp']) {
-  if (!existsSync(resolve(ROOT, portrait))) fail(portrait, 'missing 640px responsive portrait');
-}
 for (const page of PAGES) {
   const html = read(page);
   if (/portraits\/vadim-(?:boardroom|warm)-1536\.webp/.test(html) && !/portraits\/vadim-(?:boardroom|warm)-640\.webp 640w/.test(html)) {

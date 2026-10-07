@@ -1,49 +1,29 @@
 # Vadim Vladymtsev
 
-> Enterprise AI CTO and product operator focused on governed private AI for regulated organisations. CTO at StackLevel Group.
+> Enterprise AI CTO and product operator. CTO at StackLevel Group.
 
-This file is a curated, AI-readable index for https://vadimohka.com. It points language models and AI search systems to the most important public pages and facts about Vadim Vladymtsev.
-
-## Geographic focus
-
-Vadim works frequently from the United States and the United Arab Emirates. These are the primary geographic regions for availability and enterprise AI conversations.
+English-language enterprise AI, technical due diligence and CTO advisory for audiences in the United States and the United Arab Emirates (UAE). Geographic focus is not a claim of offices or residence.
 
 ## Canonical pages
 
-- [Home](https://vadimohka.com/): executive profile and primary positioning.
-- [Century AI Studio](https://century-ai.by/): enterprise AI Studio and operating layer for enterprise AI.
-- [Work](https://vadimohka.com/work.html): selected work, product context, public records and technical/education foundation.
-- [Media & Speaking](https://vadimohka.com/expert.html): dated public records, speaking topics, bios and media formats.
-- [Enterprise AI](https://vadimohka.com/enterprise.html): governed private AI for regulated organisations.
-- [AI Technical Due Diligence](https://vadimohka.com/investors.html): technical assessment of AI product, data, architecture, deployment and execution risk.
-- [Founder support](https://vadimohka.com/founders.html): product architecture, technical focus and delivery rhythm.
-- [About and contact](https://vadimohka.com/about.html#contact): working approach, background and ways to work with Vadim.
+- [Home](https://vadimohka.com/): Vadim Vladymtsev, CTO at StackLevel Group. Enterprise AI strategy, product architecture, technical due diligence and CTO advisory for USA and UAE audiences.
+- [About & Contact](https://vadimohka.com/about.html): Meet Vadim Vladymtsev, CTO at StackLevel Group. Product architecture, enterprise AI and technical judgment. Contact routes for USA and UAE business inquiries.
+- [Century AI Studio](https://vadimohka.com/century.html): Explore Century AI Studio: assistants, workflows, protected data access, private deployment and operational controls for enterprise AI. Product context and sources.
+- [Enterprise AI](https://vadimohka.com/enterprise.html): Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.
+- [AI Technical Due Diligence](https://vadimohka.com/investors.html): AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.
+- [CTO Advisory](https://vadimohka.com/founders.html): CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.
+- [Media & Speaking](https://vadimohka.com/expert.html): Enterprise AI speaker and technical expert Vadim Vladymtsev. Topics, published articles, public appearances and contact routes for media and conference organizers.
+- [Selected Work](https://vadimohka.com/work.html): Explore Vadim Vladymtsev’s enterprise AI work: Century product context, published expertise, engineering experience and source-linked public records.
+- [Sources](https://vadimohka.com/sources.html): Original publications, product references, conference records and professional profiles supporting Vadim Vladymtsev’s enterprise AI work and background.
 
-## Key facts
+## Public profiles and product
 
-- Vadim is CTO at StackLevel Group.
-- Century AI Studio is a corporate AI platform for chat, assistants, workflows, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.
-- Vadim's focus is governed private AI for regulated organisations, connecting product, architecture, security, adoption and controlled production.
-- Vadim's background includes university teaching, programming education and competitive-programming coaching at BSUIR.
-
-## Verified public work
-
-- Finance Mail.ru quotation on emerging AI roles; Vadim is identified as CTO at StackLevel Group (11 January 2026): https://vadimohka.com/sources.html#finance-mail
-- Authored Vaiti article on enterprise AI “pilot hell” (2 March 2026): https://vadimohka.com/sources.html#vaiti
-- M.AI.N AI Community organiser record listing Vadim as CTO of StackLevel Group for practical AI technologies for business (30 April 2026): https://www.instagram.com/p/DW7GULsDNwq/
-- IT-Security official programme listing Vadim as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries (18 March 2026): https://vadimohka.com/sources.html#it-security
-
-## Supporting public references
-
+- [Russian-language personal profile](https://vadimohka.ru/)
 - [LinkedIn](https://www.linkedin.com/in/vadimohka/)
 - [Century AI Studio](https://century-ai.by/)
-- [Stepik course](https://stepik.org/course/86957/promo)
-- [Claude Foundations certificate](https://verify.skilljar.com/c/boo5cp3yw29k)
-- [Google Scholar](https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru)
-- [Codeforces](https://codeforces.com/profile/Vadimohka)
 
-## Extended AI-readable profile
+## Supporting documents
 
-- [Full LLM profile](https://vadimohka.com/llms-full.txt)
-- [Canonical Markdown profile](https://vadimohka.com/ai-profile.md)
+- [Profile summary](https://vadimohka.com/ai-profile.md)
+- [Full public site text](https://vadimohka.com/llms-full.txt)
 - [Structured entity graph](https://vadimohka.com/data/entity-graph.json)

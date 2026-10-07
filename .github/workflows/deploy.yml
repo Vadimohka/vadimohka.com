@@ -24,25 +24,11 @@ jobs:
 
       # Fail the deploy if the static checks don't pass (no broken site ships).
       - name: QA gate
-        run: node qa/check.mjs
+        run: node qa/check.mjs && node qa/test-regressions.mjs && node qa/executive-content.mjs && python3 qa/health/check.py
 
       # Publish only the public site — exclude repo/dev/internal files.
       - name: Assemble _site
-        run: |
-          rsync -a --delete \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='.remember' \
-            --exclude='.playwright-mcp' \
-            --exclude='qa' \
-            --exclude='site-improvement-pack' \
-            --exclude='reports' \
-            --exclude='AGENTS.md' \
-            --exclude='.agents' \
-            --exclude='_site' \
-            --exclude='.gitignore' \
-            --exclude='.DS_Store' \
-            ./ _site/
+        run: node qa/health/build.mjs
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

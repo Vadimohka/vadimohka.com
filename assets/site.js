@@ -108,15 +108,6 @@ if(skipLink && mainContent){
   });
 }
 
-const reveals = document.querySelectorAll('.reveal');
-if(!('IntersectionObserver' in window)){
-  reveals.forEach(el=>el.classList.add('is-visible'));
-}else{
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach((entry)=>{ if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target);} });
-  },{threshold:0});
-  reveals.forEach(el=>io.observe(el));
-}
 const intentCards = document.querySelectorAll('.intent-card[data-intent]');
 const routeResponse = document.querySelector('[data-route-response]');
 const routeTitle = routeResponse?.querySelector('[data-route-title]');
@@ -162,6 +153,7 @@ if(intentCards.length){
     const link = card.querySelector('a[href*="intent="]');
     if(!link) return;
     link.addEventListener('click', event => {
+      if(event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const intent = card.dataset.intent;
       if(!routeDetails[intent] || !routeResponse) return;
       event.preventDefault();
