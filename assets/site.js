@@ -46,6 +46,20 @@ menuControls.forEach(button => {
   button.addEventListener('click', () => {
     setMenuState(button, links, button.getAttribute('aria-expanded') !== 'true');
   });
+  // Keep the whole focused link visible in a height-limited landscape menu.
+  // Some engines focus a partially clipped link without scrolling its container.
+  links.addEventListener('focusin', () => {
+    requestAnimationFrame(() => {
+      const active = document.activeElement;
+      if(!mobileMenuQuery.matches || links.hidden || !links.contains(active)) return;
+      const link = active.getBoundingClientRect();
+      const menu = links.getBoundingClientRect();
+      const top = menu.top + links.clientTop + 6;
+      const bottom = menu.top + links.clientTop + links.clientHeight - 6;
+      if(link.top < top) links.scrollTop += link.top - top;
+      else if(link.bottom > bottom) links.scrollTop += link.bottom - bottom;
+    });
+  });
   // Native button activation already handles Enter and Space.
   button.closest('.nav').addEventListener('focusout', () => {
     requestAnimationFrame(() => {

@@ -122,6 +122,9 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
         await page.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
       }
       await page.evaluate(() => window.scrollTo({top:0,behavior:'instant'}));
+      // networkidle does not guarantee that asynchronous image decoding/painting has finished.
+      await page.locator('main img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+      await page.evaluate(() => new Promise(resolvePaint => requestAnimationFrame(() => requestAnimationFrame(resolvePaint))));
       await page.waitForTimeout(700);
       const invisible = await page.locator('main .reveal').evaluateAll(nodes => nodes.some(node => getComputedStyle(node).opacity !== '1'));
       if (invisible) throw new Error(`${route} ${width}: content stayed transparent after scrolling`);
