@@ -1,0 +1,36 @@
+name: Prepare reviewed site maintenance
+on:
+  push:
+    branches: [maintenance/site-health]
+    paths: ['.github/workflows/maintenance-migration.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install migration-only image and HTML tooling
+        run: python3 -m pip install Pillow==12.3.0 beautifulsoup4==4.14.3
+      - name: Run the plain-source migration and independent guards
+        run: |
+          python3 qa/health/migrate.py
+          node qa/check.mjs
+          node qa/test-regressions.mjs
+          node qa/executive-content.mjs
+          python3 qa/health/check.py
+          node qa/health/build.mjs
+      - name: Save candidate on working branch, excluding migration helpers
+        run: |
+          rm qa/health/migrate.py .github/workflows/maintenance-migration.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'perf seo: improve resource delivery and coherent USA/UAE discovery; remove unused exports'
+          git push origin HEAD:maintenance/site-health

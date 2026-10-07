@@ -1,101 +1,51 @@
-# Vadim Vladymtsev — Ultra Personal Site
+# Vadim Vladymtsev — personal site
 
-Static GitHub Pages site. No build step, no dependencies.
+Static English-language Executive 03 website for enterprise AI, technical due diligence and CTO advisory. USA and UAE are intended audiences, not implied office locations. No production runtime dependencies or third-party font requests.
 
-## Deploy
+## Preview, check and publish
 
-1. Create a GitHub repository.
-2. Upload all files from this folder to the repository root.
-3. Go to Settings → Pages.
-4. Select Deploy from branch → main → root.
-5. Open the published GitHub Pages URL.
+```sh
+python3 -m http.server 4173
+node qa/check.mjs
+node qa/test-regressions.mjs
+node qa/executive-content.mjs
+python3 qa/health/check.py
+node qa/health/build.mjs
+```
 
-## Preview locally
+GitHub Actions publishes `main` using the public allowlist in `qa/health/build.mjs`. Documentation, source notes, QA, old installation packs and reports are not published. A failed gate prevents deployment. The ten public routes and all six contact intents are retained.
 
-    python3 -m http.server 4173
+## Search and AI discovery
 
-Then open http://localhost:4173/
+`qa/health/search-config.json` is the editorial source for titles, descriptions, consistent identity/service metadata and actual modification dates. Run:
 
-## Pages
+```sh
+python3 qa/health/generate-discovery.py --write
+python3 qa/health/generate-discovery.py --check
+```
 
-- `index.html` — main positioning.
-- `enterprise.html` — governed private AI for regulated organisations.
-- `founders.html` — founders / chaos to product.
-- `investors.html` — AI technical diligence / technical judgment.
-- `about.html` — current role, working approach, background and contact routes.
-- `century.html` — product proof.
-- `work.html` — selected work, product context and engineering background.
-- `sources.html` — public source map.
-- `404.html` — styled not-found page.
+The generator synchronizes page heads, the entity graph, XML sitemaps and AI-readable documents with visible content. It does not invent clients, offices, residence, reviews or regional clones. Service nodes, not Person, specify `areaServed`. There is one English version; the Russian profile is related but not a page-for-page translation.
 
-## QA
+`llms.txt` supplements crawlable HTML; it is not a ranking guarantee. Sitemap dates are explicit editorial dates, never refreshed merely by deployment. Original source and claim registers remain in `docs/archive/`, with current ledgers in `qa/brand/`.
 
-Dependency-free static checks (pure Node, no browser, no install). Verifies every
-page has a title, meta description, canonical/OG/Twitter tags, a `lang` attribute and
-exactly one `<h1>`; every image has `alt` + `width`/`height`; internal links and assets
-resolve; and there are no empty hrefs, absolute local paths, duplicate ids,
-production TODOs or placeholder form actions. It also checks claim/source ledger
-references, stable Person JSON-LD, navigation parity, public-signal source records,
-canonical/sitemap equality, and robots sitemap references.
+Historical content baselines stay intact. `qa/health/approved-changes.json` records specific old/new hashes for authorized maintenance changes; semantic content checks remain active. Future changes must update those explicit exceptions deliberately, not replace historical baselines.
 
-    node qa/check.mjs        # from the repo root
-    node qa/test-regressions.mjs
+## Browser and performance checks
 
-Optional browser QA uses development-only Playwright and axe-core tooling:
+```sh
+cd qa/browser
+npm ci
+npx playwright install chromium
+npm test
+# BROWSER=firefox or BROWSER=webkit after installing that engine
+```
 
-    cd qa/browser && npm ci && npx playwright install chromium && npm test
+The browser suite checks 28 viewports, all ten routes, fonts/images, keyboard/menu/resize behavior, no-JavaScript content, reduced motion, source anchors, English US/UAE locale contexts, nested 404 assets and axe findings.
 
-It checks all 10 public pages at 19 viewport sizes, from 320 to 1920px,
-including both sides of the navigation/hero breakpoints and short landscape
-screens. Checks cover element-level clipping, aligned containers, portrait
-framing, touch targets, keyboard focus during menu/viewport changes, contact
-intents, no-JavaScript content, reduced motion and serious/critical axe findings.
-Full-page screenshots cover every route at 390 and 1440px.
+The Site health workflow compares the pre-maintenance `a5fd47a` snapshot and candidate using pinned Lighthouse 13.4.1, with three home-mobile runs and spot checks on other pages. Raw reports distinguish lab measurements from real-user Core Web Vitals and from real HTTPS availability checks. A single runner does not measure geographic USA/UAE latency. Missing field data is reported as unavailable.
 
-`Browser QA` runs automatically on relevant pull requests (and can be started
-manually), testing Chromium, Firefox and WebKit in parallel and uploading
-screenshots for each engine. Locally, select another installed engine with:
+## Assets
 
-    cd qa/browser && npx playwright install firefox && BROWSER=firefox npm test
+The supplied portrait, approved font files and their licenses remain unchanged. Responsive WebP versions are derivatives of the credited original photographs. Closing photographs are native lazy-loaded images; decorative imagery does not imply offices or customer relationships. Provenance is recorded in `assets/executive/credits.json`.
 
-The homepage uses `assets/portraits/vadim-home-720.webp`, optimized from the
-provided 720 x 900 portrait without cropping or upscaling. Its eager image and
-preload reference the same file. The homepage uses an SVG silhouette mask and an intentional responsive chest-up
-crop to match the approved composition; the source image is unchanged. Internal
-portrait frames retain 4:5 framing. Supporting photographs retain their natural
-image proportions. The homepage architecture scene is explicitly illustrative,
-not a live product screenshot. Decorative photographs do not imply clients,
-offices or endorsements. Image sources and font licenses are recorded in
-`assets/executive/credits.json` and adjacent OFL license files.
-
-    node qa/executive-content.mjs
-
-This additional check protects 21 original files, all factual homepage paragraphs,
-links, anchors and the original metadata. Editorial heading/label changes are
-listed explicitly rather than weakening or regenerating the baseline.
-
-When network access is available, re-check the key public proof links with:
-
-    node qa/external-link-check.mjs
-
-This reports inaccessible sources for review without silently removing evidence.
-
-`qa/` is dev-only and is not needed by the published site.
-
-The Pages workflow assembles a clean `_site/` artifact and excludes `qa/`,
-`site-improvement-pack/`, `reports/`, `.agents/`, `AGENTS.md`, and other local/development
-paths. GitHub Pages does not provide an arbitrary `/index.html` HTTP 301 in this
-repository; the canonical tag and root sitemap URL use `https://vadimohka.com/`.
-A true redirect requires a hosting or edge rule and must be verified separately.
-
-The contact section is intentionally form-free until an approved endpoint and
-privacy owner exist. Its functional routes are direct LinkedIn/company links;
-the six intent query parameters (`enterprise`, `diligence`, `founder`,
-`executive`, `media`, `speaking`) preselect the route when JavaScript is
-available and remain ordinary links when it is not.
-
-## Notes
-
-No build step. No dependencies. Works on GitHub Pages. Canonical / Open Graph /
-sitemap URLs use the `vadimohka.com` domain — update them if you deploy to a
-custom domain.
+Unused historical exports and obsolete installation/prompt packs are removed; Git history retains recovery copies. GH Pages controls cache and compression headers; changing CDN policy or adding Search Console/Bing verification requires the relevant service access.
