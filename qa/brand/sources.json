@@ -30,13 +30,14 @@
       "subject": "Media quotation on emerging AI roles",
       "supports": "Quotes Vadim Vladymtsev, CTO at StackLevel, on GenAI Product Owner, LLMOps/MLOps, AI Governance, Model Risk, AI Evaluator and red-teaming roles.",
       "source_type": "media article",
-      "url": "https://vadimohka.com/sources.html#finance-mail",
+      "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
       "status": "verified",
       "authority": "medium-high",
       "allowed_use": "Verified media quotation/public-expertise record.",
       "caveat": "Use the outlet's exact title and date; do not imply a dedicated profile interview.",
       "source_id": "S003",
-      "date_checked_or_event": "2026-01-11"
+      "date_checked_or_event": "2026-01-11",
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
     },
     {
       "subject": "Secondary publication of emerging AI roles article",
@@ -54,25 +55,27 @@
       "subject": "Author article on pilot hell",
       "supports": "Article authored by Vadim Vladymtsev: 'ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»'.",
       "source_type": "publication article",
-      "url": "https://vadimohka.com/sources.html#vaiti",
+      "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
       "status": "verified",
       "authority": "medium",
       "allowed_use": "Verified authored article and thought-work record.",
       "caveat": "Link the article directly and preserve original language/title.",
       "source_id": "S005",
-      "date_checked_or_event": "2026-03-02"
+      "date_checked_or_event": "2026-03-02",
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
     },
     {
       "subject": "Vaiti author page",
       "supports": "Author page for Vadim Vladymtsev.",
       "source_type": "publisher author page",
-      "url": "https://vadimohka.com/sources.html#vaiti",
+      "url": "https://vaiti.io/author/001495/",
       "status": "verified",
       "authority": "medium",
       "allowed_use": "Author identity/entity link.",
       "caveat": "Article-level links remain stronger evidence.",
       "source_id": "S006",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
     },
     {
       "subject": "M.AI.N AI Community appearance",
@@ -114,13 +117,14 @@
       "subject": "IT-Security conference",
       "supports": "Official programme lists Vadim Vladymtsev, representative of StackLevel Group, in a presidium discussion on AI in Belarus and neighbouring countries.",
       "source_type": "official event programme",
-      "url": "https://vadimohka.com/sources.html#it-security",
+      "url": "https://its.it-event.by/2-uncategorised/61-programma",
       "status": "verified",
       "authority": "high",
       "allowed_use": "Verified conference/panel appearance with exact role and session.",
       "caveat": "Use programme wording; do not upgrade 'representative/presidium participant' to keynote.",
       "source_id": "S010",
-      "date_checked_or_event": "2026-03-18"
+      "date_checked_or_event": "2026-03-18",
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
     },
     {
       "subject": "Vadim's IT-Security event post",

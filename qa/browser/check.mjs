@@ -4,11 +4,17 @@ import { resolve } from 'node:path';
 import { chromium, firefox, webkit } from 'playwright';
 import { auditLayout, checkResponsive } from './responsive.mjs';
 import '../executive-content.mjs';
+import {checkHealthInteractions} from '../health/browser.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const ROOT = resolve(new URL('../..', import.meta.url).pathname);
 const BASE = 'http://127.0.0.1:4173';
 const viewports = [
+  {width:375,height:812,name:'375'},
+  {width:412,height:915,name:'412'},
+  {width:414,height:896,name:'414'},
+  {width:820,height:1180,name:'820'},
+  {width:834,height:1194,name:'834'},
   {width:1920,height:1080,name:'1920'},
   {width:1440,height:1000,name:'1440'},
   {width:1280,height:800,name:'1280'},
@@ -225,7 +231,7 @@ try {
     await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});
     for (const node of await axePage.locator('.reveal').all()) {
       await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
-      await axePage.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
+      await axePage.waitForFunction(el => getComputedStyle(el).opacity === '1', await node.elementHandle());
     }
     await axePage.evaluate(() => window.scrollTo({top:0,behavior:'instant'}));
     await axePage.waitForFunction(() => [...document.querySelectorAll('main .reveal')].every(node => getComputedStyle(node).opacity === '1'));
@@ -234,6 +240,7 @@ try {
     if (serious.length) throw new Error(`${route}: axe serious/critical violations: ${JSON.stringify(serious.map(v => ({id:v.id,nodes:v.nodes.map(n => ({target:n.target,summary:n.failureSummary}))})))}`);
   }
   await axeContext.close();
+  await checkHealthInteractions({page, browser, BASE});
   await checkResponsive({browser, page, BASE, ROOT, allPages, viewports});
   console.log(`PASS — ${browserName} browser QA covered ${viewports.length} viewports, menu/skip/no-JS/reduced-motion/contact routes and axe`);
 } finally {

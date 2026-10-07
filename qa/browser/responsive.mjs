@@ -125,7 +125,7 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
       await page.addStyleTag({content:'html{scroll-behavior:auto!important}'});
       for (const node of await page.locator('.reveal').all()) {
         await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
-        await page.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
+        await page.waitForFunction(el => getComputedStyle(el).opacity === '1', await node.elementHandle());
       }
       // Lazy images need a real viewport intersection before decode() in Firefox.
       // Trigger each request by scrolling, then verify loading and decoding; do not

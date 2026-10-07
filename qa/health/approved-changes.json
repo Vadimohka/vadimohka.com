@@ -1,0 +1,99 @@
+{
+  "sourceCommit": "a5fd47a74aefa09336194202b312298b21dc8cbf",
+  "purpose": "Owner-requested SEO/GEO, responsive startup and resource optimization. Keep historical baselines intact.",
+  "hashes": {
+    "protected:sitemap.xml": {
+      "before": "6b2367198bce008ea624a18f6b1712031a7cfbc333b3bb298e0ab93514a3deda",
+      "after": "a31e9af6a4609e835e5bd365579e50c7692a76bbf8012d19691db76406fde520"
+    },
+    "protected:sitemap-ai.xml": {
+      "before": "6778d60b3e41b8c8ca2073c90db1c09f2bce1695eb1d2d1af6514c64b1702783",
+      "after": "c353f76b4fc1f162c2adbbdf7204a1b707e36adef8e7c9f1fc949f714e4a919e"
+    },
+    "protected:sitemap-images.xml": {
+      "before": "25537c14e50c1cb1718a41d8fa616d0fee807331f47d9e97bfc3011011af9bdf",
+      "after": "c19d4d3f0560425e3406ea5700bcf4e3afc9025282a1e124bb2a240c698d45d0"
+    },
+    "protected:robots.txt": {
+      "before": "311112fcc9332c14e5d22e5f10f4a8124cb77cc528f0ca80bae0aec98a0870eb",
+      "after": "1409447a6272f215dc606ea8d937dd76a4549885b8126ffabd3e2e0a121bac0c"
+    },
+    "protected:data/entity-graph.json": {
+      "before": "e4a2534175555456c2d9258dae4387c59950016474d2394cf461876d400bc4d7",
+      "after": "2cc43a7ea142174f4f64faf3a3aaa7254de8e638c7a04c9e854e36f9cec6403f"
+    },
+    "protected:ai-profile.md": {
+      "before": "991809359ddd37c48a0503aaaefaf58a2e8d5d4bc63a0bc38397c7a813be76e1",
+      "after": "69c706d286e4e776b12fb7612f94f8fcb4a4d22660a861679c10ec35cc580663"
+    },
+    "protected:llms.txt": {
+      "before": "0dedb638e99770897a56a30b865ea6dafbc5b9618a36bb8885adcb2bffcbca87",
+      "after": "2cb8e61b42d02e81efa12be86dc5eab83f0354d46216a99c983d69bac9c133b6"
+    },
+    "protected:llms-full.txt": {
+      "before": "772d72bb19d791125c2a6d9984642d9d54fcf7214754cc14a5b93081da80ac40",
+      "after": "701aa0c3b92163cf701f6a981355ddd522bd260b793ad6792e6814adf1c223ac"
+    },
+    "protected:.github/workflows/deploy.yml": {
+      "before": "5e931a76791939b5d582f190a3aea1cd2a61b3d1b98ea9659dbb06e7c91eca69",
+      "after": "47c8c40d5209b2ccb7d182c2ab99d25447fe6bbc9a9fc6ac75898c2074228074"
+    },
+    "home-head": {
+      "before": "4b0b5624fea3d2dcf295fd5d9f3961113abcf8a91ae7e6a46b1adab239394a00",
+      "after": "a66d2e024c67f1c1edb3120c0f0b998b7a848101b88483a9295342887bb5df53"
+    },
+    "locked:index.html": {
+      "before": "464601f30713356ba523a71af4dddb23cc3051e35a3c633cac7e46d709d5e99d",
+      "after": "29497b267296b568dde3af1c264278804de52a59fe7fd9fb956aaafe65b1cec8"
+    },
+    "locked:assets/site.css": {
+      "before": "1aee211412f766f498d71c1f0a729c354bc7d0fca91691260784551e7ac3072a",
+      "after": "a8cae93876e095518db489d7ce37237db5813d9f72e7b5f54121f95672e9eebb"
+    },
+    "locked:assets/site.js": {
+      "before": "92ee5f349e10a307072a4c3329f40ba88358ae85eca6f67cbb7cf95f94f4b2e0",
+      "after": "5874ab6886866cab6ccdfa1b5f7f9389601599167620d9f9353151110cbdefad"
+    },
+    "internal-head:404.html": {
+      "before": "178b9cfbbca651efc3564d7fb4442f089343fc511e17e6bec82e315ee71e7200",
+      "after": "4b8a320c41108cbd36bbc7f2a375401541fcf2a5038646df9fec9b2a131f70d2"
+    },
+    "internal-head:about.html": {
+      "before": "9f6bd8c2bb9f919310630dadd024efadf8a1106c6cda898115e254c0b10988f4",
+      "after": "8038c5f3c770ca9e57214e736a36d9518a2a0b72847f0b67f2da82eb8cdc98fe"
+    },
+    "internal-head:century.html": {
+      "before": "6f9b709e72cc618bd2a4b13338a31a50ed76233f1d166c85caa75c4cd863bb7a",
+      "after": "6a3bf7aa1e53d1ee2c25fa3f1aab01651d228d2d642147b03798299e4b02b805"
+    },
+    "internal-head:enterprise.html": {
+      "before": "421e97eb29ca74df0dcbdb85cee9855d0de0543b304f3e8816d0130b4f3f69c7",
+      "after": "d7e369860f2f88dbff976e317ad26fb74dac63cf7e0587b99c738d7a4bf23340"
+    },
+    "internal-head:expert.html": {
+      "before": "5a2e1955f5de617fc82e6c47ac36d605ae0d7c1ca6efc9397249fea7e1f706ea",
+      "after": "44a80936d34af6e0208059e9aa9b242b1ab8710353f5cb719b53acdfd7211801"
+    },
+    "internal-head:founders.html": {
+      "before": "fb6e14f2d2d5193c500be1a8d5b25707a5a24dbd03f574410fcd6332bee9eb1f",
+      "after": "9cf7aa2dc343963587b3c3a9b62b5b7555568119c996a608cb2aa566422078d8"
+    },
+    "internal-head:investors.html": {
+      "before": "9c59306777d251eb1ec10481cf1122cb4c176896da33c273b568b3957469a034",
+      "after": "837bb29a5c0d75b98a1575821e13321475b518d8c6ab66bc55f6ace894449848"
+    },
+    "internal-head:sources.html": {
+      "before": "aff4eb4373bcb587cc8d351d0187df2abf97866639640eb5d3b538a7f615d0cb",
+      "after": "e5da5a210c8144cd75af2b759a0be36aced6bd42e0c8308aaeab4cfd9558cd07"
+    },
+    "internal-head:work.html": {
+      "before": "d427eb57a67ae624a43571ec765a6ade2b84bee49cda76312a221d869b3a4246",
+      "after": "06c465e1acba0fea677ebf757cc02e9e4ddff8a7f4b2e6038828b32ecb5c1029"
+    }
+  },
+  "sourceRepairs": {
+    "https://vadimohka.com/sources.html#finance-mail": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
+    "https://vadimohka.com/sources.html#vaiti": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
+    "https://vadimohka.com/sources.html#it-security": "https://its.it-event.by/2-uncategorised/61-programma"
+  }
+}

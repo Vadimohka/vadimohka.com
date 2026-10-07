@@ -1,0 +1,112 @@
+[
+  {
+    "path": "assets/better.png",
+    "bytes": 2339410,
+    "sha256": "60f45696b89e382b8ce59c9f284a5dad96e029bf01199b244fda721d72495b9c"
+  },
+  {
+    "path": "assets/boardroom.jpg",
+    "bytes": 204049,
+    "sha256": "b1f28f3a8fa7ec40375ae4fdf427404552266f3d65a3168f34c664410b15b2f5"
+  },
+  {
+    "path": "assets/boardroom.webp",
+    "bytes": 104340,
+    "sha256": "fec43f1ae1243a5ca5c1de3be59cf064401abb1ed018a4f73a9eda14fe642071"
+  },
+  {
+    "path": "assets/classic.jpg",
+    "bytes": 380738,
+    "sha256": "fef2516867fffa8e7544078c89c12408472d30b6e3190238333167be443ef569"
+  },
+  {
+    "path": "assets/classic.webp",
+    "bytes": 339672,
+    "sha256": "e05a117f29208826c4bc244a59235eb6e04f27f8ee59a80aac9bc6acf1fda1eb"
+  },
+  {
+    "path": "assets/dark.jpg",
+    "bytes": 248209,
+    "sha256": "27a9bc932c21f0b20e04f5eb1504bf679b39451d9933d820426d7c963bf07035"
+  },
+  {
+    "path": "assets/dark.webp",
+    "bytes": 155548,
+    "sha256": "caa83cf12c9a5a5053e2511e93a05cebed5cc38912994cffe4e82b72dc44326d"
+  },
+  {
+    "path": "assets/field.webp",
+    "bytes": 41336,
+    "sha256": "f3e5ab7c5d20bce9d22b0d87e1dad57174b4ba2077236cb19d1256e3f95f4119"
+  },
+  {
+    "path": "assets/og.jpg",
+    "bytes": 102866,
+    "sha256": "b0d34c73ca24bbbf115f3c18856d63dc280b993a15618c73485da9ee50d21256"
+  },
+  {
+    "path": "assets/portraits/vadim-boardroom-1536.webp",
+    "bytes": 88454,
+    "sha256": "814a21226f696e685daed33a3ebb7a6792d6c93f9d05e6fc954ea5e6f2fa3b85"
+  },
+  {
+    "path": "assets/portraits/vadim-boardroom-640.webp",
+    "bytes": 9670,
+    "sha256": "91a37cfb93ab9d8dc99f34ed33287f3aecdf2e3f4132481ee0dd2622c9496c32"
+  },
+  {
+    "path": "assets/portraits/vadim-boardroom-960.webp",
+    "bytes": 26050,
+    "sha256": "87de6ba8b3816b59606853ac6877188f9a7474d80f5716190f4c146a13862a86"
+  },
+  {
+    "path": "assets/portraits/vadim-casual-960.webp",
+    "bytes": 28606,
+    "sha256": "1c1f1af1d40fb3afbcba119cfcbad8100e8c70e1b190e5c7d4574fbac83c9360"
+  },
+  {
+    "path": "assets/portraits/vadim-classic-1536.webp",
+    "bytes": 314466,
+    "sha256": "57cd406378b709c1f6f41b22636bfe86a311290125f52989963048723b3cbb06"
+  },
+  {
+    "path": "assets/portraits/vadim-classic-960.webp",
+    "bytes": 62740,
+    "sha256": "d190b8dd06e5bbf04d235a57957ed45c44ce580f3cd20f50660683accf6f5b11"
+  },
+  {
+    "path": "assets/portraits/vadim-educator-1122.webp",
+    "bytes": 60642,
+    "sha256": "eafdac23d3c9fb4bfbba04d6b391a5b1caf24eddb34868550fd7445203abe3b3"
+  },
+  {
+    "path": "assets/portraits/vadim-warm-1536.webp",
+    "bytes": 73512,
+    "sha256": "9d4b3bcbd7103bd57f59845ab7bdd625e05662248156af6d24f76a2ca6a9138f"
+  },
+  {
+    "path": "assets/portraits/vadim-warm-640.webp",
+    "bytes": 7216,
+    "sha256": "dbe4b7f27670ac61743cba7ed37c9e827686a501b9860b6a7c2ecf179f89d1de"
+  },
+  {
+    "path": "assets/portraits/vadim-warm-960.webp",
+    "bytes": 23606,
+    "sha256": "8af3ea77d1ee423643b1a75934416167868c8a6e7e59635368912e6a41066c8a"
+  },
+  {
+    "path": "assets/teacher.jpg",
+    "bytes": 185578,
+    "sha256": "651635abe9b6308505bc8fca933644067d988cde16ae14d34f76efafc3b103cb"
+  },
+  {
+    "path": "assets/teacher.png",
+    "bytes": 1924591,
+    "sha256": "b6dd83322084a857bad040ae748e009f1f8ce9ccf7ad83af71deb415add6f457"
+  },
+  {
+    "path": "assets/teacher.webp",
+    "bytes": 127626,
+    "sha256": "61c9363dc086bac58d7d4c9527b8715cb0eb12b6145b3133f7a039450eadf5fa"
+  }
+]
