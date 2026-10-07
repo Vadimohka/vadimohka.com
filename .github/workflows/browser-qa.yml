@@ -1,7 +1,13 @@
-name: Browser QA (manual)
+name: Browser QA
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - '*.html'
+      - 'assets/**'
+      - 'qa/**'
+      - '.github/workflows/browser-qa.yml'
 
 permissions:
   contents: read
@@ -9,16 +15,29 @@ permissions:
 jobs:
   browser:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     defaults:
       run:
         working-directory: qa/browser
     steps:
       - uses: actions/checkout@v4
+      - name: Archive the exact tested source for reproducible previews
+        working-directory: .
+        run: git archive --format=zip --output=/tmp/vadimohka-tested-source.zip HEAD
+      - name: Upload tested source
+        uses: actions/upload-artifact@v4
+        with:
+          name: vadimohka-tested-source
+          path: /tmp/vadimohka-tested-source.zip
+          retention-days: 7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: qa/browser/package-lock.json
+      - name: Static and regression checks
+        working-directory: .
+        run: node qa/check.mjs && node qa/test-regressions.mjs
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm test
@@ -29,3 +48,4 @@ jobs:
           name: vadimohka-browser-screenshots
           path: qa/screenshots/T08-*.png
           if-no-files-found: ignore
+          retention-days: 7
