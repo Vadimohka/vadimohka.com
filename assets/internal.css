@@ -307,3 +307,9 @@
 }
 @media(prefers-reduced-motion:reduce){.inner-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media print{.inner-page main{color:#111}.inner-page .inner-hero,.inner-page .inner-section{background:#fff}.inner-page .inner-hero::before,.inner-page .inner-closing::before{display:none}.inner-page :is(.studio-visual,.review-visual,.editorial-visual,.profile-portrait,.page-index){display:none}.inner-page .inner-hero-grid,.inner-page .section-intro{display:block}.inner-page .inner-title span,.inner-page .section-intro>.h2{color:#111}}
+
+/* Keep numeric chapter labels on one line and give illustrated documents a real bottom inset. */
+.inner-page .page-index a span{flex-shrink:0;white-space:nowrap}
+.inner-page .page-index a span:first-child{min-width:14px}
+.inner-page .review-page--front .report-list>div{min-height:28px}
+.inner-page .review-page--front .report-foot{margin-top:8px}

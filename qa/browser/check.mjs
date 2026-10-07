@@ -14,6 +14,8 @@ const viewports = [
   {width:1280,height:800,name:'1280'},
   {width:1151,height:900,name:'1151'},
   {width:1150,height:900,name:'1150'},
+  {width:1101,height:900,name:'1101'},
+  {width:1100,height:900,name:'1100'},
   {width:1024,height:768,name:'1024'},
   {width:901,height:768,name:'901'},
   {width:900,height:768,name:'900'},
