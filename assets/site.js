@@ -2,6 +2,15 @@ document.documentElement.classList.add('js');
 
 const mobileMenuQuery = window.matchMedia('(max-width: 1150px)');
 const menuControls = document.querySelectorAll('.menu-toggle[aria-controls]');
+// CSS can hide a focused control before the media-query callback runs.
+let menuFocus = null;
+document.addEventListener('focusin', event => {
+  menuFocus = event.target.closest('.nav') ? event.target : null;
+});
+document.addEventListener('pointerdown', event => {
+  if(!event.target.closest('.nav')) menuFocus = null;
+});
+window.addEventListener('blur', () => { menuFocus = null; });
 const setMenuState = (button, links, open, returnFocus = false) => {
   const nav = button.closest('.nav');
   button.setAttribute('aria-expanded', String(open));
@@ -15,15 +24,19 @@ const setMenuState = (button, links, open, returnFocus = false) => {
   }
 };
 const syncMenusToViewport = () => {
+  const active = document.activeElement === document.body ? menuFocus : document.activeElement;
   menuControls.forEach(button => {
     const links = document.getElementById(button.getAttribute('aria-controls'));
     if(!links) return;
     if(!mobileMenuQuery.matches){
       links.hidden = false;
+      if(active === button) links.querySelector('a')?.focus();
       button.setAttribute('aria-expanded','false');
       button.closest('.nav').classList.remove('is-open');
     }else if(button.getAttribute('aria-expanded') !== 'true'){
+      const focusInMenu = links.contains(active);
       links.hidden = true;
+      if(focusInMenu) button.focus();
     }
   });
 };
@@ -33,10 +46,13 @@ menuControls.forEach(button => {
   button.addEventListener('click', () => {
     setMenuState(button, links, button.getAttribute('aria-expanded') !== 'true');
   });
-  button.addEventListener('keydown', event => {
-    if(event.key !== 'Enter' && event.key !== ' ') return;
-    event.preventDefault();
-    setMenuState(button, links, button.getAttribute('aria-expanded') !== 'true');
+  // Native button activation already handles Enter and Space.
+  button.closest('.nav').addEventListener('focusout', () => {
+    requestAnimationFrame(() => {
+      if(mobileMenuQuery.matches && !button.closest('.nav').contains(document.activeElement)){
+        setMenuState(button, links, false);
+      }
+    });
   });
   links.addEventListener('click', event => {
     if(event.target.closest('a') && mobileMenuQuery.matches) setMenuState(button, links, false);
@@ -59,6 +75,15 @@ document.addEventListener('click', event => {
 if(typeof mobileMenuQuery.addEventListener === 'function') mobileMenuQuery.addEventListener('change', syncMenusToViewport);
 syncMenusToViewport();
 
+// Keep anchor offsets and the landscape menu tied to the actual header height.
+const siteHeader = document.querySelector('.site-header');
+const syncHeaderHeight = () => {
+  if(siteHeader) document.documentElement.style.setProperty('--header-height', `${siteHeader.getBoundingClientRect().height}px`);
+};
+syncHeaderHeight();
+if(siteHeader && 'ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(siteHeader);
+else window.addEventListener('resize', syncHeaderHeight, {passive:true});
+
 const skipLink = document.querySelector('.skip-link');
 const mainContent = document.getElementById('main-content');
 if(skipLink && mainContent){
@@ -75,14 +100,16 @@ if(!('IntersectionObserver' in window)){
 }else{
   const io = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{ if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target);} });
-  },{threshold:.12});
+  },{threshold:0});
   reveals.forEach(el=>io.observe(el));
 }
 const light = document.querySelector('.cursor-light');
 if(light){
+  const pointerEffects = window.matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
   window.addEventListener('pointermove', e => {
-    light.style.left = e.clientX + 'px';
-    light.style.top = e.clientY + 'px';
+    if(!pointerEffects.matches) return;
+    light.style.setProperty('--pointer-x', e.clientX + 'px');
+    light.style.setProperty('--pointer-y', e.clientY + 'px');
   }, {passive:true});
 }
 const intentCards = document.querySelectorAll('.intent-card[data-intent]');
