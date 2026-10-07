@@ -39,6 +39,10 @@ def metadata(name,cfg):
     if name in ('index.html','about.html'):
         lines+=['<link rel="preload" as="image" href="assets/portraits/vadim-home-720.webp" type="image/webp" fetchpriority="high" />',
                 '<link rel="preload" as="image" href="assets/executive/horizon.webp" type="image/webp" fetchpriority="high" />']
+    hero_photos={'work.html':'architecture','enterprise.html':'architecture','founders.html':'workspace','expert.html':'workspace'}
+    if name in hero_photos:
+        photo=hero_photos[name]
+        lines.append(f'<link rel="preload" as="image" href="assets/executive/{photo}.webp" imagesrcset="assets/executive/{photo}-640.webp 640w, assets/executive/{photo}-768.webp 768w, assets/executive/{photo}.webp 1000w" imagesizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1100px) 45vw, 600px" type="image/webp" fetchpriority="high" />')
     if name=='404.html':lines.insert(1,'<base href="/" />')
     lines+=['<link rel="stylesheet" href="assets/site.css" />']
     if name!='index.html':lines+=['<link rel="stylesheet" href="assets/internal.css" />']

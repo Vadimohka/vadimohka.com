@@ -68,15 +68,15 @@
     },
     "internal-head:enterprise.html": {
       "before": "421e97eb29ca74df0dcbdb85cee9855d0de0543b304f3e8816d0130b4f3f69c7",
-      "after": "d7e369860f2f88dbff976e317ad26fb74dac63cf7e0587b99c738d7a4bf23340"
+      "after": "e35424541c5fac05031d0689e108937bb397ebccc7712c3392fe02cbe4f7a85b"
     },
     "internal-head:expert.html": {
       "before": "5a2e1955f5de617fc82e6c47ac36d605ae0d7c1ca6efc9397249fea7e1f706ea",
-      "after": "44a80936d34af6e0208059e9aa9b242b1ab8710353f5cb719b53acdfd7211801"
+      "after": "83cbce6d46bbd36c187cd1de8734efc7ea186301e4daa6abe8fd7c2753c42179"
     },
     "internal-head:founders.html": {
       "before": "fb6e14f2d2d5193c500be1a8d5b25707a5a24dbd03f574410fcd6332bee9eb1f",
-      "after": "9cf7aa2dc343963587b3c3a9b62b5b7555568119c996a608cb2aa566422078d8"
+      "after": "436d78c0770f7f6a19c5687a6f21c080268488921b5b94e801a004ddb81e7393"
     },
     "internal-head:investors.html": {
       "before": "9c59306777d251eb1ec10481cf1122cb4c176896da33c273b568b3957469a034",
@@ -88,7 +88,7 @@
     },
     "internal-head:work.html": {
       "before": "d427eb57a67ae624a43571ec765a6ade2b84bee49cda76312a221d869b3a4246",
-      "after": "06c465e1acba0fea677ebf757cc02e9e4ddff8a7f4b2e6038828b32ecb5c1029"
+      "after": "2688042cecc077e496ff8a64d90a51b8fd5e97de9c1f71822ce039cea4424101"
     }
   },
   "sourceRepairs": {

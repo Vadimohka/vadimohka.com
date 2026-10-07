@@ -9,5 +9,5 @@
   "earth_credit": "NASA Earth Observatory / Joshua Stevens, Suomi NPP VIIRS data. 2016 composite. Decorative interpretation, not a current map.",
   "fonts": "Google Fonts: Playfair Display, DM Sans. SIL Open Font License; subset WOFF2 files and license texts included.",
   "usage": "Editorial atmosphere only. No client, office-location, product-interface or endorsement claims.",
-  "responsive_variants": "The -640.webp and dubai-960.webp files are proportionally resized from the corresponding credited originals, encoded as WebP at quality 82. Original media remains unchanged."
+  "responsive_variants": "The -640.webp, -768.webp and dubai-960.webp files are proportionally resized from the corresponding credited originals, encoded as WebP at quality 82. Original media remains unchanged."
 }
