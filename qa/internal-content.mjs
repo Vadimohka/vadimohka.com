@@ -16,6 +16,10 @@ let blocks=0;
 for(const [file,before] of Object.entries(baseline.pages)){
  assert.equal(before.sourceHash,original.unchanged[file],`${file}: baseline must describe original content`);
  const html=read(file);
+ if(file==='expert.html'){
+  const summaries=[...html.matchAll(/<summary>[\s\S]*?<\/summary>/g)].map(m=>normalize(m[0]).replace(/[+×]/g,'').trim());
+  for(const label of ['25 words','50 words','100 words'])assert.ok(summaries.includes(label),`expert.html: biography summary lost: ${label}`);
+ }
  const originalHead=html.match(/<head>[\s\S]*?<\/head>/)[0].replace('<link rel="stylesheet" href="assets/internal.css" />','');
  assert.equal(hash(originalHead),before.head,`${file}: metadata/structured data changed`);
  for(const tag of ['header','footer'])assert.equal(hash(html.match(new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`))[0]),before[tag],`${file}: ${tag} changed`);
