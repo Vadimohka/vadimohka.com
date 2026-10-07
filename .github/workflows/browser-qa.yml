@@ -45,9 +45,14 @@ jobs:
           cache-dependency-path: qa/browser/package-lock.json
       - name: Static and regression checks
         working-directory: .
-        run: node qa/check.mjs && node qa/test-regressions.mjs
+        run: node qa/check.mjs && node qa/test-regressions.mjs && python3 qa/health/check.py
       - run: npm ci
-      - run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Install Chromium without unrelated OS upgrades
+        if: matrix.browser == 'chromium'
+        run: npx playwright install --only-shell chromium
+      - name: Install Firefox or WebKit with required system libraries
+        if: matrix.browser != 'chromium'
+        run: npx playwright install --with-deps ${{ matrix.browser }}
       - run: npm test
       - name: Upload browser screenshots
         if: always()
