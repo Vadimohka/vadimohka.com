@@ -9,6 +9,7 @@ const read=f=>readFileSync(resolve(ROOT,f),'utf8');
 const hash=s=>createHash('sha256').update(s).digest('hex');
 const baseline=JSON.parse(read('qa/internal-content-baseline.json'));
 const original=JSON.parse(read('qa/executive-content-baseline.json'));
+const editorial=JSON.parse(read('qa/editorial-titles.json'));
 export const internalPages=new Set(Object.keys(baseline.pages));
 const normalize=html=>html.replace(/<[^>]*>/g,' ').replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos|nbsp|rarr);/gi,(all,code)=>code.startsWith('#x')?String.fromCodePoint(parseInt(code.slice(2),16)):code.startsWith('#')?String.fromCodePoint(parseInt(code.slice(1),10)):({amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',rarr:'→'}[code]??all)).replace(/\s+/g,' ').trim();
 for(const [file,expected] of Object.entries(baseline.locked))assert.equal(hash(read(file)),expected,`${file}: homepage/shared production file changed`);
@@ -24,7 +25,8 @@ for(const [file,before] of Object.entries(baseline.pages)){
  assert.equal(hash(originalHead),before.head,`${file}: metadata/structured data changed`);
  for(const tag of ['header','footer'])assert.equal(hash(html.match(new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`))[0]),before[tag],`${file}: ${tag} changed`);
  const text=normalize(html.match(/<main\b[\s\S]*?<\/main>/)[0]);
- for(const unit of before.text){assert.ok(text.includes(unit),`${file}: original content lost: ${unit}`);blocks++;}
+ for(const [oldTitle,newTitle] of Object.entries(editorial[file]||{})){assert.ok(before.text.includes(oldTitle), `${file}: unknown editorial source heading`);assert.ok(text.includes(newTitle), `${file}: replacement heading missing: ${newTitle}`);}
+ for(const unit of before.text){assert.ok(text.includes(editorial[file]?.[unit]||unit),`${file}: original content lost: ${unit}`);blocks++;}
  const hrefs=new Set([...html.matchAll(/\bhref="([^"]+)"/g)].map(m=>normalize(m[1])));
  for(const href of before.hrefs)assert.ok(hrefs.has(href),`${file}: destination lost: ${href}`);
  const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));

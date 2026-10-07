@@ -18,6 +18,8 @@ const viewports = [
   {width:901,height:768,name:'901'},
   {width:900,height:768,name:'900'},
   {width:768,height:1024,name:'768'},
+  {width:761,height:1024,name:'761'},
+  {width:760,height:1024,name:'760'},
   {width:701,height:900,name:'701'},
   {width:700,height:900,name:'700'},
   {width:640,height:960,name:'640'},
@@ -102,6 +104,13 @@ try {
         if (await page.locator('.inner-hero').count() !== 1) throw new Error(`${route}: missing internal-page composition`);
         if (await page.locator('.hero-photo').count()) throw new Error(`${route}: old repeated portrait layout returned`);
         if (route === 'about.html' && await page.locator('.profile-portrait img[src="assets/portraits/vadim-home-720.webp"]').count() !== 1) throw new Error('About portrait missing');
+        const type = await page.locator('h1').evaluate(el => ({size:parseFloat(getComputedStyle(el).fontSize), family:getComputedStyle(el).fontFamily}));
+        if (!type.family.includes('Playfair Display') || type.size < 37) throw new Error(`${route}: editorial headline hierarchy regressed`);
+        if (route === 'century.html' || route === 'work.html') {
+          if (await page.locator('.studio-visual .studio-window').count() !== 2) throw new Error(`${route}: missing layered architectural illustration`);
+          if (!(await page.locator('.studio-visual figcaption').innerText()).includes('not a product screenshot')) throw new Error('Illustration boundary missing');
+        }
+
       }
       if (route === 'index.html' && viewport.name === '1440') {
         const sectionCount = await page.locator('main > section').count();
