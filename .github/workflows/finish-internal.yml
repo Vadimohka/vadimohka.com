@@ -1,0 +1,64 @@
+name: Finish internal page review
+on:
+  push:
+    branches: [design/internal-executive-03]
+    paths: ['.github/workflows/finish-internal.yml']
+permissions:
+  contents: write
+jobs:
+  finish:
+    if: github.ref == 'refs/heads/design/internal-executive-03'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: design/internal-executive-03
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply exact reviewed edits
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, hashlib
+          p=Path('assets/internal.css');s=p.read_text()
+          old='.inner-page .platform-inputs span{padding:'
+          assert s.count(old)==1
+          s=s.replace(old,'.inner-page .platform-inputs span{min-width:0;overflow-wrap:anywhere;padding:')
+          old='.inner-page .disclosure-sign{color:'
+          assert s.count(old)==1
+          s=s.replace(old,'.inner-page .disclosure-sign{display:grid;place-items:center;flex:none;width:24px;height:24px;margin-inline:6px;line-height:1;color:')
+          p.write_text(s)
+          p=Path('expert.html');s=p.read_text()
+          for label in ['25 words','50 words','100 words']:
+              old='<summary><span aria-hidden="true" class="disclosure-sign">+</span></summary><div class="bio-copy"><p class="proof-role">'+label+'</p>'
+              new='<summary><span class="bio-label">'+label+'</span><span aria-hidden="true" class="disclosure-sign">+</span></summary><div class="bio-copy">'
+              assert s.count(old)==1,label
+              s=s.replace(old,new)
+          p.write_text(s)
+          p=Path('qa/internal-content.mjs');s=p.read_text()
+          insert=r""" if(file==='expert.html'){
+            const summaries=[...html.matchAll(/<summary>[\s\S]*?<\/summary>/g)].map(m=>normalize(m[0]).replace(/[+×]/g,'').trim());
+            for(const label of ['25 words','50 words','100 words'])assert.ok(summaries.includes(label),`expert.html: biography summary lost: ${label}`);
+           }
+          """
+          assert s.count(' const originalHead=')==1
+          s=s.replace(' const originalHead=',insert+' const originalHead=')
+          p.write_text(s)
+          expected={'assets/internal.css':'597784d50a753f0d0d4347ae29e145fe5c568b0a4d0cc770d9570a940f1bc436','expert.html':'b0a72790b59863584ff14da677a178355d9da6f0c23f8932efd92a3d7e72833e','qa/internal-content.mjs':'5b0ebc6f46e4cca20c12ea11145793724f88962bcc79704f1e08a078bff5c7e7'}
+          for filename,sha in expected.items():
+              actual=hashlib.sha256(Path(filename).read_bytes()).hexdigest()
+              assert actual==sha,(filename,actual)
+          print('Exact reviewed source hashes verified.')
+      - name: Check preserved content and static site
+        run: node qa/check.mjs && node qa/test-regressions.mjs && node qa/executive-content.mjs
+      - name: Commit reviewed correction and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/internal.css expert.html qa/internal-content.mjs
+          git rm .github/workflows/finish-internal.yml
+          git diff --cached --stat
+          git commit -m 'fix: label native biography disclosures and keep narrow layouts within bounds'
+          git push origin HEAD:design/internal-executive-03
