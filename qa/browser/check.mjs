@@ -160,9 +160,17 @@ try {
   const axePage = await axeContext.newPage();
   for (const route of ['index.html','about.html','work.html']) {
     await axePage.goto(`${BASE}/${route}?browserqa=axe`, {waitUntil:'networkidle'});
+    // Audit the final rendered content, not a transient opacity during a reveal.
+    await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});
+    for (const node of await axePage.locator('.reveal').all()) {
+      await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
+      await axePage.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
+    }
+    await axePage.evaluate(() => window.scrollTo({top:0,behavior:'instant'}));
+    await axePage.waitForFunction(() => [...document.querySelectorAll('main .reveal')].every(node => getComputedStyle(node).opacity === '1'));
     const results = await new AxeBuilder({page:axePage}).withTags(['wcag2a','wcag2aa']).analyze();
     const serious = results.violations.filter(v => v.impact === 'serious' || v.impact === 'critical');
-    if (serious.length) throw new Error(`${route}: axe serious/critical violations: ${serious.map(v => v.id).join(', ')}`);
+    if (serious.length) throw new Error(`${route}: axe serious/critical violations: ${JSON.stringify(serious.map(v => ({id:v.id,nodes:v.nodes.map(n => ({target:n.target,summary:n.failureSummary}))})))}`);
   }
   await axeContext.close();
   await checkResponsive({browser, page, BASE, ROOT, allPages, viewports});

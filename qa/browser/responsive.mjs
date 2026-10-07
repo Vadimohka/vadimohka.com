@@ -11,8 +11,10 @@ export async function auditLayout(page, label) {
     for (const node of document.querySelectorAll('header *, main *, footer *')) {
       const rect = node.getBoundingClientRect();
       if (!rect.width || !rect.height) continue;
-      if (rect.left < -1 || rect.right > width + 1 || node.scrollWidth > node.clientWidth + 2) {
-        failures.push(`overflow/clipping: ${node.tagName}.${node.className}`);
+      // Inline boxes have no clientWidth; Firefox may still report their scrollWidth.
+      const clipped = node.clientWidth > 0 && node.scrollWidth > node.clientWidth + 2;
+      if (rect.left < -1 || rect.right > width + 1 || clipped) {
+        failures.push(`overflow/clipping: ${node.tagName}.${node.className} bounds=${rect.left}:${rect.right}, scroll/client=${node.scrollWidth}/${node.clientWidth}`);
       }
     }
     const containers = [...document.querySelectorAll('.nav, main > section > .container, .footer > .container')];
