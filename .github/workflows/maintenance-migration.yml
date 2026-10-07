@@ -26,9 +26,10 @@ jobs:
           node qa/executive-content.mjs
           python3 qa/health/check.py
           node qa/health/build.mjs
-      - name: Save candidate on working branch, excluding migration helpers
+      - name: Save content only; workflow edits require the authorized repository connection
         run: |
-          rm qa/health/migrate.py .github/workflows/maintenance-migration.yml
+          rm qa/health/migrate.py
+          git restore --source=HEAD --staged --worktree .github/workflows
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
