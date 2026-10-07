@@ -1,17 +1,29 @@
 import { spawn } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { chromium } from 'playwright';
+import { chromium, firefox, webkit } from 'playwright';
+import { auditLayout, checkResponsive } from './responsive.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const ROOT = resolve(new URL('../..', import.meta.url).pathname);
 const BASE = 'http://127.0.0.1:4173';
 const viewports = [
+  {width:1920,height:1080,name:'1920'},
   {width:1440,height:1000,name:'1440'},
+  {width:1280,height:800,name:'1280'},
+  {width:1151,height:900,name:'1151'},
+  {width:1150,height:900,name:'1150'},
   {width:1024,height:768,name:'1024'},
+  {width:901,height:768,name:'901'},
+  {width:900,height:768,name:'900'},
   {width:768,height:1024,name:'768'},
+  {width:640,height:960,name:'640'},
+  {width:480,height:800,name:'480'},
   {width:390,height:844,name:'390'},
-  {width:320,height:568,name:'320'}
+  {width:360,height:780,name:'360'},
+  {width:320,height:568,name:'320'},
+  {width:844,height:390,name:'landscape-844'},
+  {width:568,height:320,name:'landscape-568'}
 ];
 const allPages = ['index.html','about.html','work.html','century.html','enterprise.html','investors.html','founders.html','expert.html','sources.html','404.html'];
 
@@ -21,7 +33,10 @@ const stopServer = () => server.kill('SIGTERM');
 process.on('exit', stopServer);
 await new Promise(resolveReady => setTimeout(resolveReady, 500));
 
-const browser = await chromium.launch({headless:true});
+const browserName = process.env.BROWSER || 'chromium';
+const browserType = {chromium, firefox, webkit}[browserName];
+if (!browserType) throw new Error(`Unsupported BROWSER: ${browserName}`);
+const browser = await browserType.launch({headless:true});
 mkdirSync(resolve(ROOT, 'qa/screenshots'), {recursive:true});
 try {
   const page = await browser.newPage();
@@ -50,6 +65,7 @@ try {
     await page.setViewportSize({width:viewport.width,height:viewport.height});
     for (const route of allPages) {
       await page.goto(`${BASE}/${route}?browserqa=alignment`, {waitUntil:'networkidle'});
+      await auditLayout(page, `${route} ${viewport.name}`);
       const alignment = await page.evaluate(() => {
         const boxes = [...document.querySelectorAll('main > section > .container')].map(node => {
           const rect = node.getBoundingClientRect();
@@ -65,7 +81,7 @@ try {
       if (alignment.edges.length > 1) throw new Error(`${route} ${viewport.name}: section containers are misaligned (${alignment.edges.join(', ')})`);
       const expectedHero = route === 'founders.html'
         ? 'vadim-educator-1122.webp'
-        : (route === 'index.html' || route === 'enterprise.html' ? 'vadim-boardroom-1536.webp' : 'vadim-warm-1536.webp');
+        : (route === 'index.html' ? 'vadim-home-720.webp' : (route === 'enterprise.html' ? 'vadim-boardroom-1536.webp' : 'vadim-warm-1536.webp'));
       if (!alignment.heroImage.includes(expectedHero)) throw new Error(`${route} ${viewport.name}: expected hero portrait is missing`);
       if (route === 'index.html' && viewport.name === '1440') {
         const sectionCount = await page.locator('main > section').count();
@@ -144,12 +160,23 @@ try {
   const axePage = await axeContext.newPage();
   for (const route of ['index.html','about.html','work.html']) {
     await axePage.goto(`${BASE}/${route}?browserqa=axe`, {waitUntil:'networkidle'});
+    // Audit the final rendered content, not a transient opacity during a reveal.
+    await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});
+    for (const node of await axePage.locator('.reveal').all()) {
+      await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
+      await axePage.waitForFunction(el => el.classList.contains('is-visible'), await node.elementHandle());
+    }
+    await axePage.evaluate(() => window.scrollTo({top:0,behavior:'instant'}));
+    await axePage.waitForFunction(() => [...document.querySelectorAll('main .reveal')].every(node => getComputedStyle(node).opacity === '1'));
     const results = await new AxeBuilder({page:axePage}).withTags(['wcag2a','wcag2aa']).analyze();
     const serious = results.violations.filter(v => v.impact === 'serious' || v.impact === 'critical');
-    if (serious.length) throw new Error(`${route}: axe serious/critical violations: ${serious.map(v => v.id).join(', ')}`);
+    if (serious.length) throw new Error(`${route}: axe serious/critical violations: ${JSON.stringify(serious.map(v => ({id:v.id,nodes:v.nodes.map(n => ({target:n.target,summary:n.failureSummary}))})))}`);
   }
   await axeContext.close();
-  console.log(`PASS — browser QA covered ${viewports.length} viewports, menu/skip/no-JS/reduced-motion/contact routes and axe`);
+  await checkResponsive({browser, page, BASE, ROOT, allPages, viewports});
+  console.log(`PASS — ${browserName} browser QA covered ${viewports.length} viewports, menu/skip/no-JS/reduced-motion/contact routes and axe`);
 } finally {
   await browser.close();
+  stopServer();
 }
+

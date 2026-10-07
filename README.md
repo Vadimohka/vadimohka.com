@@ -45,10 +45,23 @@ Optional browser QA uses development-only Playwright and axe-core tooling:
 
     cd qa/browser && npm ci && npx playwright install chromium && npm test
 
-It covers 1440, 1024, 768, 390 and 320px viewports, mobile menu/skip-link
-behavior, contact intents, no-JavaScript navigation, reduced motion, overflow,
-screenshots and serious/critical axe findings. A manual GitHub Actions workflow
-(`Browser QA (manual)`) runs the same suite and uploads screenshots.
+It checks all 10 public pages at 16 viewport sizes, from 320 to 1920px,
+including both sides of the navigation/hero breakpoints and short landscape
+screens. Checks cover element-level clipping, aligned containers, portrait
+framing, touch targets, keyboard focus during menu/viewport changes, contact
+intents, no-JavaScript content, reduced motion and serious/critical axe findings.
+Full-page screenshots cover every route at 390 and 1440px.
+
+`Browser QA` runs automatically on relevant pull requests (and can be started
+manually), testing Chromium, Firefox and WebKit in parallel and uploading
+screenshots for each engine. Locally, select another installed engine with:
+
+    cd qa/browser && npx playwright install firefox && BROWSER=firefox npm test
+
+The homepage uses `assets/portraits/vadim-home-720.webp`, optimized from the
+provided 720 x 900 portrait without cropping or upscaling. Its eager image and
+preload reference the same file. Portrait frames retain a 4:5 ratio at every
+breakpoint; supporting photographs retain their natural image proportions.
 
 When network access is available, re-check the key public proof links with:
 
