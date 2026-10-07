@@ -108,6 +108,13 @@ try {
         if (route === 'about.html' && await page.locator('.profile-portrait img[src="assets/portraits/vadim-home-720.webp"]').count() !== 1) throw new Error('About portrait missing');
         const type = await page.locator('h1').evaluate(el => ({size:parseFloat(getComputedStyle(el).fontSize), family:getComputedStyle(el).fontFamily}));
         if (!type.family.includes('Playfair Display') || type.size < 37) throw new Error(`${route}: editorial headline hierarchy regressed`);
+        const brokenNumbers = await page.locator('.page-index a span:first-child').evaluateAll(ns => ns.filter(n => n.offsetHeight > parseFloat(getComputedStyle(n).lineHeight) + 1).length);
+        if (brokenNumbers) throw new Error(`${route} ${viewport.name}: chapter numbers wrap`);
+        if (route === 'investors.html') {
+          const inset = await page.locator('.review-page--front').evaluate(el => { const f=el.querySelector('.report-foot'); return el.clientHeight - f.offsetTop - f.offsetHeight; });
+          if (inset < 8) throw new Error(`${route} ${viewport.name}: illustrated document content clips (${inset}px inset)`);
+        }
+
         if (route === 'century.html' || route === 'work.html') {
           if (await page.locator('.studio-visual .studio-window').count() !== 2) throw new Error(`${route}: missing layered architectural illustration`);
           if (!(await page.locator('.studio-visual figcaption').innerText()).includes('not a product screenshot')) throw new Error('Illustration boundary missing');
