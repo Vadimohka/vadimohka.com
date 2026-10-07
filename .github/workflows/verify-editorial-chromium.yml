@@ -1,0 +1,40 @@
+name: Verify final editorial source in Chromium
+on:
+  push:
+    branches: [design/internal-editorial-refinement]
+    paths: [.github/workflows/verify-editorial-chromium.yml]
+permissions:
+  contents: read
+jobs:
+  chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      BROWSER: chromium
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3cbc82d4d1fe394fec7347e8e3e98b4da6b216de
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: qa/browser/package-lock.json
+      - name: Verify source and static guards
+        run: |
+          test "$(git rev-parse HEAD)" = 3cbc82d4d1fe394fec7347e8e3e98b4da6b216de
+          node qa/check.mjs && node qa/test-regressions.mjs && node qa/executive-content.mjs
+      - name: Install locked browser tooling and headless Chromium
+        working-directory: qa/browser
+        run: |
+          npm ci
+          npx playwright install --only-shell chromium
+      - name: Run the full unmodified browser suite
+        working-directory: qa/browser
+        run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: editorial-final-chromium
+          path: qa/screenshots/T08-*.png
+          retention-days: 7
