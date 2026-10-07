@@ -7,6 +7,6 @@
   "photography_license": "https://unsplash.com/license",
   "earth_texture": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/144000/144898/BlackMarble_2016_01deg.jpg",
   "earth_credit": "NASA Earth Observatory / Joshua Stevens, Suomi NPP VIIRS data. 2016 composite. Decorative interpretation, not a current map.",
-  "fonts": "Google Fonts: Instrument Serif, DM Sans. SIL Open Font License; license files included.",
+  "fonts": "Google Fonts: Playfair Display, DM Sans. SIL Open Font License; subset WOFF2 files and license texts included.",
   "usage": "Editorial atmosphere only. No client, office-location, product-interface or endorsement claims."
 }
