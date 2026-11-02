@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
-import { approvedHash } from './health/approved-changes.mjs';
+import { approvedHash, restoredSource, removedText, removedId, checkContentRevision } from './health/approved-changes.mjs';
 import { internalPages } from './internal-content.mjs';
 const ROOT = resolve(new URL('..', import.meta.url).pathname);
 const read = name => readFileSync(resolve(ROOT, name), 'utf8');
@@ -23,6 +23,7 @@ for (const [file, expected] of Object.entries(baseline.unchanged)) {
 const home = read('index.html');
 assert.equal(hash(home.match(/<head>[\s\S]*?<\/head>/)[0]), approvedHash('home-head', baseline.home.head), 'Homepage metadata/preload changed');
 const main = normalize(home.match(/<main\b[\s\S]*?<\/main>/)[0]);
+checkContentRevision('index.html',baseline.home.text,main);
 // Only editorial labels/headlines change. Every factual paragraph remains verbatim,
 // including the original mandate in the visible, native details disclosure.
 const editorial = new Map([
@@ -36,15 +37,16 @@ const editorial = new Map([
   ['For speaking and expert commentary, see the public-work archive .', ['All media & speaking']]
 ]);
 for (const unit of baseline.home.text) {
+  if (removedText('index.html',unit)) continue;
   for (const replacement of editorial.get(unit) || [unit]) {
     assert.ok(main.includes(replacement), `Homepage content lost: ${unit} -> ${replacement}`);
   }
 }
 
 const hrefs = new Set([...home.matchAll(/\bhref="([^"]+)"/g)].map(m => normalize(m[1])));
-for (const href of baseline.home.hrefs) assert.ok(hrefs.has(href), `Homepage destination lost: ${href}`);
+for (const href of baseline.home.hrefs) {const destination=restoredSource('index.html',href);if(destination!==null)assert.ok(hrefs.has(destination), `Homepage destination lost: ${href}`);}
 const ids = new Set([...home.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
-for (const id of baseline.home.ids) assert.ok(ids.has(id), `Homepage anchor lost: ${id}`);
+for (const id of baseline.home.ids) if(!removedId('index.html',id))assert.ok(ids.has(id), `Homepage anchor lost: ${id}`);
 assert.equal((home.match(/class="hero-photo\b/g)||[]).length, 1, 'Homepage must have only one portrait hero');
 assert.ok(home.includes('Illustrative architecture · based on the published product capabilities'), 'Conceptual product visual needs its disclosure');
 console.log(`PASS — content integrity: ${Object.keys(baseline.unchanged).length} protected files, ${baseline.home.text.length} homepage text blocks, links and anchors`);

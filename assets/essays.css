@@ -1,0 +1,37 @@
+/* Essays share the site's typography and palette, with a quiet reading measure. */
+.essay-archive-hero{padding-block:clamp(48px,7vw,96px) 36px}
+.essay-archive-hero h1{font:400 clamp(58px,8vw,100px)/1.05 var(--serif);letter-spacing:-.04em;margin:0 0 24px}
+.essay-archive-hero .page-lead{max-width:630px;font-size:18px;line-height:1.75;color:#c1c4c4}
+.essay-archive-hero .text-action{margin-top:24px;font-size:13px}
+.essay-archive{padding-bottom:64px}
+.essay-card{display:grid;grid-template-columns:190px minmax(0,1fr);gap:20px 48px;padding:34px 0;border-top:1px solid var(--line-strong)}
+.essay-card-meta{display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--muted)}
+.essay-card-meta time{color:var(--gold)}
+.essay-card h2{font:400 clamp(27px,3.1vw,39px)/1.2 var(--serif);letter-spacing:-.025em;margin:0 0 14px;max-width:770px;text-wrap:balance}
+.essay-card h2 a{display:inline-block;color:var(--paper);text-decoration-thickness:1px;text-underline-offset:6px}
+.essay-card h2 a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.essay-card p{font-size:16px;line-height:1.75;max-width:690px;margin:0;color:var(--muted)}
+.essay-card .tlink{font-size:13px;margin-top:18px}
+.essay-reading{max-width:770px;margin-inline:auto;padding:36px 0 72px}
+.essay-breadcrumbs{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.essay-breadcrumbs a{color:var(--gold)}
+.essay-header .kicker{font-size:11px;color:var(--gold);letter-spacing:.12em;margin-bottom:20px}
+.essay-header h1{font:400 clamp(37px,5.4vw,66px)/1.1 var(--serif);letter-spacing:-.035em;margin:0 0 28px;text-wrap:balance}
+.essay-meta{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;font-size:13px;line-height:1.7;color:var(--muted);padding-bottom:30px;border-bottom:1px solid var(--line-strong)}
+.essay-meta a{color:var(--paper)}
+.essay-meta a:hover{color:var(--gold)}
+.essay-updated{font-size:12px;color:var(--muted-2);margin:12px 0 0}
+.essay-thesis{font:400 clamp(22px,2.5vw,27px)/1.6 var(--serif);color:#eee5d4;margin:36px 0 30px}
+.essay-prose{font:400 clamp(17px,1.5vw,19px)/1.85 var(--sans);color:#cbd0ce}
+.essay-prose p{margin:0 0 1.4em}
+.essay-author{display:flex;gap:18px;align-items:center;padding:28px 0;margin-top:36px;border-block:1px solid var(--line-strong)}
+.essay-author img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none}
+.essay-author p{font-size:13px;line-height:1.65;color:var(--muted);margin:4px 0 0}
+.essay-author a{font-size:15px;color:var(--paper)}
+.essay-next{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding-top:30px}
+.essay-next a{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding-block:10px;color:var(--paper);font:400 22px/1.35 var(--serif)}
+.essay-next a:last-child{text-align:right;align-items:flex-end}
+.essay-next span{font:400 11px/1.5 var(--sans);color:var(--gold);letter-spacing:.05em}
+.essay-next a:hover{color:var(--gold)}
+@media(max-width:700px){.essay-card{grid-template-columns:minmax(0,1fr);gap:16px;padding-block:27px}.essay-card-meta{flex-direction:row;flex-wrap:wrap;gap:8px 16px}.essay-reading{padding-top:28px}.essay-breadcrumbs{margin-bottom:32px}.essay-meta{gap:7px 14px}.essay-next{gap:18px}.essay-next a{font-size:20px}}
+@media print{.essay-reading{max-width:none;padding:0}.essay-breadcrumbs,.essay-next{display:none}.essay-thesis,.essay-prose,.essay-author p,.essay-meta,.essay-updated{color:#222}.essay-author{break-inside:avoid}}

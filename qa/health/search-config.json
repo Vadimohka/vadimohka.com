@@ -1,6 +1,6 @@
 {
   "baseURL": "https://vadimohka.com/",
-  "modified": "2026-10-07",
+  "modified": "2026-11-03",
   "person": {
     "@type": "Person",
     "@id": "https://vadimohka.com/#person",
@@ -30,43 +30,10 @@
       "ICPC coaching"
     ],
     "sameAs": [
-      "https://vadimohka.ru/",
       "https://www.linkedin.com/in/vadimohka/",
       "https://github.com/Vadimohka",
       "https://codeforces.com/profile/Vadimohka",
-      "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
-    ],
-    "subjectOf": [
-      {
-        "@type": "NewsArticle",
-        "name": "New roles in work: a market for hybrid professions is forming in Russia",
-        "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
-        "datePublished": "2026-01-11",
-        "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
-      },
-      {
-        "@type": "Article",
-        "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
-        "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
-        "datePublished": "2026-03-02",
-        "author": {
-          "@id": "https://vadimohka.com/#person"
-        }
-      },
-      {
-        "@type": "Event",
-        "name": "M.AI.N AI Community",
-        "url": "https://www.instagram.com/p/DW7GULsDNwq/",
-        "startDate": "2026-04-30",
-        "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
-      },
-      {
-        "@type": "Event",
-        "name": "IT-Security programme discussion on AI",
-        "url": "https://its.it-event.by/2-uncategorised/61-programma",
-        "startDate": "2026-03-18",
-        "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
-      }
+      "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en"
     ],
     "hasCredential": [
       {
@@ -116,43 +83,10 @@
         "ICPC coaching"
       ],
       "sameAs": [
-        "https://vadimohka.ru/",
         "https://www.linkedin.com/in/vadimohka/",
         "https://github.com/Vadimohka",
         "https://codeforces.com/profile/Vadimohka",
-        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
-      ],
-      "subjectOf": [
-        {
-          "@type": "NewsArticle",
-          "name": "New roles in work: a market for hybrid professions is forming in Russia",
-          "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
-          "datePublished": "2026-01-11",
-          "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
-        },
-        {
-          "@type": "Article",
-          "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
-          "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
-          "datePublished": "2026-03-02",
-          "author": {
-            "@id": "https://vadimohka.com/#person"
-          }
-        },
-        {
-          "@type": "Event",
-          "name": "M.AI.N AI Community",
-          "url": "https://www.instagram.com/p/DW7GULsDNwq/",
-          "startDate": "2026-04-30",
-          "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
-        },
-        {
-          "@type": "Event",
-          "name": "IT-Security programme discussion on AI",
-          "url": "https://its.it-event.by/2-uncategorised/61-programma",
-          "startDate": "2026-03-18",
-          "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
-        }
+        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en"
       ],
       "hasCredential": [
         {
@@ -176,7 +110,6 @@
       "@type": "Organization",
       "@id": "https://vadimohka.com/#stacklevel",
       "name": "StackLevel Group",
-      "url": "https://stacklevel.group/en/company",
       "employee": {
         "@id": "https://vadimohka.com/#person"
       }
@@ -198,7 +131,7 @@
     "name": "Century AI Studio",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "url": "https://century-ai.by/",
+    "url": "https://century-ai.eu/",
     "description": "Corporate AI platform for chat, assistants, workflow modes, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.",
     "keywords": "enterprise AI, corporate AI platform, AI Studio, workflows, text-to-SQL, private deployment, audit, access policies"
   },
@@ -337,21 +270,21 @@
     },
     "expert.html": {
       "title": "Enterprise AI Speaker & Expert | Vadim Vladymtsev",
-      "description": "Enterprise AI speaker and technical expert Vadim Vladymtsev. Topics, published articles, public appearances and contact routes for media and conference organizers.",
+      "description": "Enterprise AI speaker and technical expert Vadim Vladymtsev. Original essays, speaking topics, short biographies and contact routes for editors and event organizers.",
       "socialImage": "https://vadimohka.com/assets/social/og-expert.png",
       "schemaType": "CollectionPage",
       "label": "Media & Speaking"
     },
     "work.html": {
       "title": "Enterprise AI Work & Public Record | Vadim Vladymtsev",
-      "description": "Explore Vadim Vladymtsev’s enterprise AI work: Century product context, published expertise, engineering experience and source-linked public records.",
+      "description": "Explore Vadim Vladymtsev’s enterprise AI work: Century product context, original essays, engineering experience and technical leadership.",
       "socialImage": "https://vadimohka.com/assets/social/og-home.png",
       "schemaType": "CollectionPage",
       "label": "Selected Work"
     },
     "sources.html": {
       "title": "Sources & Public References | Vadim Vladymtsev",
-      "description": "Original publications, product references, conference records and professional profiles supporting Vadim Vladymtsev’s enterprise AI work and background.",
+      "description": "Product information, professional profiles, public code, research and a learning credential connected with Vadim Vladymtsev’s work.",
       "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
       "schemaType": "CollectionPage",
       "label": "Sources"
@@ -362,6 +295,100 @@
       "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
       "schemaType": "WebPage",
       "label": "Not Found"
+    },
+    "essays/index.html": {
+      "title": "Essays on Engineering, AI & Teams | Vadim Vladymtsev",
+      "description": "Original essays by Vadim Vladymtsev on software architecture, AI at work, shared understanding, project communities and authorship.",
+      "label": "Essays",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "CollectionPage",
+      "modified": "2026-11-03"
+    },
+    "essays/revising-my-architecture/index.html": {
+      "title": "Revising an Architecture I Designed | Vadim Vladymtsev",
+      "description": "What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.",
+      "label": "Revising an Architecture I Designed",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "modified": "2026-11-03",
+      "article": {
+        "published": "2026-11-02",
+        "modified": "2026-11-03",
+        "keywords": [
+          "Engineering",
+          "Software architecture",
+          "Responsibility"
+        ]
+      }
+    },
+    "essays/who-gets-the-time-ai-saves/index.html": {
+      "title": "Who Gets the Time AI Saves? | Vadim Vladymtsev",
+      "description": "AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.",
+      "label": "Who Gets the Time AI Saves?",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "modified": "2026-11-03",
+      "article": {
+        "published": "2026-10-29",
+        "modified": "2026-11-03",
+        "keywords": [
+          "Artificial intelligence",
+          "Productivity",
+          "Management"
+        ]
+      }
+    },
+    "essays/shared-understanding/index.html": {
+      "title": "Shared Understanding Takes Work | Vadim Vladymtsev",
+      "description": "What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.",
+      "label": "Shared Understanding Takes Work",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "modified": "2026-11-03",
+      "article": {
+        "published": "2026-10-22",
+        "modified": "2026-11-03",
+        "keywords": [
+          "Teams",
+          "Coaching",
+          "Engineering leadership"
+        ]
+      }
+    },
+    "essays/after-the-applause/index.html": {
+      "title": "What Happens After the Applause | Vadim Vladymtsev",
+      "description": "A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.",
+      "label": "What Happens After the Applause",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "modified": "2026-11-03",
+      "article": {
+        "published": "2026-10-15",
+        "modified": "2026-11-03",
+        "keywords": [
+          "Entrepreneurship",
+          "Communities",
+          "Responsibility"
+        ]
+      }
+    },
+    "essays/recognising-myself-in-my-work/index.html": {
+      "title": "Recognizing Myself in My Work | Vadim Vladymtsev",
+      "description": "Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.",
+      "label": "Recognizing Myself in My Work",
+      "socialImage": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "schemaType": "WebPage",
+      "modified": "2026-11-03",
+      "article": {
+        "published": "2026-10-08",
+        "modified": "2026-11-03",
+        "keywords": [
+          "Authorship",
+          "Personal projects",
+          "Engineering"
+        ]
+      }
     }
-  }
+  },
+  "assetsVersion": "20261103-essays"
 }

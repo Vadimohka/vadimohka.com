@@ -1,7 +1,7 @@
 # Vadim Vladymtsev — public site text
 
 Canonical website: https://vadimohka.com/
-Content updated: 2026-10-07
+Content updated: 2026-11-03
 
 This document is generated from the visible English site. Links and the human-readable pages are authoritative. It does not establish offices, client engagements or personal presence in a country.
 
@@ -23,8 +23,6 @@ C Century Private enterprise AI
 ### Private AI. Operational control.
 
 Century brings assistants, workflows, governed data access, audit, observability and deployment control into one enterprise product surface.
-
-AI Product Leader · IT-Akademgrad 2025 See the public record →
 
 THE OPERATING LAYER
 
@@ -64,27 +62,25 @@ I’m Vadim Vladymtsev, CTO at StackLevel Group. I work across product, architec
 
 Enterprise AI becomes useful only when the product, data access, controls, ownership and delivery system work together. My focus is the operating layer around the model: what the system is allowed to do, how it is evaluated, how users adopt it, and how it remains observable in production.
 
-### Selected public work.
+### Essays.
 
-Media 11 Jan 2026
+Essay · 2 November 2026
 
-### Finance Mail.ru · New AI roles
+### Revising an Architecture I Designed
 
-Quotation as CTO at StackLevel Group · 11 January 2026.
+What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
 
-Article 2 Mar 2026
+Essay · 29 October 2026
 
-### Vaiti · Escaping pilot hell
+### Who Gets the Time AI Saves?
 
-Authored article on enterprise AI adoption · 2 March 2026.
+AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
 
-Panel 18 Mar 2026
+Essay · 22 October 2026
 
-### IT-Security programme
+### Shared Understanding Takes Work
 
-StackLevel Group representative in a presidium discussion · 18 March 2026.
-
-Organiser record listing CTO role for practical AI technologies for business · 30 April 2026.
+What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
 
 Let’s talk
 
@@ -127,13 +123,13 @@ BSUIR
 
 ### Senior lecturer and ICPC coach
 
-An official university article describes Vadim as a senior lecturer, head of the Olympiad school and coach.
+Vadim’s background includes university teaching, leading an Olympiad school and coaching competitive programming teams at BSUIR.
 
 Programming education
 
 ### Coaching and competition
 
-Public BSUIR records connect Vadim with student programming teams and competition organisation.
+Together with Ivan Udovin, Vadim helped coach So Stuffy, a competitive programming team. Explaining an algorithm so someone else can implement it remains a useful lesson in teamwork.
 
 Contact
 
@@ -262,29 +258,29 @@ Requests, models, tokens and costs can be logged for operational review and audi
 
 The product source describes protections against data leakage and prompt injection; implementation depends on the deployment context.
 
-05 · Relationship and product context
+05 · Product context
 
-### Product record & relationship.
+### Product & practice.
 
-Century is the product anchor for the governed-private-AI positioning on this site. Public product material describes capabilities and recognition; it does not establish Vadim's exact Century title or personal ownership, so this page does not assign one.
+Century brings assistants, workflows and governed data access into an enterprise AI platform. This page introduces its architecture and operating model.
 
-Century recognition
+Century AI Studio
 
-### Third place, AI Product Leader
+### The current product.
 
-Century received third place in the AI Product Leader category at IT-Akademgrad 2025. This is product recognition, not a personal award.
+Explore the current capabilities, deployment options and contact route on the Century website.
 
-Boundary
+Engineering perspective
 
-### What this page covers.
+### Decisions behind the system.
 
-No live adoption count, client case, roadmap promise, personal title or deployment outcome is added without a confirmed source.
+Read about architecture, responsibility and the choices that shape useful AI products.
 
 06 · Product site
 
 ### Explore what comes next.
 
-Use the Century site for the current product description and contact route. Use this page for the evidence boundary and relationship context.
+Use the Century site for the current product description, deployment options and contact route.
 
 ## Enterprise AI
 https://vadimohka.com/enterprise.html
@@ -376,11 +372,11 @@ Product
 
 Century's public product material describes private/on-premise/VPC deployment, local processing, audit/logging and integrations. This is company-level product material, not a personal client case.
 
-Published · 2 March 2026
+Essay · 29 October 2026
 
-### Why enterprise AI pilots stall.
+### Who Gets the Time AI Saves?
 
-Vadim authored a Vaiti article on “pilot hell” and the move from pilots toward production, a relevant public insight for executives assessing operating readiness.
+AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
 
 06 · Next action
 
@@ -555,11 +551,11 @@ Product
 
 Century is the product anchor for governed private enterprise AI. Its public product site provides company-level product context; it is not presented here as a personal client outcome.
 
-BSUIR background
+Essay · 22 October 2026
 
-### Teaching and programming systems.
+### Shared Understanding Takes Work
 
-Official BSUIR records support specific teaching, coaching and competition-organisation context. These records show an engineering foundation, not a commercial outcome.
+What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
 
 05 · Boundaries
 
@@ -572,39 +568,35 @@ CTO advisory inquiries from founders and executive teams in the United States an
 ## Media & Speaking
 https://vadimohka.com/expert.html
 
-Media & Speaking · Public archive
+Media & Speaking
 
 ### Ideas for real-world AI.
 
-A compact archive for editors, event organisers and executives: dated records, exact roles, speaking topics and reusable bios.
+Essays, speaking topics and short biographies for editors, organizers and executive audiences.
 
-01 · Public records
+01 · Writing
 
-### Selected appearances.
+### Selected essays.
 
-Media conversation · Emerging AI roles
+First-person reflections on engineering decisions, AI at work and how teams learn.
 
-### Finance Mail.ru
+Essay · 2 November 2026
 
-Finance Mail.ru · 11 January 2026 · Quoted as CTO at StackLevel Group.
+### Revising an Architecture I Designed
 
-Published article · Enterprise AI adoption
+What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
 
-### Vaiti — escaping pilot hell
+Essay · 29 October 2026
 
-Vaiti · 2 March 2026 · Author.
+### Who Gets the Time AI Saves?
 
-Programme · AI in Belarus and neighbouring countries
+AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
 
-### IT-Security discussion
+Essay · 22 October 2026
 
-IT-Security · 18 March 2026 · StackLevel Group representative in a presidium discussion.
+### Shared Understanding Takes Work
 
-Community · Practical AI technologies for business
-
-### M.AI.N AI Community
-
-M.AI.N AI Community · 30 April 2026 · Listed as CTO at StackLevel Group.
+What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
 
 02 · Speaking topics
 
@@ -632,7 +624,7 @@ Why workflow, ownership and review matter as much as model quality.
 
 ### Engineering education and talent
 
-Specific lessons from teaching and programming-coaching records.
+Lessons from teaching, coaching and making technical ideas easier to share.
 
 03 · Bio variants
 
@@ -665,7 +657,7 @@ Work
 
 ### Product. Practice. Perspective.
 
-A concise view of the role, products, writing and appearances that shape Vadim Vladymtsev's work as an enterprise AI CTO and product operator.
+A concise view of the role, products and ideas that shape Vadim Vladymtsev's work as an enterprise AI CTO and product operator.
 
 Current work
 
@@ -683,33 +675,23 @@ StackLevel Group
 
 Vadim works across enterprise AI product, architecture, security context, adoption and engineering delivery for regulated organisations.
 
-Public work
+Essays
 
 ### Ideas in the open.
 
-Vaiti · 2 March 2026
+The decisions behind the work, and what I learn by revisiting them.
 
-### Escaping enterprise AI pilot hell
+Essay · 2 November 2026
 
-An authored article on why pilots stall and what changes when an organisation moves toward production.
+### Revising an Architecture I Designed
 
-Finance Mail.ru · 11 January 2026
+What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
 
-### Emerging AI roles
+Essay · 29 October 2026
 
-Quoted as CTO at StackLevel Group on new operating roles and the organisational questions around them.
+### Who Gets the Time AI Saves?
 
-IT-Security · 18 March 2026
-
-### AI in Belarus and neighbouring countries
-
-Listed as a StackLevel Group representative in a presidium discussion.
-
-M.AI.N AI Community · 30 April 2026
-
-### Practical AI for business
-
-Listed as CTO at StackLevel Group for a community event on practical AI technologies.
+AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
 
 Background
 
@@ -719,13 +701,13 @@ BSUIR
 
 ### Senior lecturer and ICPC coach
 
-An official university article describes Vadim as a senior lecturer, head of the Olympiad school and coach.
+Vadim’s background includes university teaching, leading an Olympiad school and coaching competitive programming teams at BSUIR.
 
 Programming education
 
 ### Coaching and competition
 
-Public BSUIR records connect Vadim with student programming teams and competition organisation.
+Together with Ivan Udovin, Vadim helped coach So Stuffy, a competitive programming team. Explaining an algorithm so someone else can implement it remains a useful lesson in teamwork.
 
 Codeforces
 
@@ -746,54 +728,214 @@ Public sources
 
 ### The public record.
 
-Public links for the work, products and appearances described on this site.
+Product information, professional profiles, code and research.
 
-### Finance Mail.ru · New AI roles
+### Century AI Studio
 
-Quotation from Vadim Vladymtsev, CTO at StackLevel Group · 11 January 2026.
-
-### Vaiti · Escaping pilot hell
-
-Authored article by Vadim Vladymtsev on enterprise AI adoption · 2 March 2026.
-
-### M.AI.N AI Community
-
-Organiser event record listing Vadim as CTO of StackLevel Group · 30 April 2026.
-
-### IT-Security programme
-
-Official programme listing a StackLevel Group representative in the AI discussion · 18 March 2026.
-
-### Century
-
-Century AI Studio: assistants, workflows, data access, security and metrics.
+Current product information, capabilities and deployment options.
 
 ### LinkedIn
 
-Professional profile and current positioning.
+Professional profile and a direct contact route.
 
-### Stepik
+### GitHub
 
-Public algorithms and C++ programming course.
-
-### Claude Foundations
-
-Certified AI practice.
-
-### Google Scholar
-
-LLMs, neural modelling and algorithms.
-
-### HTP / IT-Akademgrad
-
-Public recognition of Century in the AI Product Leader category.
+Public code and development work.
 
 ### Codeforces
 
-Competitive programming history.
+Competitive programming profile and contest history.
+
+### Google Scholar
+
+Research profile and publication list.
+
+### Claude Foundations
+
+Certificate for the Claude Foundations course.
 
 Sources
 
 ### Context matters.
 
-Company and product pages describe the organisation or product. Personal roles, appearances and recognition are linked to the specific public pages that mention them.
+These links lead to the product and profiles discussed on this site. My essays describe the ideas and experiences behind the work in full.
+
+## Essays
+https://vadimohka.com/essays/
+
+Notes from the work
+
+### Essays.
+
+What I learn from building software, helping teams understand each other and deciding what deserves our time.
+
+### Revising an Architecture I Designed
+
+What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
+
+### Who Gets the Time AI Saves?
+
+AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
+
+### Shared Understanding Takes Work
+
+What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
+
+### What Happens After the Applause
+
+A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.
+
+### Recognizing Myself in My Work
+
+Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.
+
+## Revising an Architecture I Designed
+https://vadimohka.com/essays/revising-my-architecture/
+
+Author: Vadim Vladymtsev
+Published: 2026-11-02
+Updated: 2026-11-03
+
+Taking responsibility for an engineering decision includes being willing to revise it when it gets in the way of the work. That is easy to accept when discussing someone else's architecture. With your own, you also have to deal with the desire to remain right.
+
+Early in my work with microservices, I built an application in which each service had its own database. Over time, that arrangement began to create problems. I consolidated some of the databases and reworked the application. The transition required many migrations. I had chosen the architecture, so I considered correcting it part of my responsibility.
+
+Microservices divide an application into services with separate responsibilities. Giving a service its own database can support its independence. A sound principle, however, does not establish whether a particular system benefits from the way it has been applied. In my case, the separation needed to change. That gives me a specific decision to examine; it does not settle the wider argument about microservices.
+
+An architecture you designed has a layer of protection that never appears in the technical documentation. You have invested time in it and grown used to how it works. You may have explained to other people why the design makes sense. Revising it can feel like admitting that you were not competent enough to make the original choice. It becomes tempting to find one more reason to defend it.
+
+Those reasons are usually available. Somewhere, a similar architecture works well. There are convincing articles explaining its advantages. Another workaround might let you preserve the original structure. But none of that tells you whether the design is helping the application you actually have to maintain.
+
+I bring the discussion back to the work the system needs to support. What has become difficult, and what is causing that difficulty? Is removing the limitation worth the cost of the transition? These questions make the consequences of a decision available for discussion. The answers can be uncomfortable for its author. They also provide a basis for deciding what to do next.
+
+Acknowledging the problem still leaves the migration to carry out. The transition needs planning, and the data needs to survive it. The people who will maintain the application need to understand what changed. A thoughtful statement about lessons learned will not do any of that work. The cost of the original choice becomes visible in the effort required to correct it.
+
+Taking responsibility can also mean asking someone with deeper expertise to help. My job then is to give them an honest account of the context and allow them to change what I built. Protecting my authorship from useful changes would be an odd way to look after the system.
+
+Revision needs justification too. If every doubt triggers a rewrite, the product can spend a long time under repair. Some inconveniences are reasonable to live with for now. Other constraints already prevent necessary work. Distinguishing between them requires attention to the task and the cost of changing direction. The desire for a cleaner design is not enough on its own.
+
+I want professional trust to be able to withstand this conversation. An engineer should be able to explain the original choice, describe its consequences, and propose a correction. There is no need to recast every turn as part of a plan that existed from the beginning. We can take responsibility for what we understand now.
+
+The database experience left me with a practical standard: when a decision stops helping the system, I need to help the system move beyond it. That includes decisions I made myself.
+
+## Who Gets the Time AI Saves?
+https://vadimohka.com/essays/who-gets-the-time-ai-saves/
+
+Author: Vadim Vladymtsev
+Published: 2026-10-29
+Updated: 2026-11-03
+
+The value of faster work depends on who gets the time saved and what they can do with it. AI can accelerate an individual task. What happens afterward is still a matter of agreements within the company. Without them, the word efficiency can conceal very different expectations.
+
+On a presentation slide, the story is straightforward. A task used to take longer; now it takes less time. The difference is colored green. The technology has done well, and we can move to the next slide. The working day is less straightforward. The opening may be filled by another task, or by a meeting about how many more tasks should now be possible.
+
+It is reasonable for a company investing in tools to expect better results. Producing more without expanding the team is an understandable goal. As an engineer, I want that goal stated explicitly so we can discuss whether the implementation supports it. Confusion begins when an employee is promised relief while their manager understands the same promise as room for additional work.
+
+Consider someone who prepares reports. AI helps them produce a draft faster, and, after checking the result, there is still a real saving. They could examine the data more closely or work through outstanding requests. The team could also agree that they will finish work on time. Each outcome has value. Each requires a different decision about how work is organized.
+
+A thorough review needs a place in the schedule. Additional requests need priorities. If the goal was to reduce overtime, every available opening cannot become an invitation to add an urgent task. Otherwise, the technical improvement will happen while the outcome promised to the employee remains on the slide.
+
+The shape of the time saved matters too. A few minutes between messages and meetings may never become an opportunity to think. Working through a difficult problem takes a sufficiently long stretch without constant interruptions. Faster small tasks do not automatically create that stretch. The schedule may need to change as well.
+
+Before automating, I would ask what opportunity we want to create. Do we want customers to receive answers sooner? Does the team need more time to examine difficult decisions? Naming the desired outcome tells us what to look for. It can also reveal work that must change alongside the tool if the expected benefit is to become possible.
+
+When a customer is waiting, for example, it helps to follow the entire request. Drafting an email faster makes little difference if approval still accounts for most of the delay. If the goal is quality, the team needs to agree on the review process. A quicker draft tells us very little about the number of errors in the final document.
+
+Giving someone discretion over some of the time can be particularly difficult. An unfilled slot is visible immediately. The value of thinking carefully may appear later. A manager who wants the team to have more autonomy has to tolerate some of that uncertainty. Filling every minute is easier than explaining why time has been left available.
+
+I want efficiency to have an identifiable beneficiary. That could be a customer who receives an answer sooner or a business that handles more work. It could also be a specialist whose regular evening overtime ends. These interests sometimes coincide and sometimes need negotiation. The technology will not make that agreement for the people involved.
+
+That is why I want a discussion of time savings to finish with the words, 'Because of this, we will be able to…' The rest of the sentence should describe a change in people's working lives or in the company's results. Then we have something meaningful to evaluate, and the time saved has a purpose.
+
+## Shared Understanding Takes Work
+https://vadimohka.com/essays/shared-understanding/
+
+Author: Vadim Vladymtsev
+Published: 2026-10-22
+Updated: 2026-11-03
+
+A strong team needs a shared understanding of its work. Without it, one person's knowledge can remain inaccessible to everyone else. Reaching that understanding takes time, even when every member is well prepared and capable of solving difficult problems independently.
+
+Together with Ivan Udovin, I helped coach So Stuffy, a competitive programming team. In these competitions, participants solve algorithmic problems and implement their solutions in code. Part of my work was helping a participant explain an idea clearly enough for a teammate to program it. Disagreements within the team also needed attention.
+
+That experience gives me a simple question to ask: once one person has understood the solution, what has everyone else understood? There is work between an individual's insight and a result the team can produce. It is easy to overlook that work when the person with the idea already sees how everything fits together and regards explaining it as a formality.
+
+Imagine that one participant has worked out an algorithm. Another is ready to write the code but does not understand why it will work for a particular valid input. The first repeats the explanation more briefly and with greater confidence. The second is no closer to understanding. Both are capable, but a necessary part of the reasoning still belongs to only one of them.
+
+It is tempting to judge their abilities: one cannot explain, or the other is slow to understand. I find it more useful to locate the point where their assumptions diverged. Perhaps the person proposing the algorithm checked the disputed case mentally and omitted it from the explanation. Perhaps a term means something different to each of them. Confidence will do little to resolve either problem.
+
+Once you have found an answer, the intermediate steps can become hard to see. Explaining it requires recovering part of that path. The listener needs room to stop you at a point that no longer feels difficult to you. Their question may also reveal a real gap in the idea. In that case, explaining helps both people improve the solution.
+
+The aim is enough shared context to continue the work and examine an important assumption. People can contribute different kinds of expertise without knowing every detail of one another's work. Different approaches are useful when people can explain what they depend on. Shared understanding makes those differences available to the team.
+
+I use a similar standard for discussions in development teams. Does a colleague know what they can decide independently after the conversation? Do they understand when the agreement will stop applying? A nod at the end of a meeting does not establish either. I learn more when someone describes their next step and explains why they intend to take it.
+
+A manager can be tempted to become everyone's permanent interpreter. Every disagreement comes back to them, and work pauses until they intervene. That can feel like evidence of their importance. I see it as a reason to examine how the team shares context. Some of what people need may be concentrated in one person's head.
+
+Helping can mean working through a specific misunderstanding together and leaving an explanation others can use. Sometimes a shared example is enough. Sometimes a term needs a more precise definition. The useful result is that participants can handle the next similar question themselves.
+
+Discussion also needs a stopping point. A team can agree on a small action, carry it out, and see where expectations differ. Doing something together tests understanding and helps distinguish useful clarification from a conversation that no longer changes the work.
+
+I count the time spent explaining as part of the team's work. It pays off when people can proceed without a permanent intermediary. At that point, one person's strength becomes something their teammates can actually use.
+
+## What Happens After the Applause
+https://vadimohka.com/essays/after-the-applause/
+
+Author: Vadim Vladymtsev
+Published: 2026-10-15
+Updated: 2026-11-03
+
+Support for a project should continue after the event that makes it visible. A competition gives a team a reason to come together and show its first result. The next challenge is using the opportunities it receives. That transition reveals how well the surrounding community helps people build.
+
+I helped organize StartLab, a university startup competition in Belarus. We changed the venue and judging panel and revised the application questions. After the competition, some participants went on to interviews with accelerators. Others received an opportunity to work with a bank's lab. The winners received money to develop their projects. These were concrete openings beyond the classroom.
+
+I value events like this. Explaining an idea to people outside a university department can help a student discover that someone else is interested. A deadline can push a team to get its prototype ready to show. Attention from others can give people confidence to continue. That first moment of recognition has a useful job to do.
+
+Access to a lab still has to become work in that lab. An introduction to an expert has to become a conversation that clarifies a next step. When you are building your first project, you may not even know what to ask for. There is a distance between receiving an opportunity and knowing how to act on it. Crossing it alone can be difficult.
+
+After the final comes the work that is harder to photograph. The team needs to meet again, return to the prototype, and find someone willing to use it. That person's questions may be less comfortable than the judges' questions. The explanation that worked during the pitch may mean very little to them. This is where the project begins to face a different kind of test.
+
+I would include a conversation about that work in the support offered. A month after the competition, for example, I would ask what the team had tried and where it had stopped. Those answers provide a better basis for help than another general wish for success. A specific obstacle gives the next action a purpose.
+
+Follow-up can depend entirely on one person who cares enough to make time. They offer an introduction or ask, 'How is it going?' I respect that commitment. I also want it to have support of its own: an agreed next meeting and a way to involve other people. Otherwise, assistance may end when that person's spare evenings run out.
+
+A related question appears in my work as a CTO. A demonstration has a date. The system's ordinary life after launch can continue for a long time. Someone will encounter an error; someone else will need an explanation. We have to plan for that work. A student idea also needs someone to consider what happens after the moment of public attention.
+
+Support can have clear limits. Organizers do not have to guide every team indefinitely. Participants should understand what kind of question they can return with and where the commitment ends. A specific, bounded offer is more useful than the impression that everything will somehow work out after winning.
+
+Some projects will close. People may test an assumption and decide they no longer want to pursue it. That can be a worthwhile educational result, giving them experience to use in their next choice. Keeping a project on a list of promising initiatives long after everyone has moved on makes it harder to understand what the competition achieved or what its participants need.
+
+At a future final, I would like to hear from the previous year's teams. What did they do afterward, and which opportunities were they able to use? Their accounts could improve the support offered and give new participants a fuller picture of the work ahead.
+
+A good competition can begin something that lasts. By the time the room is empty, people should still have a way to continue the conversation. That is how I want to judge the environment I help create.
+
+## Recognizing Myself in My Work
+https://vadimohka.com/essays/recognising-myself-in-my-work/
+
+Author: Vadim Vladymtsev
+Published: 2026-10-08
+Updated: 2026-11-03
+
+I want to recognize my own choices in my work and understand why I made them. That matters in engineering and in projects I pursue out of personal interest. When the connection survives, I want to return to the result even after the task is finished.
+
+Once, I was watching a video essay I had made for myself and enjoying it again. Some time had passed, but I still wanted to open it. I could recognize my choices in the music and in what I had brought together. The work had preserved an idea I could return to and feel again.
+
+In professional projects, that feeling can disappear behind requirements and deadlines. There is a list of things to deliver, feedback to address, and a date to meet. That structure helps people work together. Completed items, though, say little about which decisions I made deliberately or what I can identify as my contribution.
+
+For me, authorship begins in the small places where a choice had to be made. How should the system explain a user's next step? What should happen when that person makes a mistake? Will another developer understand why a component works the way it does? The answers give the work its character. An unusual interface or a technical invention is not a prerequisite.
+
+Consider a simple form. It can reject invalid information and leave the person to work out what happened. It can also explain the problem while preserving what they have already entered. In the second case, someone has thought ahead about another person's mistake. I appreciate decisions like that. They reveal how the creator imagines the person on the other side of the screen.
+
+Personal taste also has to hold up in use. A feature I like may confuse the people using the product. The team may have a different view, and the deadline still matters. Sometimes the thoughtful choice is to let a favorite detail go. Explaining my intention and being willing to hear an objection are both part of authorship for me.
+
+I also need room for projects where I choose the question myself. One is Belka, a research project on a language model for Belarusian that I am developing and testing. I treat it as a research hobby. That lets me work honestly on a question that interests me without having to promise that every experiment will become a large business.
+
+A hobby of this kind still involves real work. There are things I do not understand yet, assumptions to examine, and unsuccessful attempts to revisit. Personal interest gives that effort a reason. I want to understand the problem and find out what I can do with it.
+
+Every working day will not feel like a favorite personal project. Any sustained effort includes obligations that simply have to be fulfilled. I want to understand why I agreed to do that work and which decisions I am prepared to stand behind. That helps me remain connected to the result through the less interesting parts as well.
+
+I also want the people behind a piece of work to be known. Recognition feels good, and I can acknowledge that desire directly. In collaborative work, however, authorship is shared. An account of something a team built should preserve the contributions of its members. Putting my name on the story cannot explain work that other people did.
+
+When I return to an older project, I may see choices I would make differently today. That does not remove the pleasure of revisiting it. The difference between my earlier choice and my current view can show me what I have learned. I want the original interest that made me begin to remain recognizable too.
+
+I want to make things that are useful to others and show the care invested in them. Recognizing myself in a project means remembering what I chose to pay attention to and being willing to explain that choice. That gives me a reason to return to the work after it is finished.

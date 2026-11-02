@@ -30,43 +30,10 @@
         "ICPC coaching"
       ],
       "sameAs": [
-        "https://vadimohka.ru/",
         "https://www.linkedin.com/in/vadimohka/",
         "https://github.com/Vadimohka",
         "https://codeforces.com/profile/Vadimohka",
-        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru"
-      ],
-      "subjectOf": [
-        {
-          "@type": "NewsArticle",
-          "name": "New roles in work: a market for hybrid professions is forming in Russia",
-          "url": "https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/",
-          "datePublished": "2026-01-11",
-          "description": "Vadim Vladymtsev is quoted as CTO at StackLevel Group on emerging AI roles."
-        },
-        {
-          "@type": "Article",
-          "name": "ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада»",
-          "url": "https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/",
-          "datePublished": "2026-03-02",
-          "author": {
-            "@id": "https://vadimohka.com/#person"
-          }
-        },
-        {
-          "@type": "Event",
-          "name": "M.AI.N AI Community",
-          "url": "https://www.instagram.com/p/DW7GULsDNwq/",
-          "startDate": "2026-04-30",
-          "description": "Organiser record listing Vadim Vladymtsev as CTO of StackLevel Group for practical AI technologies for business."
-        },
-        {
-          "@type": "Event",
-          "name": "IT-Security programme discussion on AI",
-          "url": "https://its.it-event.by/2-uncategorised/61-programma",
-          "startDate": "2026-03-18",
-          "description": "Official programme listing Vadim Vladymtsev as a StackLevel Group representative in a presidium discussion on AI in Belarus and neighbouring countries."
-        }
+        "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en"
       ],
       "hasCredential": [
         {
@@ -90,7 +57,6 @@
       "@type": "Organization",
       "@id": "https://vadimohka.com/#stacklevel",
       "name": "StackLevel Group",
-      "url": "https://stacklevel.group/en/company",
       "employee": {
         "@id": "https://vadimohka.com/#person"
       }
@@ -111,9 +77,78 @@
       "name": "Century AI Studio",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "url": "https://century-ai.by/",
+      "url": "https://century-ai.eu/",
       "description": "Corporate AI platform for chat, assistants, workflow modes, documents, structured data, protected integrations, private deployment, access policies, logs and operational review.",
       "keywords": "enterprise AI, corporate AI platform, AI Studio, workflows, text-to-SQL, private deployment, audit, access policies"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/#webpage",
+      "url": "https://vadimohka.com/",
+      "name": "Vadim Vladymtsev | Enterprise AI CTO & Advisory",
+      "description": "Vadim Vladymtsev, CTO at StackLevel Group. Enterprise AI strategy, product architecture, technical due diligence and CTO advisory for USA and UAE audiences.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://vadimohka.com/about.html#webpage",
+      "url": "https://vadimohka.com/about.html",
+      "name": "Vadim Vladymtsev | About & Contact — USA & UAE",
+      "description": "Meet Vadim Vladymtsev, CTO at StackLevel Group. Product architecture, enterprise AI and technical judgment. Contact routes for USA and UAE business inquiries.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/century.html#webpage",
+      "url": "https://vadimohka.com/century.html",
+      "name": "Century AI Studio | Governed Enterprise AI Platform",
+      "description": "Explore Century AI Studio: assistants, workflows, protected data access, private deployment and operational controls for enterprise AI. Product context and sources.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/#century"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/enterprise.html#webpage",
+      "url": "https://vadimohka.com/enterprise.html",
+      "name": "Enterprise AI Strategy & Architecture | USA & UAE",
+      "description": "Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/enterprise.html#service"
+      }
     },
     {
       "@type": "Service",
@@ -143,6 +178,24 @@
         "@type": "ServiceChannel",
         "serviceUrl": "https://vadimohka.com/about.html#contact",
         "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/investors.html#webpage",
+      "url": "https://vadimohka.com/investors.html",
+      "name": "AI Technical Due Diligence | USA & UAE | Vadim Vladymtsev",
+      "description": "AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/investors.html#service"
       }
     },
     {
@@ -176,6 +229,24 @@
       }
     },
     {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/founders.html#webpage",
+      "url": "https://vadimohka.com/founders.html",
+      "name": "CTO Advisory for Founders | USA & UAE | Vadim Vladymtsev",
+      "description": "CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/founders.html#service"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://vadimohka.com/founders.html#service",
       "name": "CTO advisory for founders",
@@ -204,6 +275,526 @@
         "serviceUrl": "https://vadimohka.com/about.html#contact",
         "availableLanguage": "en"
       }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vadimohka.com/expert.html#webpage",
+      "url": "https://vadimohka.com/expert.html",
+      "name": "Enterprise AI Speaker & Expert | Vadim Vladymtsev",
+      "description": "Enterprise AI speaker and technical expert Vadim Vladymtsev. Original essays, speaking topics, short biographies and contact routes for editors and event organizers.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vadimohka.com/work.html#webpage",
+      "url": "https://vadimohka.com/work.html",
+      "name": "Enterprise AI Work & Public Record | Vadim Vladymtsev",
+      "description": "Explore Vadim Vladymtsev’s enterprise AI work: Century product context, original essays, engineering experience and technical leadership.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vadimohka.com/sources.html#webpage",
+      "url": "https://vadimohka.com/sources.html",
+      "name": "Sources & Public References | Vadim Vladymtsev",
+      "description": "Product information, professional profiles, public code, research and a learning credential connected with Vadim Vladymtsev’s work.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "citation": []
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://vadimohka.com/essays/#webpage",
+      "url": "https://vadimohka.com/essays/",
+      "name": "Essays on Engineering, AI & Teams | Vadim Vladymtsev",
+      "description": "Original essays by Vadim Vladymtsev on software architecture, AI at work, shared understanding, project communities and authorship.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/#website"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/#articles"
+      },
+      "hasPart": [
+        {
+          "@id": "https://vadimohka.com/essays/revising-my-architecture/#article"
+        },
+        {
+          "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#article"
+        },
+        {
+          "@id": "https://vadimohka.com/essays/shared-understanding/#article"
+        },
+        {
+          "@id": "https://vadimohka.com/essays/after-the-applause/#article"
+        },
+        {
+          "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#article"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://vadimohka.com/essays/#articles",
+      "numberOfItems": 5,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Revising an Architecture I Designed",
+          "url": "https://vadimohka.com/essays/revising-my-architecture/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Who Gets the Time AI Saves?",
+          "url": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Shared Understanding Takes Work",
+          "url": "https://vadimohka.com/essays/shared-understanding/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What Happens After the Applause",
+          "url": "https://vadimohka.com/essays/after-the-applause/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Recognizing Myself in My Work",
+          "url": "https://vadimohka.com/essays/recognising-myself-in-my-work/"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/essays/revising-my-architecture/#webpage",
+      "url": "https://vadimohka.com/essays/revising-my-architecture/",
+      "name": "Revising an Architecture I Designed | Vadim Vladymtsev",
+      "description": "What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/revising-my-architecture/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/revising-my-architecture/#article"
+      },
+      "datePublished": "2026-11-02"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/revising-my-architecture/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Revising an Architecture I Designed",
+          "item": "https://vadimohka.com/essays/revising-my-architecture/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://vadimohka.com/essays/revising-my-architecture/#article",
+      "url": "https://vadimohka.com/essays/revising-my-architecture/",
+      "headline": "Revising an Architecture I Designed",
+      "description": "What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/essays/revising-my-architecture/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "keywords": [
+        "Engineering",
+        "Software architecture",
+        "Responsibility"
+      ],
+      "articleBody": "Taking responsibility for an engineering decision includes being willing to revise it when it gets in the way of the work. That is easy to accept when discussing someone else's architecture. With your own, you also have to deal with the desire to remain right.\n\nEarly in my work with microservices, I built an application in which each service had its own database. Over time, that arrangement began to create problems. I consolidated some of the databases and reworked the application. The transition required many migrations. I had chosen the architecture, so I considered correcting it part of my responsibility.\n\nMicroservices divide an application into services with separate responsibilities. Giving a service its own database can support its independence. A sound principle, however, does not establish whether a particular system benefits from the way it has been applied. In my case, the separation needed to change. That gives me a specific decision to examine; it does not settle the wider argument about microservices.\n\nAn architecture you designed has a layer of protection that never appears in the technical documentation. You have invested time in it and grown used to how it works. You may have explained to other people why the design makes sense. Revising it can feel like admitting that you were not competent enough to make the original choice. It becomes tempting to find one more reason to defend it.\n\nThose reasons are usually available. Somewhere, a similar architecture works well. There are convincing articles explaining its advantages. Another workaround might let you preserve the original structure. But none of that tells you whether the design is helping the application you actually have to maintain.\n\nI bring the discussion back to the work the system needs to support. What has become difficult, and what is causing that difficulty? Is removing the limitation worth the cost of the transition? These questions make the consequences of a decision available for discussion. The answers can be uncomfortable for its author. They also provide a basis for deciding what to do next.\n\nAcknowledging the problem still leaves the migration to carry out. The transition needs planning, and the data needs to survive it. The people who will maintain the application need to understand what changed. A thoughtful statement about lessons learned will not do any of that work. The cost of the original choice becomes visible in the effort required to correct it.\n\nTaking responsibility can also mean asking someone with deeper expertise to help. My job then is to give them an honest account of the context and allow them to change what I built. Protecting my authorship from useful changes would be an odd way to look after the system.\n\nRevision needs justification too. If every doubt triggers a rewrite, the product can spend a long time under repair. Some inconveniences are reasonable to live with for now. Other constraints already prevent necessary work. Distinguishing between them requires attention to the task and the cost of changing direction. The desire for a cleaner design is not enough on its own.\n\nI want professional trust to be able to withstand this conversation. An engineer should be able to explain the original choice, describe its consequences, and propose a correction. There is no need to recast every turn as part of a plan that existed from the beginning. We can take responsibility for what we understand now.\n\nThe database experience left me with a practical standard: when a decision stops helping the system, I need to help the system move beyond it. That includes decisions I made myself.",
+      "wordCount": 596
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#webpage",
+      "url": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/",
+      "name": "Who Gets the Time AI Saves? | Vadim Vladymtsev",
+      "description": "AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#article"
+      },
+      "datePublished": "2026-10-29"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Who Gets the Time AI Saves?",
+          "item": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#article",
+      "url": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/",
+      "headline": "Who Gets the Time AI Saves?",
+      "description": "AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-10-29",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "keywords": [
+        "Artificial intelligence",
+        "Productivity",
+        "Management"
+      ],
+      "articleBody": "The value of faster work depends on who gets the time saved and what they can do with it. AI can accelerate an individual task. What happens afterward is still a matter of agreements within the company. Without them, the word efficiency can conceal very different expectations.\n\nOn a presentation slide, the story is straightforward. A task used to take longer; now it takes less time. The difference is colored green. The technology has done well, and we can move to the next slide. The working day is less straightforward. The opening may be filled by another task, or by a meeting about how many more tasks should now be possible.\n\nIt is reasonable for a company investing in tools to expect better results. Producing more without expanding the team is an understandable goal. As an engineer, I want that goal stated explicitly so we can discuss whether the implementation supports it. Confusion begins when an employee is promised relief while their manager understands the same promise as room for additional work.\n\nConsider someone who prepares reports. AI helps them produce a draft faster, and, after checking the result, there is still a real saving. They could examine the data more closely or work through outstanding requests. The team could also agree that they will finish work on time. Each outcome has value. Each requires a different decision about how work is organized.\n\nA thorough review needs a place in the schedule. Additional requests need priorities. If the goal was to reduce overtime, every available opening cannot become an invitation to add an urgent task. Otherwise, the technical improvement will happen while the outcome promised to the employee remains on the slide.\n\nThe shape of the time saved matters too. A few minutes between messages and meetings may never become an opportunity to think. Working through a difficult problem takes a sufficiently long stretch without constant interruptions. Faster small tasks do not automatically create that stretch. The schedule may need to change as well.\n\nBefore automating, I would ask what opportunity we want to create. Do we want customers to receive answers sooner? Does the team need more time to examine difficult decisions? Naming the desired outcome tells us what to look for. It can also reveal work that must change alongside the tool if the expected benefit is to become possible.\n\nWhen a customer is waiting, for example, it helps to follow the entire request. Drafting an email faster makes little difference if approval still accounts for most of the delay. If the goal is quality, the team needs to agree on the review process. A quicker draft tells us very little about the number of errors in the final document.\n\nGiving someone discretion over some of the time can be particularly difficult. An unfilled slot is visible immediately. The value of thinking carefully may appear later. A manager who wants the team to have more autonomy has to tolerate some of that uncertainty. Filling every minute is easier than explaining why time has been left available.\n\nI want efficiency to have an identifiable beneficiary. That could be a customer who receives an answer sooner or a business that handles more work. It could also be a specialist whose regular evening overtime ends. These interests sometimes coincide and sometimes need negotiation. The technology will not make that agreement for the people involved.\n\nThat is why I want a discussion of time savings to finish with the words, 'Because of this, we will be able to…' The rest of the sentence should describe a change in people's working lives or in the company's results. Then we have something meaningful to evaluate, and the time saved has a purpose.",
+      "wordCount": 618
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/essays/shared-understanding/#webpage",
+      "url": "https://vadimohka.com/essays/shared-understanding/",
+      "name": "Shared Understanding Takes Work | Vadim Vladymtsev",
+      "description": "What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/shared-understanding/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/shared-understanding/#article"
+      },
+      "datePublished": "2026-10-22"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/shared-understanding/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Shared Understanding Takes Work",
+          "item": "https://vadimohka.com/essays/shared-understanding/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://vadimohka.com/essays/shared-understanding/#article",
+      "url": "https://vadimohka.com/essays/shared-understanding/",
+      "headline": "Shared Understanding Takes Work",
+      "description": "What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/essays/shared-understanding/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "keywords": [
+        "Teams",
+        "Coaching",
+        "Engineering leadership"
+      ],
+      "articleBody": "A strong team needs a shared understanding of its work. Without it, one person's knowledge can remain inaccessible to everyone else. Reaching that understanding takes time, even when every member is well prepared and capable of solving difficult problems independently.\n\nTogether with Ivan Udovin, I helped coach So Stuffy, a competitive programming team. In these competitions, participants solve algorithmic problems and implement their solutions in code. Part of my work was helping a participant explain an idea clearly enough for a teammate to program it. Disagreements within the team also needed attention.\n\nThat experience gives me a simple question to ask: once one person has understood the solution, what has everyone else understood? There is work between an individual's insight and a result the team can produce. It is easy to overlook that work when the person with the idea already sees how everything fits together and regards explaining it as a formality.\n\nImagine that one participant has worked out an algorithm. Another is ready to write the code but does not understand why it will work for a particular valid input. The first repeats the explanation more briefly and with greater confidence. The second is no closer to understanding. Both are capable, but a necessary part of the reasoning still belongs to only one of them.\n\nIt is tempting to judge their abilities: one cannot explain, or the other is slow to understand. I find it more useful to locate the point where their assumptions diverged. Perhaps the person proposing the algorithm checked the disputed case mentally and omitted it from the explanation. Perhaps a term means something different to each of them. Confidence will do little to resolve either problem.\n\nOnce you have found an answer, the intermediate steps can become hard to see. Explaining it requires recovering part of that path. The listener needs room to stop you at a point that no longer feels difficult to you. Their question may also reveal a real gap in the idea. In that case, explaining helps both people improve the solution.\n\nThe aim is enough shared context to continue the work and examine an important assumption. People can contribute different kinds of expertise without knowing every detail of one another's work. Different approaches are useful when people can explain what they depend on. Shared understanding makes those differences available to the team.\n\nI use a similar standard for discussions in development teams. Does a colleague know what they can decide independently after the conversation? Do they understand when the agreement will stop applying? A nod at the end of a meeting does not establish either. I learn more when someone describes their next step and explains why they intend to take it.\n\nA manager can be tempted to become everyone's permanent interpreter. Every disagreement comes back to them, and work pauses until they intervene. That can feel like evidence of their importance. I see it as a reason to examine how the team shares context. Some of what people need may be concentrated in one person's head.\n\nHelping can mean working through a specific misunderstanding together and leaving an explanation others can use. Sometimes a shared example is enough. Sometimes a term needs a more precise definition. The useful result is that participants can handle the next similar question themselves.\n\nDiscussion also needs a stopping point. A team can agree on a small action, carry it out, and see where expectations differ. Doing something together tests understanding and helps distinguish useful clarification from a conversation that no longer changes the work.\n\nI count the time spent explaining as part of the team's work. It pays off when people can proceed without a permanent intermediary. At that point, one person's strength becomes something their teammates can actually use.",
+      "wordCount": 628
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/essays/after-the-applause/#webpage",
+      "url": "https://vadimohka.com/essays/after-the-applause/",
+      "name": "What Happens After the Applause | Vadim Vladymtsev",
+      "description": "A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/after-the-applause/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/after-the-applause/#article"
+      },
+      "datePublished": "2026-10-15"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/after-the-applause/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Happens After the Applause",
+          "item": "https://vadimohka.com/essays/after-the-applause/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://vadimohka.com/essays/after-the-applause/#article",
+      "url": "https://vadimohka.com/essays/after-the-applause/",
+      "headline": "What Happens After the Applause",
+      "description": "A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-10-15",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/essays/after-the-applause/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "keywords": [
+        "Entrepreneurship",
+        "Communities",
+        "Responsibility"
+      ],
+      "articleBody": "Support for a project should continue after the event that makes it visible. A competition gives a team a reason to come together and show its first result. The next challenge is using the opportunities it receives. That transition reveals how well the surrounding community helps people build.\n\nI helped organize StartLab, a university startup competition in Belarus. We changed the venue and judging panel and revised the application questions. After the competition, some participants went on to interviews with accelerators. Others received an opportunity to work with a bank's lab. The winners received money to develop their projects. These were concrete openings beyond the classroom.\n\nI value events like this. Explaining an idea to people outside a university department can help a student discover that someone else is interested. A deadline can push a team to get its prototype ready to show. Attention from others can give people confidence to continue. That first moment of recognition has a useful job to do.\n\nAccess to a lab still has to become work in that lab. An introduction to an expert has to become a conversation that clarifies a next step. When you are building your first project, you may not even know what to ask for. There is a distance between receiving an opportunity and knowing how to act on it. Crossing it alone can be difficult.\n\nAfter the final comes the work that is harder to photograph. The team needs to meet again, return to the prototype, and find someone willing to use it. That person's questions may be less comfortable than the judges' questions. The explanation that worked during the pitch may mean very little to them. This is where the project begins to face a different kind of test.\n\nI would include a conversation about that work in the support offered. A month after the competition, for example, I would ask what the team had tried and where it had stopped. Those answers provide a better basis for help than another general wish for success. A specific obstacle gives the next action a purpose.\n\nFollow-up can depend entirely on one person who cares enough to make time. They offer an introduction or ask, 'How is it going?' I respect that commitment. I also want it to have support of its own: an agreed next meeting and a way to involve other people. Otherwise, assistance may end when that person's spare evenings run out.\n\nA related question appears in my work as a CTO. A demonstration has a date. The system's ordinary life after launch can continue for a long time. Someone will encounter an error; someone else will need an explanation. We have to plan for that work. A student idea also needs someone to consider what happens after the moment of public attention.\n\nSupport can have clear limits. Organizers do not have to guide every team indefinitely. Participants should understand what kind of question they can return with and where the commitment ends. A specific, bounded offer is more useful than the impression that everything will somehow work out after winning.\n\nSome projects will close. People may test an assumption and decide they no longer want to pursue it. That can be a worthwhile educational result, giving them experience to use in their next choice. Keeping a project on a list of promising initiatives long after everyone has moved on makes it harder to understand what the competition achieved or what its participants need.\n\nAt a future final, I would like to hear from the previous year's teams. What did they do afterward, and which opportunities were they able to use? Their accounts could improve the support offered and give new participants a fuller picture of the work ahead.\n\nA good competition can begin something that lasts. By the time the room is empty, people should still have a way to continue the conversation. That is how I want to judge the environment I help create.",
+      "wordCount": 660
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#webpage",
+      "url": "https://vadimohka.com/essays/recognising-myself-in-my-work/",
+      "name": "Recognizing Myself in My Work | Vadim Vladymtsev",
+      "description": "Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.",
+      "inLanguage": "en",
+      "dateModified": "2026-11-03",
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "about": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#article"
+      },
+      "datePublished": "2026-10-08"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://vadimohka.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Essays",
+          "item": "https://vadimohka.com/essays/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recognizing Myself in My Work",
+          "item": "https://vadimohka.com/essays/recognising-myself-in-my-work/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#article",
+      "url": "https://vadimohka.com/essays/recognising-myself-in-my-work/",
+      "headline": "Recognizing Myself in My Work",
+      "description": "Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.",
+      "image": "https://vadimohka.com/assets/social/og-vadim-vladymtsev.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "publisher": {
+        "@id": "https://vadimohka.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://vadimohka.com/essays/recognising-myself-in-my-work/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://vadimohka.com/essays/#webpage"
+      },
+      "keywords": [
+        "Authorship",
+        "Personal projects",
+        "Engineering"
+      ],
+      "articleBody": "I want to recognize my own choices in my work and understand why I made them. That matters in engineering and in projects I pursue out of personal interest. When the connection survives, I want to return to the result even after the task is finished.\n\nOnce, I was watching a video essay I had made for myself and enjoying it again. Some time had passed, but I still wanted to open it. I could recognize my choices in the music and in what I had brought together. The work had preserved an idea I could return to and feel again.\n\nIn professional projects, that feeling can disappear behind requirements and deadlines. There is a list of things to deliver, feedback to address, and a date to meet. That structure helps people work together. Completed items, though, say little about which decisions I made deliberately or what I can identify as my contribution.\n\nFor me, authorship begins in the small places where a choice had to be made. How should the system explain a user's next step? What should happen when that person makes a mistake? Will another developer understand why a component works the way it does? The answers give the work its character. An unusual interface or a technical invention is not a prerequisite.\n\nConsider a simple form. It can reject invalid information and leave the person to work out what happened. It can also explain the problem while preserving what they have already entered. In the second case, someone has thought ahead about another person's mistake. I appreciate decisions like that. They reveal how the creator imagines the person on the other side of the screen.\n\nPersonal taste also has to hold up in use. A feature I like may confuse the people using the product. The team may have a different view, and the deadline still matters. Sometimes the thoughtful choice is to let a favorite detail go. Explaining my intention and being willing to hear an objection are both part of authorship for me.\n\nI also need room for projects where I choose the question myself. One is Belka, a research project on a language model for Belarusian that I am developing and testing. I treat it as a research hobby. That lets me work honestly on a question that interests me without having to promise that every experiment will become a large business.\n\nA hobby of this kind still involves real work. There are things I do not understand yet, assumptions to examine, and unsuccessful attempts to revisit. Personal interest gives that effort a reason. I want to understand the problem and find out what I can do with it.\n\nEvery working day will not feel like a favorite personal project. Any sustained effort includes obligations that simply have to be fulfilled. I want to understand why I agreed to do that work and which decisions I am prepared to stand behind. That helps me remain connected to the result through the less interesting parts as well.\n\nI also want the people behind a piece of work to be known. Recognition feels good, and I can acknowledge that desire directly. In collaborative work, however, authorship is shared. An account of something a team built should preserve the contributions of its members. Putting my name on the story cannot explain work that other people did.\n\nWhen I return to an older project, I may see choices I would make differently today. That does not remove the pleasure of revisiting it. The difference between my earlier choice and my current view can show me what I have learned. I want the original interest that made me begin to remain recognizable too.\n\nI want to make things that are useful to others and show the care invested in them. Recognizing myself in a project means remembering what I chose to pay attention to and being willing to explain that choice. That gives me a reason to return to the work after it is finished.",
+      "wordCount": 667
     }
   ]
 }

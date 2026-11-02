@@ -8,7 +8,7 @@ const output = join(root, '_site');
 const publicFiles = readdirSync(root).filter(name => name.endsWith('.html')).concat([
   'CNAME', '.nojekyll', 'LICENSE', 'robots.txt',
   'sitemap.xml', 'sitemap-images.xml', 'sitemap-ai.xml',
-  'llms.txt', 'llms-full.txt', 'ai-profile.md', 'humans.txt',
+  'llms.txt', 'llms-full.txt', 'ai-profile.md', 'ai.json', 'humans.txt',
 ]);
 
 function copyTree(source, target) {
@@ -25,5 +25,6 @@ rmSync(output, {recursive: true, force: true});
 mkdirSync(output);
 for (const file of publicFiles) copyFileSync(join(root, file), join(output, file));
 copyTree(join(root, 'assets'), join(output, 'assets'));
+copyTree(join(root, 'essays'), join(output, 'essays'));
 mkdirSync(join(output, 'data'));
 copyFileSync(join(root, 'data/entity-graph.json'), join(output, 'data/entity-graph.json'));

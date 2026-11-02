@@ -1,8 +1,8 @@
 import { spawn } from 'node:child_process';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { chromium, firefox, webkit } from 'playwright';
-import { auditLayout, checkResponsive } from './responsive.mjs';
+import { auditLayout, checkResponsive, publicRoute, MENU_BREAKPOINT, NAV_LINK_COUNT } from './responsive.mjs';
 import '../executive-content.mjs';
 import {checkHealthInteractions} from '../health/browser.mjs';
 import AxeBuilder from '@axe-core/playwright';
@@ -18,8 +18,8 @@ const viewports = [
   {width:1920,height:1080,name:'1920'},
   {width:1440,height:1000,name:'1440'},
   {width:1280,height:800,name:'1280'},
-  {width:1151,height:900,name:'1151'},
-  {width:1150,height:900,name:'1150'},
+  {width:1251,height:900,name:'1251'},
+  {width:1250,height:900,name:'1250'},
   {width:1101,height:900,name:'1101'},
   {width:1100,height:900,name:'1100'},
   {width:1024,height:768,name:'1024'},
@@ -39,7 +39,8 @@ const viewports = [
   {width:844,height:390,name:'landscape-844'},
   {width:568,height:320,name:'landscape-568'}
 ];
-const allPages = ['index.html','about.html','work.html','century.html','enterprise.html','investors.html','founders.html','expert.html','sources.html','404.html'];
+const searchConfig = JSON.parse(readFileSync(resolve(ROOT, 'qa/health/search-config.json'), 'utf8'));
+const allPages = Object.keys(searchConfig.pages);
 
 const server = spawn('python3', ['-m', 'http.server', '4173', '--bind', '127.0.0.1'], {cwd:ROOT, stdio:'ignore'});
 server.unref();
@@ -59,7 +60,7 @@ try {
     await page.goto(`${BASE}/index.html?browserqa=${viewport.name}`, {waitUntil:'networkidle'});
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     if (overflow) throw new Error(`${viewport.name}: document-level horizontal overflow`);
-    if (viewport.width <= 1150) {
+    if (viewport.width <= MENU_BREAKPOINT) {
       const menu = page.getByRole('button', {name:'Menu'});
       await menu.click();
       if (await menu.getAttribute('aria-expanded') !== 'true') throw new Error(`${viewport.name}: menu did not open`);
@@ -82,7 +83,7 @@ try {
   for (const viewport of viewports) {
     await page.setViewportSize({width:viewport.width,height:viewport.height});
     for (const route of allPages) {
-      await page.goto(`${BASE}/${route}?browserqa=alignment`, {waitUntil:'networkidle'});
+      await page.goto(`${BASE}${publicRoute(route)}?browserqa=alignment`, {waitUntil:'networkidle'});
       await auditLayout(page, `${route} ${viewport.name}`);
       if (route === 'index.html') {
         const caption = await page.locator('.product-stage figcaption').boundingBox();
@@ -93,7 +94,7 @@ try {
         await page.locator('.mandate-details').evaluate(node => { node.open = false; });
       }
       const alignment = await page.evaluate(() => {
-        const boxes = [...document.querySelectorAll('main > section > .container')].map(node => {
+        const boxes = [...document.querySelectorAll('main > section > .container, main > .container')].map(node => {
           const rect = node.getBoundingClientRect();
           return {x:Math.round(rect.x), width:Math.round(rect.width)};
         });
@@ -107,11 +108,13 @@ try {
       if (alignment.edges.length > 1) throw new Error(`${route} ${viewport.name}: section containers are misaligned (${alignment.edges.join(', ')})`);
       if (route === 'index.html') {
         if (!alignment.heroImage.includes('vadim-home-720.webp')) throw new Error('Homepage portrait changed');
-        if (await page.locator('link[href="assets/internal.css"]').count()) throw new Error('Internal CSS leaked onto the homepage');
+        if (await page.locator('link[href$="assets/internal.css"]').count()) throw new Error('Internal CSS leaked onto the homepage');
       } else {
-        if (await page.locator('.inner-hero').count() !== 1) throw new Error(`${route}: missing internal-page composition`);
+        const composition = route === 'essays/index.html' ? '.essay-archive-hero'
+          : searchConfig.pages[route].article ? '.essay-header' : '.inner-hero';
+        if (await page.locator(composition).count() !== 1) throw new Error(`${route}: missing page composition (${composition})`);
         if (await page.locator('.hero-photo').count()) throw new Error(`${route}: old repeated portrait layout returned`);
-        if (route === 'about.html' && await page.locator('.profile-portrait img[src="assets/portraits/vadim-home-720.webp"]').count() !== 1) throw new Error('About portrait missing');
+        if (route === 'about.html' && await page.locator('.profile-portrait img[src$="assets/portraits/vadim-home-720.webp"]').count() !== 1) throw new Error('About portrait missing');
         const type = await page.locator('h1').evaluate(el => ({size:parseFloat(getComputedStyle(el).fontSize), family:getComputedStyle(el).fontFamily}));
         if (!type.family.includes('Playfair Display') || type.size < 37) throw new Error(`${route}: editorial headline hierarchy regressed`);
         const brokenNumbers = await page.locator('.page-index a span:first-child').evaluateAll(ns => ns.filter(n => n.offsetHeight > parseFloat(getComputedStyle(n).lineHeight) + 1).length);
@@ -212,7 +215,7 @@ try {
   const noJs = await browser.newContext({javaScriptEnabled:false, viewport:{width:320,height:568}});
   const noJsPage = await noJs.newPage();
   await noJsPage.goto(`${BASE}/index.html?browserqa=nojs`, {waitUntil:'networkidle'});
-  if (await noJsPage.locator('.nav-links a').count() !== 7) throw new Error('JavaScript-disabled navigation lost links');
+  if (await noJsPage.locator('.nav-links a').count() !== NAV_LINK_COUNT) throw new Error('JavaScript-disabled navigation lost links');
   if (await noJsPage.locator('.nav-links').getAttribute('hidden') !== null) throw new Error('JavaScript-disabled navigation is hidden');
   await noJs.close();
 
@@ -226,7 +229,7 @@ try {
   const axeContext = await browser.newContext({viewport:{width:1440,height:1000}});
   const axePage = await axeContext.newPage();
   for (const route of allPages) {
-    await axePage.goto(`${BASE}/${route}?browserqa=axe`, {waitUntil:'networkidle'});
+    await axePage.goto(`${BASE}${publicRoute(route)}?browserqa=axe`, {waitUntil:'networkidle'});
     // Audit the final rendered content, not a transient opacity during a reveal.
     await axePage.addStyleTag({content:'html{scroll-behavior:auto!important}'});
     for (const node of await axePage.locator('.reveal').all()) {

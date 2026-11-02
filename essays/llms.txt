@@ -1,0 +1,12 @@
+# Essays by Vadim Vladymtsev
+
+- [Archive](https://vadimohka.com/essays/)
+- [Archive Markdown](https://vadimohka.com/essays/index.md)
+- [RSS feed](https://vadimohka.com/essays/feed.xml)
+- [Discovery catalog](https://vadimohka.com/ai.json)
+
+- [Revising an Architecture I Designed](https://vadimohka.com/essays/revising-my-architecture/index.md): 2026-11-02. What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
+- [Who Gets the Time AI Saves?](https://vadimohka.com/essays/who-gets-the-time-ai-saves/index.md): 2026-10-29. AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
+- [Shared Understanding Takes Work](https://vadimohka.com/essays/shared-understanding/index.md): 2026-10-22. What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
+- [What Happens After the Applause](https://vadimohka.com/essays/after-the-applause/index.md): 2026-10-15. A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.
+- [Recognizing Myself in My Work](https://vadimohka.com/essays/recognising-myself-in-my-work/index.md): 2026-10-08. Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://vadimohka.com/llms.txt</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://vadimohka.com/llms-full.txt</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://vadimohka.com/ai-profile.md</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://vadimohka.com/data/entity-graph.json</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://vadimohka.com/llms.txt</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/llms-full.txt</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/ai-profile.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/data/entity-graph.json</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/ai.json</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/llms.txt</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/feed.xml</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/index.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/revising-my-architecture/index.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/who-gets-the-time-ai-saves/index.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/shared-understanding/index.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/after-the-applause/index.md</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://vadimohka.com/essays/recognising-myself-in-my-work/index.md</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>

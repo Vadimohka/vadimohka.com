@@ -1,5 +1,9 @@
 import { resolve } from 'node:path';
 
+export const MENU_BREAKPOINT = 1250;
+export const NAV_LINK_COUNT = 8;
+export const publicRoute = page => '/' + page.replace(/(^|\/)index\.html$/, '$1');
+
 // Check element bounds as well as scrollWidth: overflow:hidden must not hide a regression.
 export async function auditLayout(page, label) {
   const errors = await page.evaluate(() => {
@@ -23,7 +27,7 @@ export async function auditLayout(page, label) {
         failures.push(`overflow/clipping: ${node.tagName}.${node.className} bounds=${rect.left}:${rect.right}, scroll/client=${node.scrollWidth}/${node.clientWidth}`);
       }
     }
-    const containers = [...document.querySelectorAll('.nav, main > section > .container, .footer > .container')];
+    const containers = [...document.querySelectorAll('.nav, main > section > .container, main > .container, .footer > .container')];
     const edges = new Set(containers.map(node => {
       const rect = node.getBoundingClientRect();
       return `${Math.round(rect.left)}:${Math.round(rect.width)}`;
@@ -42,7 +46,7 @@ export async function auditLayout(page, label) {
     if (hero && (!hero.complete || !hero.naturalWidth)) failures.push('hero image did not load');
     if (hero?.getAttribute('src').includes('vadim-home-720.webp')) {
       if (hero.naturalWidth !== 720 || hero.naturalHeight !== 900) failures.push('wrong homepage portrait dimensions');
-      if (document.querySelector('link[rel="preload"][as="image"]')?.getAttribute('href') !== hero.getAttribute('src')) {
+      if (document.querySelector('link[rel="preload"][as="image"]')?.href !== hero.src) {
         failures.push('homepage preload does not match the visible portrait');
       }
     }
@@ -60,7 +64,8 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
     await button.focus();
     await page.keyboard.press('Enter');
     await page.waitForFunction(() => document.activeElement === document.querySelector('.nav-links a'));
-    for (let i = 1; i < 7; i++) await page.keyboard.press('Tab');
+    const linkCount = await page.locator('.nav-links a').count();
+    for (let i = 1; i < linkCount; i++) await page.keyboard.press('Tab');
     try {
       // Native focus scrolling can finish on a later frame, particularly in Firefox.
       await page.waitForFunction(() => {
@@ -104,14 +109,14 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
   const noJs = await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:568}});
   const fallback = await noJs.newPage();
   for (const route of allPages) {
-    await fallback.goto(`${BASE}/${route}?browserqa=nojs-content`, {waitUntil:'networkidle'});
+    await fallback.goto(`${BASE}${publicRoute(route)}?browserqa=nojs-content`, {waitUntil:'networkidle'});
     await auditLayout(fallback, `${route} without JavaScript`);
     const state = await fallback.evaluate(() => ({
       invisible: [...document.querySelectorAll('main .reveal')].some(node => getComputedStyle(node).opacity !== '1'),
       overlap: document.querySelector('.brand').getBoundingClientRect().bottom > document.querySelector('.nav-links').getBoundingClientRect().top,
       links: [...document.querySelectorAll('.nav-links a')].filter(node => node.getBoundingClientRect().height >= 44).length
     }));
-    if (state.invisible || state.overlap || state.links !== 7) throw new Error(`${route}: no-JavaScript content/navigation is unusable (${JSON.stringify(state)})`);
+    if (state.invisible || state.overlap || state.links !== NAV_LINK_COUNT) throw new Error(`${route}: no-JavaScript content/navigation is unusable (${JSON.stringify(state)})`);
   }
   await fallback.goto(`${BASE}/index.html?browserqa=nojs-screenshot`, {waitUntil:'networkidle'});
   await fallback.screenshot({path:resolve(ROOT, 'qa/screenshots/T08-home-nojs-320.png'),fullPage:true});
@@ -121,7 +126,7 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
   for (const width of [390,1440]) {
     await page.setViewportSize({width,height:width === 390 ? 844 : 1000});
     for (const route of allPages) {
-      await page.goto(`${BASE}/${route}?browserqa=full-page`, {waitUntil:'networkidle'});
+      await page.goto(`${BASE}${publicRoute(route)}?browserqa=full-page`, {waitUntil:'networkidle'});
       await page.addStyleTag({content:'html{scroll-behavior:auto!important}'});
       for (const node of await page.locator('.reveal').all()) {
         await node.evaluate(el => el.scrollIntoView({block:'center',behavior:'instant'}));
@@ -142,7 +147,8 @@ export async function checkResponsive({browser, page, BASE, ROOT, allPages}) {
       const invisible = await page.locator('main .reveal').evaluateAll(nodes => nodes.some(node => getComputedStyle(node).opacity !== '1'));
       if (invisible) throw new Error(`${route} ${width}: content stayed transparent after scrolling`);
       await auditLayout(page, `${route} ${width} after scrolling`);
-      await page.screenshot({path:resolve(ROOT, `qa/screenshots/T08-${route.replace('.html','')}-${width}-full.png`),fullPage:true});
+      const screenshotId = route.replace(/\.html$/, '').replace(/[^a-zA-Z0-9_-]+/g, '-');
+      await page.screenshot({path:resolve(ROOT, `qa/screenshots/T08-${screenshotId}-${width}-full.png`),fullPage:true});
     }
   }
   await page.goto(`${BASE}/index.html?browserqa=pointer`, {waitUntil:'networkidle'});

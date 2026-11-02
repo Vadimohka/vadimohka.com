@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Essays — Vadim Vladymtsev</title>
+    <link>https://vadimohka.com/essays/</link>
+    <description>Original essays by Vadim Vladymtsev on software architecture, AI at work, shared understanding, project communities and authorship.</description>
+    <language>en</language>
+    <atom:link href="https://vadimohka.com/essays/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revising an Architecture I Designed</title>
+      <link>https://vadimohka.com/essays/revising-my-architecture/</link>
+      <description>What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.</description>
+      <guid isPermaLink="true">https://vadimohka.com/essays/revising-my-architecture/</guid>
+      <dc:date>2026-11-02</dc:date>
+    </item>
+    <item>
+      <title>Who Gets the Time AI Saves?</title>
+      <link>https://vadimohka.com/essays/who-gets-the-time-ai-saves/</link>
+      <description>AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.</description>
+      <guid isPermaLink="true">https://vadimohka.com/essays/who-gets-the-time-ai-saves/</guid>
+      <dc:date>2026-10-29</dc:date>
+    </item>
+    <item>
+      <title>Shared Understanding Takes Work</title>
+      <link>https://vadimohka.com/essays/shared-understanding/</link>
+      <description>What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.</description>
+      <guid isPermaLink="true">https://vadimohka.com/essays/shared-understanding/</guid>
+      <dc:date>2026-10-22</dc:date>
+    </item>
+    <item>
+      <title>What Happens After the Applause</title>
+      <link>https://vadimohka.com/essays/after-the-applause/</link>
+      <description>A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.</description>
+      <guid isPermaLink="true">https://vadimohka.com/essays/after-the-applause/</guid>
+      <dc:date>2026-10-15</dc:date>
+    </item>
+    <item>
+      <title>Recognizing Myself in My Work</title>
+      <link>https://vadimohka.com/essays/recognising-myself-in-my-work/</link>
+      <description>Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.</description>
+      <guid isPermaLink="true">https://vadimohka.com/essays/recognising-myself-in-my-work/</guid>
+      <dc:date>2026-10-08</dc:date>
+    </item>
+  </channel>
+</rss>

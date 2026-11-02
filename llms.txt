@@ -12,18 +12,29 @@ English-language enterprise AI, technical due diligence and CTO advisory for aud
 - [Enterprise AI](https://vadimohka.com/enterprise.html): Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.
 - [AI Technical Due Diligence](https://vadimohka.com/investors.html): AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.
 - [CTO Advisory](https://vadimohka.com/founders.html): CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.
-- [Media & Speaking](https://vadimohka.com/expert.html): Enterprise AI speaker and technical expert Vadim Vladymtsev. Topics, published articles, public appearances and contact routes for media and conference organizers.
-- [Selected Work](https://vadimohka.com/work.html): Explore Vadim Vladymtsev’s enterprise AI work: Century product context, published expertise, engineering experience and source-linked public records.
-- [Sources](https://vadimohka.com/sources.html): Original publications, product references, conference records and professional profiles supporting Vadim Vladymtsev’s enterprise AI work and background.
+- [Media & Speaking](https://vadimohka.com/expert.html): Enterprise AI speaker and technical expert Vadim Vladymtsev. Original essays, speaking topics, short biographies and contact routes for editors and event organizers.
+- [Selected Work](https://vadimohka.com/work.html): Explore Vadim Vladymtsev’s enterprise AI work: Century product context, original essays, engineering experience and technical leadership.
+- [Sources](https://vadimohka.com/sources.html): Product information, professional profiles, public code, research and a learning credential connected with Vadim Vladymtsev’s work.
+- [Essays](https://vadimohka.com/essays/): Original essays by Vadim Vladymtsev on software architecture, AI at work, shared understanding, project communities and authorship.
+- [Revising an Architecture I Designed](https://vadimohka.com/essays/revising-my-architecture/): What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.
+- [Who Gets the Time AI Saves?](https://vadimohka.com/essays/who-gets-the-time-ai-saves/): AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.
+- [Shared Understanding Takes Work](https://vadimohka.com/essays/shared-understanding/): What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.
+- [What Happens After the Applause](https://vadimohka.com/essays/after-the-applause/): A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.
+- [Recognizing Myself in My Work](https://vadimohka.com/essays/recognising-myself-in-my-work/): Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.
 
 ## Public profiles and product
 
-- [Russian-language personal profile](https://vadimohka.ru/)
-- [LinkedIn](https://www.linkedin.com/in/vadimohka/)
-- [Century AI Studio](https://century-ai.by/)
+- [linkedin.com](https://www.linkedin.com/in/vadimohka/)
+- [github.com](https://github.com/Vadimohka)
+- [codeforces.com](https://codeforces.com/profile/Vadimohka)
+- [scholar.google.com](https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en)
+- [Century AI Studio](https://century-ai.eu/)
 
 ## Supporting documents
 
 - [Profile summary](https://vadimohka.com/ai-profile.md)
 - [Full public site text](https://vadimohka.com/llms-full.txt)
 - [Structured entity graph](https://vadimohka.com/data/entity-graph.json)
+- [Discovery catalog](https://vadimohka.com/ai.json)
+- [Essays reading index](https://vadimohka.com/essays/llms.txt)
+- [Essays RSS feed](https://vadimohka.com/essays/feed.xml)

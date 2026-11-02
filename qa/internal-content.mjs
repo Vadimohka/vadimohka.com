@@ -1,6 +1,6 @@
 // Source snapshot: main@6be1903, before the internal-page layout changes.
 // The older executive baseline is retained and anchors every source file hash.
-import { approvedHash, restoredSource } from './health/approved-changes.mjs';
+import { approvedHash, restoredSource, removedText, removedId, checkContentRevision } from './health/approved-changes.mjs';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
@@ -24,15 +24,16 @@ for(const [file,before] of Object.entries(baseline.pages)){
  }
  const originalHead=html.match(/<head>[\s\S]*?<\/head>/)[0].replace('<link rel="stylesheet" href="assets/internal.css" />','');
  assert.equal(hash(originalHead),approvedHash('internal-head:'+file,before.head),`${file}: metadata/structured data changed`);
- for(const tag of ['header','footer'])assert.equal(hash(html.match(new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`))[0]),before[tag],`${file}: ${tag} changed`);
+ for(const tag of ['header','footer'])assert.equal(hash(html.match(new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`))[0]),approvedHash('internal-'+tag+':'+file,before[tag]),`${file}: ${tag} changed`);
  const text=normalize(html.match(/<main\b[\s\S]*?<\/main>/)[0]);
- for(const [oldTitle,newTitle] of Object.entries(editorial[file]||{})){assert.ok(before.text.includes(oldTitle), `${file}: unknown editorial source heading`);assert.ok(text.includes(newTitle), `${file}: replacement heading missing: ${newTitle}`);}
- for(const unit of before.text){assert.ok(text.includes(editorial[file]?.[unit]||unit),`${file}: original content lost: ${unit}`);blocks++;}
+ checkContentRevision(file,before.text,text);
+ for(const [oldTitle,newTitle] of Object.entries(editorial[file]||{})){assert.ok(before.text.includes(oldTitle), `${file}: unknown editorial source heading`);if(!removedText(file,oldTitle))assert.ok(text.includes(newTitle), `${file}: replacement heading missing: ${newTitle}`);}
+ for(const unit of before.text){if(!removedText(file,unit))assert.ok(text.includes(editorial[file]?.[unit]||unit),`${file}: original content lost: ${unit}`);blocks++;}
  const hrefs=new Set([...html.matchAll(/\bhref="([^"]+)"/g)].map(m=>normalize(m[1])));
- for(const href of before.hrefs)assert.ok(hrefs.has(restoredSource(file,href)),`${file}: destination lost: ${href}`);
+ for(const href of before.hrefs){const destination=restoredSource(file,href);if(destination!==null)assert.ok(hrefs.has(destination),`${file}: destination lost: ${href}`);}
  const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
- for(const id of before.ids)assert.ok(ids.has(id),`${file}: anchor lost: ${id}`);
+ for(const id of before.ids)if(!removedId(file,id))assert.ok(ids.has(id),`${file}: anchor lost: ${id}`);
  assert.ok(html.includes('class="inner-page '),`${file}: missing page-specific layout`);
  assert.ok(html.includes('href="assets/internal.css"'),`${file}: missing isolated internal stylesheet`);
 }
-console.log(`PASS — internal content: ${blocks} original text blocks, 9 metadata/header/footer snapshots, all destinations/anchors; explicit SEO/performance changes authorized`);
+console.log(`PASS — internal content: ${blocks} historical text blocks, 9 metadata/header/footer snapshots; exact editorial and source changes accounted for`);

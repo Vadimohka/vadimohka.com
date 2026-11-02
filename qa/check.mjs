@@ -2,22 +2,33 @@
 // Run from repo root:  node qa/check.mjs
 // Checks: pages exist, internal links + assets resolve, one <h1>, title +
 // meta description, canonical/OG/Twitter, lang, alt + width/height on images,
-// duplicate ids, empty href, absolute local paths, stylesheet present,
+// duplicate ids, empty href, nested and root-relative links, stylesheet present,
 // rough <div> nesting balance, sitemap + robots.
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const PAGES = ['index.html','enterprise.html','founders.html','investors.html',
-  'century.html','expert.html','sources.html','404.html','work.html','about.html'];
+const read = f => readFileSync(resolve(ROOT, f), 'utf8');
+const CONFIG = JSON.parse(read('qa/health/search-config.json'));
+const PAGES = Object.keys(CONFIG.pages);
+const SITE = new URL(CONFIG.baseURL);
+const canonicalURL = page => new URL(page.replace(/(^|\/)index\.html$/, '$1'), SITE).href;
+const localTarget = (href, page = 'index.html') => {
+  const url = new URL(href.replace(/&amp;/g, '&'), canonicalURL(page));
+  if (url.origin !== SITE.origin) return null;
+  const path = decodeURIComponent(url.pathname).replace(/^\//, '');
+  return {url, file: path.endsWith('/') || !path ? path + 'index.html' : path};
+};
+const fileExists = file => existsSync(resolve(ROOT, file)) && statSync(resolve(ROOT, file)).isFile();
+const modified = page => CONFIG.pages[page]?.modified || CONFIG.pages[page]?.article?.modified || CONFIG.modified;
 
 let fails = 0;
 const fail = (p, msg) => { console.error(`  ✗ ${p}: ${msg}`); fails++; };
-const read = f => readFileSync(resolve(ROOT, f), 'utf8');
 const matches = (re, s) => [...s.matchAll(re)];
 const personCores = [];
-const PRODUCTION_FILES = [...PAGES, 'assets/site.css', 'assets/site.js', 'ai-profile.md', 'llms.txt', 'llms-full.txt', 'data/entity-graph.json', 'sitemap.xml', 'sitemap-images.xml', 'sitemap-ai.xml', 'robots.txt'];
+const PRODUCTION_FILES = [...PAGES, 'assets/site.css', 'assets/internal.css', 'assets/essays.css', 'assets/site.js', 'ai-profile.md', 'llms.txt', 'llms-full.txt', 'data/entity-graph.json', 'sitemap.xml', 'sitemap-images.xml', 'sitemap-ai.xml', 'robots.txt',
+  ...['ai.json', 'ai-catalog.json', '.well-known/ai.json', '.well-known/ai-catalog.json'].filter(fileExists)];
 const imageDimensions = file => {
   const bytes = readFileSync(resolve(ROOT, file));
   if (bytes.subarray(0, 8).toString('hex') === '89504e470d0a1a0a') return [bytes.readUInt32BE(16), bytes.readUInt32BE(20)];
@@ -94,11 +105,12 @@ for (const page of PAGES) {
   if (!/property="og:image"/.test(html)) fail(page, 'missing og:image');
   if (!/name="twitter:card"/.test(html)) fail(page, 'missing twitter:card');
   if (page !== '404.html' && !/rel="canonical"/.test(html)) fail(page, 'missing canonical');
+  if (page !== '404.html' && html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] !== canonicalURL(page)) fail(page, 'canonical does not match the public route');
   if (/vadimohka\.github\.io/.test(html)) fail(page, 'stale github.io domain (use vadimohka.com)');
   if (page !== '404.html' && !/<meta name="yandex-verification" content="c3fd18a00a5bf714"\s*\/>/.test(html)) {
     fail(page, 'missing Yandex site-verification meta tag');
   }
-  if (!/<script\s+src="assets\/site\.js\?v=[^"]+"\s+defer><\/script>/.test(html)) fail(page, 'site script must load with defer');
+  if (!/<script\s+src="\/?assets\/site\.js\?v=[^"]+"\s+defer><\/script>/.test(html)) fail(page, 'site script must load with defer');
 
   // images: alt + intrinsic dimensions + resolvable src
   for (const m of matches(/<img\b[^>]*>/g, html)) {
@@ -106,19 +118,21 @@ for (const page of PAGES) {
     const src = (tag.match(/\bsrc="([^"]*)"/) || [])[1] || '(no src)';
     if (!/\balt=/.test(tag)) fail(page, `img missing alt: ${src}`);
     if (!/\bwidth=/.test(tag) || !/\bheight=/.test(tag)) fail(page, `img missing width/height: ${src}`);
-    if (src && !/^https?:/.test(src) && !existsSync(resolve(ROOT, src))) fail(page, `img src not found: ${src}`);
+    try {
+      const target = localTarget(src, page);
+      if (target && !fileExists(target.file)) fail(page, `img src not found: ${src}`);
+    } catch { fail(page, `invalid img src: ${src}`); }
   }
 
-  // links: resolve internal, flag empty + absolute-local
+  // Resolve local URLs from each public route, including directory indexes.
   for (const m of matches(/\bhref="([^"]*)"/g, html)) {
     const href = m[1];
     if (href.trim() === '') { fail(page, 'empty href'); continue; }
-    if (/^(https?:|mailto:|tel:|#|data:)/.test(href)) continue;
-    if (href.startsWith('//')) continue;
-    if (page === '404.html' && href === '/') continue;
-    if (href.startsWith('/')) { fail(page, `absolute local path (breaks project pages): ${href}`); continue; }
-    const path = href.split(/[?#]/)[0];
-    if (path && !existsSync(resolve(ROOT, path))) fail(page, `internal link not found: ${href}`);
+    if (/^(mailto:|tel:|data:)/.test(href)) continue;
+    try {
+      const target = localTarget(href, page);
+      if (target && !fileExists(target.file)) fail(page, `internal link not found: ${href}`);
+    } catch { fail(page, `invalid link URL: ${href}`); }
   }
 
   // Static contact pages must not ship a dead or placeholder form.
@@ -129,7 +143,10 @@ for (const page of PAGES) {
 
   // stylesheet target exists
   for (const m of matches(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/g, html)) {
-    if (!/^https?:/.test(m[1]) && !existsSync(resolve(ROOT, m[1]))) fail(page, `stylesheet not found: ${m[1]}`);
+    try {
+      const target = localTarget(m[1], page);
+      if (target && !fileExists(target.file)) fail(page, `stylesheet not found: ${m[1]}`);
+    } catch { fail(page, `invalid stylesheet URL: ${m[1]}`); }
   }
 
   // duplicate ids
@@ -146,9 +163,11 @@ for (const page of PAGES) {
 const incoming = Object.fromEntries(PAGES.map(page => [page, new Set()]));
 for (const from of PAGES) {
   const html = read(from);
-  for (const match of matches(/href="([^"]+)"/g, html)) {
-    const target = match[1].split(/[?#]/)[0];
-    if (incoming[target]) incoming[target].add(from);
+  for (const match of matches(/<a\b[^>]*href="([^"]+)"/g, html)) {
+    try {
+      const target = localTarget(match[1], from)?.file;
+      if (target !== from && incoming[target]) incoming[target].add(from);
+    } catch { /* Invalid URLs are reported by the page checks above. */ }
   }
 }
 for (const page of PAGES.filter(page => page !== 'index.html' && page !== '404.html')) {
@@ -161,19 +180,19 @@ try {
   const person = graph['@graph']?.find(node => node['@type'] === 'Person');
   const stacklevel = graph['@graph']?.find(node => node['@id'] === 'https://vadimohka.com/#stacklevel');
   if (!person || person['@id'] !== 'https://vadimohka.com/#person') fail('data/entity-graph.json', 'missing stable Person @id');
-  if (!stacklevel || stacklevel['@type'] !== 'Organization' || stacklevel.url !== 'https://stacklevel.group/en/company') fail('data/entity-graph.json', 'StackLevel organisation node is not authoritative');
+  if (!stacklevel || stacklevel['@type'] !== 'Organization' || stacklevel.name !== 'StackLevel Group' || stacklevel.employee?.['@id'] !== 'https://vadimohka.com/#person' || 'url' in stacklevel) fail('data/entity-graph.json', 'StackLevel organisation identity must remain without an outbound URL');
 } catch (error) {
   fail('data/entity-graph.json', `invalid entity graph JSON: ${error.message}`);
 }
 
 // Global navigation must expose the same staged information architecture on every page.
 const NAV_EXPECTED = [
-  ['index.html', 'Home'], ['work.html', 'Work'], ['century.html', 'Century'],
-  ['enterprise.html', 'Enterprise AI'], ['investors.html', 'AI Diligence'],
-  ['founders.html', 'Founder Advisory'], ['about.html', 'About']
+  ['/', 'Home'], ['/work.html', 'Work'], ['/essays/', 'Essays'], ['/century.html', 'Century'],
+  ['/enterprise.html', 'Enterprise AI'], ['/investors.html', 'AI Diligence'],
+  ['/founders.html', 'Founder Advisory'], ['/about.html', 'About']
 ];
 const normaliseHeader = html => (html.match(/<header class="site-header">([\s\S]*?)<\/header>/)?.[0] || '')
-  .replace(/\saria-current="page"/g, '');
+  .replace(/\saria-current="(?:page|location)"/g, '');
 const headerTemplate = normaliseHeader(read('index.html'));
 for (const page of PAGES) {
   const html = read(page);
@@ -191,28 +210,42 @@ for (const page of PAGES) {
     m[2].trim()
   ]);
   if (JSON.stringify(actual) !== JSON.stringify(NAV_EXPECTED)) fail(page, 'primary navigation destinations/labels differ from staged IA');
-  const current = matches(/aria-current="page"/g, nav[1]).length;
-  if (current > 1) fail(page, 'multiple aria-current="page" items in primary navigation');
-  if (page !== '404.html' && NAV_EXPECTED.some(([path]) => path === page)) {
-    const expected = page === 'index.html' ? 'index.html' : page;
-    const currentTag = (nav[1].match(/<a\b(?=[^>]*aria-current="page")[^>]*>/) || [])[0] || '';
-    const currentHref = ((currentTag.match(/href="([^"]+)"/) || [])[1] || '').split(/[?#]/)[0];
-    if (currentHref !== expected) fail(page, `aria-current does not identify ${expected}`);
+  const currentTags = matches(/<a\b(?=[^>]*aria-current="(?:page|location)")[^>]*>/g, nav[1]);
+  if (currentTags.length > 1) fail(page, 'multiple current items in primary navigation');
+  const route = new URL(canonicalURL(page)).pathname;
+  const essayArticle = Boolean(CONFIG.pages[page].article);
+  const expected = essayArticle ? '/essays/' : route;
+  if (page !== '404.html' && NAV_EXPECTED.some(([path]) => path === expected)) {
+    const currentTag = currentTags[0]?.[0] || '';
+    const currentHref = currentTag.match(/href="([^"]+)"/)?.[1];
+    const currentValue = currentTag.match(/aria-current="([^"]+)"/)?.[1];
+    if (currentHref !== expected || currentValue !== (essayArticle ? 'location' : 'page')) fail(page, `aria-current does not identify ${expected}`);
   }
 }
 
-// sitemap + robots — public pages only (bare-domain home, no sources/404)
+// sitemap + robots — canonical public pages, excluding the 404 document.
 const sm = existsSync(resolve(ROOT, 'sitemap.xml')) ? read('sitemap.xml') : '';
-const SITEMAP = ['work.html','about.html','century.html','expert.html','enterprise.html','investors.html','founders.html'];
-const CURRENT_LASTMOD = JSON.parse(read('qa/health/search-config.json')).modified;
+const SITEMAP = PAGES.filter(page => page !== '404.html');
+const LASTMOD_BY_URL = new Map(SITEMAP.map(page => [canonicalURL(page), modified(page)]));
+for (const page of PAGES.filter(page => page.startsWith('essays/'))) {
+  LASTMOD_BY_URL.set(new URL(page.replace(/\.html$/, '.md'), SITE).href, modified(page));
+}
+for (const file of ['essays/llms.txt', 'essays/feed.xml']) {
+  LASTMOD_BY_URL.set(new URL(file, SITE).href, modified('essays/index.html'));
+}
+const checkLastmod = (entry, sitemap) => {
+  const url = entry.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  const expected = LASTMOD_BY_URL.get(url) || CONFIG.modified;
+  if (entry.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] !== expected) fail(sitemap, 'lastmod must match the configured content modification date');
+};
 if (!sm) fail('sitemap.xml', 'missing');
 else {
   if (!/<loc>https:\/\/vadimohka\.com\/?<\/loc>/.test(sm)) fail('sitemap.xml', 'missing home (bare-domain) loc');
-  for (const p of SITEMAP) if (!sm.includes('/' + p)) fail('sitemap.xml', `does not list ${p}`);
+  for (const p of SITEMAP) if (!sm.includes(`<loc>${canonicalURL(p)}</loc>`)) fail('sitemap.xml', `does not list ${p}`);
   if (sm.includes('/404.html')) fail('sitemap.xml', 'should not list 404.html');
   if (/vadimohka\.github\.io/.test(sm)) fail('sitemap.xml', 'stale github.io domain');
   for (const entry of matches(/<url>([\s\S]*?)<\/url>/g, sm)) {
-    if (!new RegExp(`<lastmod>${CURRENT_LASTMOD}<\\/lastmod>`).test(entry[1])) fail('sitemap.xml', 'lastmod must match the current publication date');
+    checkLastmod(entry[1], 'sitemap.xml');
   }
 }
 const robots = existsSync(resolve(ROOT, 'robots.txt')) ? read('robots.txt') : '';
@@ -239,7 +272,7 @@ for (const sitemap of ['sitemap-images.xml','sitemap-ai.xml']) {
     const body = read(sitemap);
     if (!/<urlset\b/.test(body)) fail(sitemap, 'invalid sitemap root');
     for (const entry of matches(/<url>([\s\S]*?)<\/url>/g, body)) {
-      if (!new RegExp(`<lastmod>${CURRENT_LASTMOD}<\\/lastmod>`).test(entry[1])) fail(sitemap, 'lastmod must match the current publication date');
+      checkLastmod(entry[1], sitemap);
     }
     if (sitemap === 'sitemap-images.xml') {
       for (const match of matches(/<image:loc>([^<]+)<\/image:loc>/g, body)) {
@@ -289,8 +322,10 @@ for (const file of PRODUCTION_FILES) {
   if (!existsSync(resolve(ROOT, file))) continue;
   if (!file.endsWith('.html')) continue;
   const body = read(file);
-  const visibleText = body.replace(/<script\b[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ');
-  if (/\bChecked\b|\bScope:\s|\bStatus:\s|\bProof\b|\bEvidence map\b|\bVerified\b|\bVerify\b/i.test(visibleText)) {
+  const visible = body.replace(/<script\b[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[\s\S]*?<\/style>/gi, ' ');
+  const labels = matches(/<(h[1-6]|summary|dt|button|span|a|p)\b[^>]*>([\s\S]*?)<\/\1>/gi, visible)
+    .map(match => match[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+  if (labels.some(label => /^(?:(?:Checked|Scope|Status|Proof|Verified)\s*:|Evidence map(?:\s*:|$)|(?:Checked|Proof|Verified|Verify)$)/i.test(label))) {
     fail(file, 'visible audit/implementation label remains in production content');
   }
 }
@@ -315,13 +350,17 @@ try {
   fail('qa/brand', `claim/source ledger JSON invalid: ${error.message}`);
 }
 
-// Public-signal cards must carry a date, role/format and direct external source.
+// Publication cards carry a date, format and a direct source or authored essay.
 const expert = read('expert.html');
-for (const record of matches(/<article class="article">([\s\S]*?)<\/article>/g, expert)) {
+for (const record of matches(/<article class="(?:article|editorial-item)">([\s\S]*?)<\/article>/g, expert)) {
   const body = record[1];
   if (!/\b20\d{2}\b/.test(body)) fail('expert.html', 'public-signal record missing date');
   if (!/class="proof-role"|class="card-label"/.test(body)) fail('expert.html', 'public-signal record missing descriptive record label');
-  if (!/href="https?:\/\//.test(body)) fail('expert.html', 'public-signal record missing external source URL');
+  const href = body.match(/<a\b[^>]*href="([^"]+)"/)?.[1];
+  try {
+    const target = href && localTarget(href, 'expert.html');
+    if (!href || (target ? !CONFIG.pages[target.file]?.article : !/^https:\/\//.test(href))) fail('expert.html', 'publication record missing a direct source or authored essay');
+  } catch { fail('expert.html', 'publication record has an invalid source URL'); }
 }
 
 console.log(fails ? `\nFAIL — ${fails} issue(s)` : `\nPASS — ${PAGES.length} pages, all static checks green`);

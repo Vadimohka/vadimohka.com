@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-11-03",
   "sources": [
     {
       "subject": "Current role at StackLevel Group",
@@ -12,7 +12,9 @@
       "allowed_use": "Personal current-role claim, subject to re-check if role changes.",
       "caveat": "Company client logos and company metrics do not prove Vadim's personal mandate.",
       "source_id": "S001",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Century product recognition",
@@ -24,7 +26,9 @@
       "allowed_use": "Product recognition with exact category, placement, organiser and year.",
       "caveat": "Do not call this a personal award unless the source explicitly does so.",
       "source_id": "S002",
-      "date_checked_or_event": "2025-10-13"
+      "date_checked_or_event": "2025-10-13",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Media quotation on emerging AI roles",
@@ -37,7 +41,9 @@
       "caveat": "Use the outlet's exact title and date; do not imply a dedicated profile interview.",
       "source_id": "S003",
       "date_checked_or_event": "2026-01-11",
-      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event.",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Secondary publication of emerging AI roles article",
@@ -49,7 +55,9 @@
       "allowed_use": "Backup source only.",
       "caveat": "Do not count as an independent second media appearance.",
       "source_id": "S004",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Author article on pilot hell",
@@ -62,7 +70,9 @@
       "caveat": "Link the article directly and preserve original language/title.",
       "source_id": "S005",
       "date_checked_or_event": "2026-03-02",
-      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event.",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Vaiti author page",
@@ -75,7 +85,9 @@
       "caveat": "Article-level links remain stronger evidence.",
       "source_id": "S006",
       "date_checked_or_event": "checked 2026-08-22",
-      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event.",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "M.AI.N AI Community appearance",
@@ -87,7 +99,9 @@
       "allowed_use": "Verified event appearance with organiser, date and topic.",
       "caveat": "Use as a public appearance, not proof of enterprise outcome.",
       "source_id": "S007",
-      "date_checked_or_event": "event 2026-04-30"
+      "date_checked_or_event": "event 2026-04-30",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "M.AI.N AI Community recap",
@@ -111,7 +125,9 @@
       "allowed_use": "Optional recording/evidence link.",
       "caveat": "Social platforms may be inaccessible to some crawlers.",
       "source_id": "S009",
-      "date_checked_or_event": "2026"
+      "date_checked_or_event": "2026",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "IT-Security conference",
@@ -124,7 +140,9 @@
       "caveat": "Use programme wording; do not upgrade 'representative/presidium participant' to keynote.",
       "source_id": "S010",
       "date_checked_or_event": "2026-03-18",
-      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event."
+      "maintenance_note": "Original publisher/program URL restored from the source register on 2026-10-07; not a new claim or event.",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Vadim's IT-Security event post",
@@ -148,7 +166,9 @@
       "allowed_use": "Course existence and exact title.",
       "caveat": "The 4,700+ learner count was not independently confirmed in this audit; re-check current platform data before publishing a number.",
       "source_id": "S012",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Codeforces profile",
@@ -166,7 +186,7 @@
       "subject": "Google Scholar profile",
       "supports": "A Google Scholar profile exists for the name and links to StackLevel/BSUIR context.",
       "source_type": "academic profile",
-      "url": "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=ru",
+      "url": "https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en",
       "status": "partially verified",
       "authority": "medium",
       "allowed_use": "Profile/entity link and publications that can be verified individually.",
@@ -184,7 +204,9 @@
       "allowed_use": "Teaching role/context, subject to exact historical dates.",
       "caveat": "A schedule page may not establish full employment history.",
       "source_id": "S015",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Northern Eurasia Finals 2022 coaching",
@@ -196,7 +218,9 @@
       "allowed_use": "Specific coaching record.",
       "caveat": "Does not prove aggregate team counts.",
       "source_id": "S016",
-      "date_checked_or_event": "2022"
+      "date_checked_or_event": "2022",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "BSUIR Open 2024",
@@ -208,7 +232,9 @@
       "allowed_use": "Specific organiser/education record.",
       "caveat": "Keep exact event wording.",
       "source_id": "S017",
-      "date_checked_or_event": "2024"
+      "date_checked_or_event": "2024",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Programming teams 2022",
@@ -220,7 +246,9 @@
       "allowed_use": "Specific coaching/support record.",
       "caveat": "Do not extrapolate aggregate results.",
       "source_id": "S018",
-      "date_checked_or_event": "2022"
+      "date_checked_or_event": "2022",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "ICPC world-finals coaching record",
@@ -232,7 +260,9 @@
       "allowed_use": "Specific coaching outcome with careful attribution.",
       "caveat": "Credit the team; do not turn the team's result into a personal award.",
       "source_id": "S019",
-      "date_checked_or_event": "2023"
+      "date_checked_or_event": "2023",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Olympiad school leadership",
@@ -244,7 +274,9 @@
       "allowed_use": "Historical teaching/coaching title with date.",
       "caveat": "Do not present a historical title as current without re-check.",
       "source_id": "S020",
-      "date_checked_or_event": "2024"
+      "date_checked_or_event": "2024",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Century product site",
@@ -292,7 +324,9 @@
       "allowed_use": "External profile cleanup checklist only.",
       "caveat": "Current status may change; re-check before action.",
       "source_id": "S024",
-      "date_checked_or_event": "checked 2026-08-22"
+      "date_checked_or_event": "checked 2026-08-22",
+      "public_use": "excluded",
+      "public_use_note": "Owner requested removal of CIS source destinations from the public .com website on 2026-11-03. Historical evidence retained outside the deployment artifact."
     },
     {
       "subject": "Claude Foundations certificate",

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "site": "https://vadimohka.com/",
+  "name": "Vadim Vladymtsev",
+  "inLanguage": "en",
+  "documents": [
+    {
+      "url": "https://vadimohka.com/",
+      "title": "Home",
+      "description": "Vadim Vladymtsev, CTO at StackLevel Group. Enterprise AI strategy, product architecture, technical due diligence and CTO advisory for USA and UAE audiences.",
+      "type": "WebPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/about.html",
+      "title": "About & Contact",
+      "description": "Meet Vadim Vladymtsev, CTO at StackLevel Group. Product architecture, enterprise AI and technical judgment. Contact routes for USA and UAE business inquiries.",
+      "type": "ProfilePage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/century.html",
+      "title": "Century AI Studio",
+      "description": "Explore Century AI Studio: assistants, workflows, protected data access, private deployment and operational controls for enterprise AI. Product context and sources.",
+      "type": "WebPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/enterprise.html",
+      "title": "Enterprise AI",
+      "description": "Enterprise AI strategy and architecture with Vadim Vladymtsev. Use-case selection, data boundaries, governance and production planning for USA and UAE organizations.",
+      "type": "WebPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/investors.html",
+      "title": "AI Technical Due Diligence",
+      "description": "AI technical due diligence for investors in the USA and UAE. Assess product, data, architecture, security, team and deployment risks with Vadim Vladymtsev.",
+      "type": "WebPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/founders.html",
+      "title": "CTO Advisory",
+      "description": "CTO advisory for founders and executive teams in the USA and UAE. Align product, architecture, ownership and engineering delivery with a focused technical diagnostic.",
+      "type": "WebPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/expert.html",
+      "title": "Media & Speaking",
+      "description": "Enterprise AI speaker and technical expert Vadim Vladymtsev. Original essays, speaking topics, short biographies and contact routes for editors and event organizers.",
+      "type": "CollectionPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/work.html",
+      "title": "Selected Work",
+      "description": "Explore Vadim Vladymtsev’s enterprise AI work: Century product context, original essays, engineering experience and technical leadership.",
+      "type": "CollectionPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/sources.html",
+      "title": "Sources",
+      "description": "Product information, professional profiles, public code, research and a learning credential connected with Vadim Vladymtsev’s work.",
+      "type": "CollectionPage",
+      "dateModified": "2026-11-03"
+    },
+    {
+      "url": "https://vadimohka.com/essays/",
+      "title": "Essays",
+      "description": "Original essays by Vadim Vladymtsev on software architecture, AI at work, shared understanding, project communities and authorship.",
+      "type": "CollectionPage",
+      "dateModified": "2026-11-03",
+      "markdown": "https://vadimohka.com/essays/index.md"
+    },
+    {
+      "url": "https://vadimohka.com/essays/revising-my-architecture/",
+      "title": "Revising an Architecture I Designed",
+      "description": "What rebuilding part of my own microservices application taught me about engineering responsibility, migration costs, and professional trust.",
+      "type": "Article",
+      "dateModified": "2026-11-03",
+      "datePublished": "2026-11-02",
+      "markdown": "https://vadimohka.com/essays/revising-my-architecture/index.md"
+    },
+    {
+      "url": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/",
+      "title": "Who Gets the Time AI Saves?",
+      "description": "AI can make a task faster. The value depends on who receives the time saved and what the company enables them to do with it.",
+      "type": "Article",
+      "dateModified": "2026-11-03",
+      "datePublished": "2026-10-29",
+      "markdown": "https://vadimohka.com/essays/who-gets-the-time-ai-saves/index.md"
+    },
+    {
+      "url": "https://vadimohka.com/essays/shared-understanding/",
+      "title": "Shared Understanding Takes Work",
+      "description": "What coaching a competitive programming team taught me about explaining ideas, sharing context, and helping strong people work independently.",
+      "type": "Article",
+      "dateModified": "2026-11-03",
+      "datePublished": "2026-10-22",
+      "markdown": "https://vadimohka.com/essays/shared-understanding/index.md"
+    },
+    {
+      "url": "https://vadimohka.com/essays/after-the-applause/",
+      "title": "What Happens After the Applause",
+      "description": "A startup competition creates opportunities. Teams still need a way to use them. My view of support after the final, informed by StartLab.",
+      "type": "Article",
+      "dateModified": "2026-11-03",
+      "datePublished": "2026-10-15",
+      "markdown": "https://vadimohka.com/essays/after-the-applause/index.md"
+    },
+    {
+      "url": "https://vadimohka.com/essays/recognising-myself-in-my-work/",
+      "title": "Recognizing Myself in My Work",
+      "description": "Personal taste, thoughtful details, and shared credit: why I want to understand my own choices and return to the things I have made.",
+      "type": "Article",
+      "dateModified": "2026-11-03",
+      "datePublished": "2026-10-08",
+      "markdown": "https://vadimohka.com/essays/recognising-myself-in-my-work/index.md"
+    }
+  ],
+  "discovery": {
+    "ai-profile.md": "https://vadimohka.com/ai-profile.md",
+    "llms-full.txt": "https://vadimohka.com/llms-full.txt",
+    "data/entity-graph.json": "https://vadimohka.com/data/entity-graph.json",
+    "essays/llms.txt": "https://vadimohka.com/essays/llms.txt",
+    "essays/feed.xml": "https://vadimohka.com/essays/feed.xml",
+    "llms.txt": "https://vadimohka.com/llms.txt"
+  }
+}

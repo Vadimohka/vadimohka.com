@@ -4,7 +4,7 @@ export async function checkHealthInteractions({page,browser,BASE}){
   await page.setViewportSize({width:390,height:844});
   await page.goto(`${BASE}/about.html`,{waitUntil:'networkidle'});
   for(const link of await page.locator('.route-link').all())assert.match(await link.getAttribute('aria-label'),/^Choose this route:/);
-  for(const id of ['finance-mail','vaiti','it-security']){
+  for(const id of ['century','linkedin','github','codeforces','scholar','claude-foundations']){
     await page.goto(`${BASE}/sources.html#${id}`,{waitUntil:'networkidle'});
     const link=page.locator(`#${id}`);assert.equal(await link.count(),1);
     const destination=await link.getAttribute('href');assert.ok(destination.startsWith('https://')&&!destination.includes('vadimohka.com/sources.html'));

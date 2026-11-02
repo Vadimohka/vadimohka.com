@@ -32,15 +32,14 @@ https://vadimohka.com/century.html
 
 ## Public record
 
-- New roles in work: a market for hybrid professions is forming in Russia — 2026-01-11 — https://finance.mail.ru/article/novyie-roli-v-rabote-v-rossii-formiruetsya-ryinok-gibridnyih-professij-69194520/
-- ИИ-пузырь внутри компании: антикейсы и стратегии выхода из «пилотного ада» — 2026-03-02 — https://vaiti.io/ii-puzyr-vnutri-kompanii-antikejsy-i-strategii-vyhoda-iz-pilotnogo-ada/
-- M.AI.N AI Community — 2026-04-30 — https://www.instagram.com/p/DW7GULsDNwq/
-- IT-Security programme discussion on AI — 2026-03-18 — https://its.it-event.by/2-uncategorised/61-programma
 
 ## Identity and contact
 
 https://vadimohka.com/about.html#contact
 
-Russian-language profile: https://vadimohka.ru/
+- [linkedin.com](https://www.linkedin.com/in/vadimohka/)
+- [github.com](https://github.com/Vadimohka)
+- [codeforces.com](https://codeforces.com/profile/Vadimohka)
+- [scholar.google.com](https://scholar.google.com/citations?user=ccabRDYAAAAJ&hl=en)
 
 Technical assessments are not investment, legal or financial advice. Public product recognition is not a personal award.

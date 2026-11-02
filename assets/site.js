@@ -1,6 +1,6 @@
 document.documentElement.classList.add('js');
 
-const mobileMenuQuery = window.matchMedia('(max-width: 1150px)');
+const mobileMenuQuery = window.matchMedia('(max-width: 1250px)');
 const menuControls = document.querySelectorAll('.menu-toggle[aria-controls]');
 // CSS can hide a focused control before the media-query callback runs.
 let menuFocus = null;
