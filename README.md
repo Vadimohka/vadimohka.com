@@ -2,7 +2,7 @@
 
 Static English-language Executive 03 website for enterprise AI, technical due diligence and CTO advisory. USA and UAE are intended audiences, not implied office locations. No production runtime dependencies or third-party font requests.
 
-## Preview, check and publish
+## Preview and checks
 
 ```sh
 python3 -m http.server 4173
@@ -10,10 +10,19 @@ node qa/check.mjs
 node qa/test-regressions.mjs
 node qa/executive-content.mjs
 python3 qa/health/check.py
-node qa/health/build.mjs
 ```
 
-GitHub Actions publishes `main` using the public allowlist in `qa/health/build.mjs`. Documentation, source notes, QA, old installation packs and reports are not published. A failed gate prevents deployment. The ten public routes and all six contact intents are retained.
+## Publish
+
+The GitHub Pages workflow publishes `main` in one job: checkout, package static files, configure Pages, upload the public artifact and deploy. It runs no QA gates, tests, generators, browser checks or post-deployment checks. Browser QA and Site health are separate workflows for pull requests or manual use.
+
+`scripts/package-site.mjs` copies the ready-to-publish files into `_site` using the public allowlist. It uses only Node.js built-ins and does not install dependencies or invoke validation. Documentation, source notes, QA, old installation packs and reports are excluded from publication. The ten public routes and all six contact intents are retained.
+
+To prepare the same artifact locally:
+
+```sh
+node scripts/package-site.mjs
+```
 
 ## Search and AI discovery
 
